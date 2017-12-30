@@ -4,25 +4,51 @@
 [hub]
         protocol = https
 [alias]
+        st = status
         co = checkout
+        ci = commit
         promote = !$ZSH/bin/git-promote
         wtf     = !$ZSH/bin/git-wtf
         rank-contributors = !$ZSH/bin/git-rank-contributors
         count   = !git shortlog -sn
+        oops = commit --amend --no-edit
 [color]
         diff = auto
         status = auto
         branch = auto
         ui = true
+[color "branch"]
+        current = yellow reverse
+        local = yellow
+        remote = green
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = cyan
 [core]
         excludesfile = ~/.gitignore
-        editor = vim
+        editor = pico
 [apply]
         whitespace = nowarn
 [mergetool]
         keepBackup = false
 [difftool]
         prompt = false
+[diff]
+        tool = sourcetree
+[merge]
+        tool = sourcetree
+[difftool "sourcetree"]
+        cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+        path =
+[mergetool "sourcetree"]
+        cmd = /Applications/SourceTree.app/Contents/Resources/opend$
+        trustExitCode = true
 [help]
         autocorrect = 1
 [push]
