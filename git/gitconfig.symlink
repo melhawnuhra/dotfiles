@@ -7,9 +7,9 @@
         st = status
         co = checkout
         ci = commit
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributors = !$ZSH/bin/git-rank-contributors
+        promote = !$HOME/.dotfiles/bin/git-promote
+        wtf     = !$HOME/.dotfiles/bin/git-wtf
+        rank-contributors = !$HOME/.dotfiles/bin/git-rank-contributors
         count   = !git shortlog -sn
         oops = commit --amend --no-edit
 [color]

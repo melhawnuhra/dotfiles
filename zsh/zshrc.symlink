@@ -1,5 +1,6 @@
 # shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+export DOTFILES_HOME=$HOME/.dotfiles
+export ZSH=$HOME/.oh-my-zsh
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/code
@@ -14,7 +15,7 @@ fi
 
 # all of our zsh files
 typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+config_files=($DOTFILES_HOME/**/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
