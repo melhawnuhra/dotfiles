@@ -1,6 +1,17 @@
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
+export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+ZSH_THEME="muse"
+CASE_SENSITIVE="false"
+HYPHEN_INSENSITIVE="true"
+COMPLETION_WAITING_DOTS="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+plugins=(git osx z wd zsh-syntax-highlighting )
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
+
 fpath=($ZSH/functions $fpath)
 
 autoload -U $ZSH/functions/*(:t)
