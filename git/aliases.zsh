@@ -29,3 +29,5 @@ alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'
 # Pull / push
 alias gp='git pull --rebase --prune'
 alias gpp='git pull --rebase && git push'
+
+alias gw='git-wtf'
