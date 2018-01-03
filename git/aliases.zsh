@@ -8,7 +8,7 @@ fi
 
 # Commit / staging
 alias ga='git add'
-alias gc='git commit'
+alias gc='git commit -m'
 alias gca='git-amend'
 alias gaa='git add -A'
 alias gac='git add -A && git commit -m'
