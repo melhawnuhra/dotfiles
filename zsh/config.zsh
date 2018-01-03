@@ -38,9 +38,8 @@ setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share 
 setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
 
-# don't expand aliases _before_ completion has finished
-#   like: git comm-[tab]
-setopt complete_aliases
+# Allow autocompletion of aliases
+setopt no_complete_aliases
 
 # Keybindings for word/sentence/line nagivation
 bindkey '^[^[[D' backward-word

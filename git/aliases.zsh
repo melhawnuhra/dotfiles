@@ -10,6 +10,7 @@ fi
 alias ga='git add'
 alias gc='git commit'
 alias gca='git-amend'
+alias gaa='git add -A'
 alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
 
