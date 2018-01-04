@@ -44,10 +44,12 @@ setopt no_complete_aliases
 # Keybindings for word/sentence/line nagivation
 bindkey '^[^[[D' backward-word
 bindkey '^[^[[C' forward-word
-bindkey '^[[5D' beginning-of-line
-bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^?' backward-delete-char
+
+bindkey '^[begin' beginning-of-line
+bindkey '^[end' end-of-line
+bindkey '^[clearline' kill-whole-line
 
 # Better history
 # Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys

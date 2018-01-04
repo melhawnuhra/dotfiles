@@ -28,6 +28,7 @@ alias gh="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(y
 alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'
 
 # Pull / push
+alias gu='git push'
 alias gp='git pull --rebase --prune'
 alias gpp='git pull --rebase && git push'
 
