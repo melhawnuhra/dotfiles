@@ -49,7 +49,8 @@ bindkey '^?' backward-delete-char
 
 bindkey '^[begin' beginning-of-line
 bindkey '^[end' end-of-line
-bindkey '^[clearline' kill-whole-line
+bindkey '^[backclearline' backward-kill-line
+bindkey '^[forwardclearline' forward-kill-line
 
 # Better history
 # Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
