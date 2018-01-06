@@ -6,6 +6,8 @@ then
   alias git=$hub_path
 fi
 
+alias g="git"
+
 # Commit / staging
 alias ga='git add'
 alias gc='git commit -m'
