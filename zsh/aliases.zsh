@@ -4,7 +4,7 @@ alias cats='pygmentize -g'		# Syntax-highlighted cat
 alias cpwd='pwd|tr -d "\n"|pbcopy'	# Copy pwd path
 
 # Fuck alias
-if $(thefuck &>/dev/null)
+if $(which thefuck &>/dev/null)
 then
     eval $(thefuck --alias)
 fi

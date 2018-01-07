@@ -3,7 +3,7 @@ export CLICOLOR=true
 
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-ZSH_THEME="muse"
+ZSH_THEME=""
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
