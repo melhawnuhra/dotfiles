@@ -1,0 +1,6 @@
+jlmurphysa/oh-my-zsh folder:plugins/wd
+jlmurphysa/oh-my-zsh folder:plugins/z
+jlmurphysa/oh-my-zsh folder:plugins/osx
+
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions

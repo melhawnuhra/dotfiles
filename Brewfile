@@ -27,6 +27,7 @@ brew 'unrar'
 brew 'wget'
 brew 'yarn'
 brew 'youtube-dl'
+brew 'getantibody/tap/antibody'
 
 cask '1password'
 cask 'firefox'

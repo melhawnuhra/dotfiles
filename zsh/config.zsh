@@ -9,7 +9,6 @@ HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=( osx z wd zsh-syntax-highlighting )
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 fpath=($DOTFILES_HOME/functions $fpath)
