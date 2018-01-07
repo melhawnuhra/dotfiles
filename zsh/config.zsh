@@ -34,12 +34,18 @@ setopt COMPLETE_IN_WORD
 setopt IGNORE_EOF
 
 setopt APPEND_HISTORY # adds history
-setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
+setopt INC_APPEND_HISTORY # adds history incrementally
 setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_EXPIRE_DUPS_FIRST
 
 # Allow autocompletion of aliases
 setopt no_complete_aliases
+
+unsetopt histverify # Allow usage of !$ without confirmation
+setopt RM_STAR_SILENT # dont ask for confirmation in rm globs*
 
 # Keybindings for word/sentence/line nagivation
 bindkey '^[^[[D' backward-word
