@@ -35,3 +35,4 @@ alias gp='git pull --rebase --prune'
 alias gpp='git pull --rebase && git push'
 
 alias gw='git-wtf'
+alias st='open -a SourceTree .'
