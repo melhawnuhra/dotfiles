@@ -31,7 +31,7 @@
         changed = green
         untracked = cyan
 [core]
-        excludesfile = ~/.gitignore
+	excludesfile = /Users/jaredmurphy/.gitignore_global
         editor = pico
 [apply]
         whitespace = nowarn
@@ -40,9 +40,9 @@
 [difftool]
         prompt = false
 [diff]
-        tool = sourcetree
+        tool = code-insiders
 [merge]
-        tool = sourcetree
+        tool = code-insiders
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -57,3 +57,8 @@
         #
         # Setting to git 2.0 default to suppress warning message
         default = simple
+[user]
+	name = Jared Murphy
+	email = jlmurphy.sa@gmail.com
+[commit]
+	template = /Users/jaredmurphy/.stCommitMsg
