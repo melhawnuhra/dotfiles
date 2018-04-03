@@ -59,6 +59,8 @@ defaults, and so on. Tweak this script, and occasionally run `dot` from
 time to time to keep your environment fresh and up-to-date. You can find
 this script in `bin/`.
 
+If you'd like to pull in the Vim plugins, run `$ git submodule update --init --recursive`
+
 ## bugs
 
 I want this to work for everyone; that means when you clone it down it should
