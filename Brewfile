@@ -39,4 +39,4 @@ cask 'steam'
 cask 'transmission'
 cask 'tunnelbear'
 cask 'vlc'
-cask 'karabiner
+cask 'karabiner-elements'

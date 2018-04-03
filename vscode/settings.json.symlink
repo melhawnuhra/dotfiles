@@ -1,0 +1,151 @@
+{
+    "auto-close-tag.activationOnLanguage": [
+        "xml",
+        "php",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "markdown",
+        "HTML (Eex)",
+        "HTML"
+    ],
+    "extensions.ignoreRecommendations": false,
+    "update.channel": "default",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+
+    "debug.inlineValues": true,
+    "debug.internalConsoleOptions": "openOnSessionStart",
+    "debug.openDebug": "openOnSessionStart",
+    "debug.openExplorerOnEnd": true,
+    "debug.showInStatusBar": "always",
+
+    "editor.codeLens": false,
+    "editor.wordWrapColumn": 120,
+    "editor.wordWrap": "bounded",
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorStyle": "line",
+    "editor.insertSpaces": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.showSlider": "always",
+    "editor.renderIndentGuides": false,
+    "editor.renderLineHighlight": "all",
+    "editor.renderWhitespace": "all",
+    "editor.scrollBeyondLastLine": false,
+    "editor.snippetSuggestions": "top",
+    "editor.showFoldingControls": "always",
+    "editor.smoothScrolling": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 12,
+    "editor.lightbulb.enabled": true,
+
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "files.useExperimentalFileWatcher": true,
+    "files.autoSave": "onFocusChange",
+
+    "gitlens.advanced.blame.delayAfterEdit": 2000,
+    "gitlens.advanced.telemetry.enabled": false,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": true
+    },
+
+    "html.suggest.angular1": false,
+    "html.suggest.ionic": false,
+
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Monokai",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.statusBar.visible": true,
+
+    "zenMode.hideActivityBar": false,
+    "zenMode.hideTabs": false,
+    "zenMode.restore": true,
+
+    "window.closeWhenEmpty": true,
+    "window.nativeTabs": true,
+    "window.newWindowDimensions": "maximized",
+    "window.restoreFullscreen": true,
+    "window.title": "${rootName}${separator}${activeEditorShort} ${dirty}",
+
+    "python.disablePromptForFeatures": [
+        "pylint"
+    ],
+
+    "php.validate.run": "onType",
+
+    "npm.packageManager": "yarn",
+    "javascript.format.insertSpaceAfterConstructor": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "javascript.implicitProjectConfig.checkJs": true,
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "javascript.validate.enable": false,
+    "[javascriptreact]": {},
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "eslint.enable": false,
+    },
+    "jsDocCompletion.enabled": true,
+    "typescript.format.insertSpaceAfterConstructor": true,
+    "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "typescript.implementationsCodeLens.enabled": true,
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.useCodeSnippetsOnMethodSuggest": true,
+
+    "eslint.packageManager": "yarn",
+    "eslint.run": "onType",
+    "eslint.enable": false,
+
+    "problems.decorations.enabled": true,
+    "git.autofetch": true,
+    "gitlens.blame.format": "${message|30?} ${ago|14}",
+    "gitlens.codeLens.scopes": [
+        "document",
+        "containers",
+        "blocks"
+    ],
+
+    "python.linting.lintOnSave": true,
+    "window.zoomLevel": 0,
+    "material-icon-theme.showWelcomeMessage": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "gitlens.keymap": "chorded",
+    "vsicons.dontShowNewVersionMessage": true,
+
+    "vim.disableExtension": false,
+    "vim.cmdLineInitialColon": true,
+    "vim.easymotion": true,
+    "vim.leader": ",",
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors": {
+        "normal": "#444444",
+        "insert": "#226622",
+        "visual": "#224466",
+        "visualline": "#662244",
+        "visualblock": "#224466",
+        "replace": "#662222"
+    },
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#444444",
+        "statusBar.noFolderBackground": "#444444",
+        "statusBar.debuggingBackground": "#444444"
+    }
+}
