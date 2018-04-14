@@ -29,6 +29,8 @@ brew 'wget'
 brew 'yarn'
 brew 'youtube-dl'
 brew 'getantibody/tap/antibody'
+brew 'tmux'
+brew 'reattach-to-user-namespace'
 
 cask '1password'
 cask 'firefox'

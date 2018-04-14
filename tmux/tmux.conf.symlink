@@ -14,7 +14,7 @@ bind-key b split-window
 set -g base-index 1         # start windows numbering at 1
 setw -g pane-base-index 1   # make pane numbering consistent with windows
 
-setw -g automatic-rename on # rename window to reflect current program
+setw -g automatic-rename off # don't automatically rename windows
 set -g renumber-windows on  # renumber windows when a window is closed
 
 set -g set-titles on                        # set terminal title
@@ -25,6 +25,15 @@ set -g set-titles-string '#h ❐ #S ● #I #W'
 set-window-option -g window-status-fg colour244 #base0
 set-window-option -g window-status-bg default
 #set-window-option -g window-status-attr dim
+
+# Use vim keybindings
+setw -g mode-keys vi
+
+# Decrease command delay for vim responsiveness
+set -sg escape-time 1
+
+# Increase repeat time for repeatable commands
+set -g repeat-time 1000
 
 # active window title colors
 set-window-option -g window-status-current-fg colour166 #orange
@@ -78,7 +87,7 @@ setw -g aggressive-resize on
 # another TMUX session
 bind-key a send-prefix
 
-# Activity monitoring
+# Highlight window when it has new activity
 setw -g monitor-activity on
 set -g visual-activity on
 
@@ -104,6 +113,14 @@ set-option -g allow-rename off
 
 # Start copy mode when scrolling up
 # bind -n WheelUpPane copy-mode
+
+# Enable pbcopy/pbpaste
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+
+# Allow yanking to global clipboard
+set -g set-clipboard on
+bind-key -Tcopy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+bind-key -Tcopy-mode-vi Escape send -X cancel
 
 # color
 set -g default-terminal "screen-256color"
