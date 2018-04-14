@@ -144,8 +144,8 @@
         "replace": "#662222"
     },
     "workbench.colorCustomizations": {
-        "statusBar.background": "#444444",
-        "statusBar.noFolderBackground": "#444444",
-        "statusBar.debuggingBackground": "#444444"
+        "statusBar.background": "#226622",
+        "statusBar.noFolderBackground": "#226622",
+        "statusBar.debuggingBackground": "#226622"
     }
 }
