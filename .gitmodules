@@ -16,3 +16,18 @@
 [submodule "vim/.vim.symlink/bundle/easymotion.vim"]
 	path = vim/.vim.symlink/bundle/easymotion.vim
 	url = https://github.com/easymotion/vim-easymotion.git
+[submodule "vim/.vim.symlink/bundle/ale.vim"]
+	path = vim/.vim.symlink/bundle/ale.vim
+	url = https://github.com/w0rp/ale.git
+[submodule "vim/.vim.symlink/bundle/js-indent.vim"]
+	path = vim/.vim.symlink/bundle/js-indent.vim
+	url = https://github.com/jason0x43/vim-js-indent.git
+[submodule "vim/.vim.symlink/bundle/js-pretty-template.vim"]
+	path = vim/.vim.symlink/bundle/js-pretty-template.vim
+	url = https://github.com/Quramy/vim-js-pretty-template.git
+[submodule "vim/.vim.symlink/bundle/typescript.vim"]
+	path = vim/.vim.symlink/bundle/typescript.vim
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "vim/.vim.symlink/bundle/YouCompleteMe.vim"]
+	path = vim/.vim.symlink/bundle/YouCompleteMe.vim
+	url = https://github.com/Valloric/YouCompleteMe.git
