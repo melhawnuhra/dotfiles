@@ -34,6 +34,7 @@ brew 'tmux'
 brew 'reattach-to-user-namespace'
 
 cask '1password'
+cask 'etcher'
 cask 'firefox'
 cask 'google-chrome'
 cask 'handbrake'
