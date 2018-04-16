@@ -41,6 +41,14 @@
     "editor.fontSize": 12,
     "editor.lightbulb.enabled": true,
 
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.autoClosingBrackets": true,
+    "editor.autoIndent": true,
+    "editor.detectIndentation": true,
+    "editor.mouseWheelZoom": false,
+    "editor.matchBrackets": true,
+    "editor.colorDecorators": true,
+
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
 
@@ -69,7 +77,7 @@
     "html.suggest.ionic": false,
 
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Monokai",
+    "workbench.colorTheme": "Themer Dark",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.tabSizing": "shrink",
     "workbench.statusBar.visible": true,
@@ -130,19 +138,6 @@
     "gitlens.keymap": "chorded",
     "vsicons.dontShowNewVersionMessage": true,
 
-    "vim.disableExtension": false,
-    "vim.cmdLineInitialColon": true,
-    "vim.easymotion": true,
-    "vim.leader": ",",
-    "vim.statusBarColorControl": true,
-    "vim.statusBarColors": {
-        "normal": "#444444",
-        "insert": "#226622",
-        "visual": "#224466",
-        "visualline": "#662244",
-        "visualblock": "#224466",
-        "replace": "#662222"
-    },
     "workbench.colorCustomizations": {
         "statusBar.background": "#226622",
         "statusBar.noFolderBackground": "#226622",

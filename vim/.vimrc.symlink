@@ -17,7 +17,7 @@ set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 
 syntax on                       "Enable syntax highlighting
-colorscheme monokai             "Colorscheme
+colorscheme ThemerVim           "Colorscheme
 set hidden                      "Allow buffers in the background
 set hid                         "A buffer becomes hidden when abandoned
 let mapleader=","               "Remap the leader key
@@ -74,6 +74,17 @@ set magic           " Turn magic on for regular expressions
 nmap <leader>w :w!<cr>                " Quick saving
 command W w !sudo tee % > /dev/null   " Sudo save
 
+" ====== EASYMOTION CONFIG =======
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
