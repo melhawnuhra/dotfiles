@@ -139,8 +139,9 @@
     "vsicons.dontShowNewVersionMessage": true,
 
     "workbench.colorCustomizations": {
-        "statusBar.background": "#226622",
-        "statusBar.noFolderBackground": "#226622",
-        "statusBar.debuggingBackground": "#226622"
+        "statusBar.background": "#282629",
+        "statusBar.debuggingBackground": "#474247",
+        "statusBar.noFolderBackground": "#282629",
+        "statusBar.foreground": "#C1BCC2"
     }
 }
