@@ -31,3 +31,12 @@
 [submodule "vim/.vim.symlink/bundle/YouCompleteMe.vim"]
 	path = vim/.vim.symlink/bundle/YouCompleteMe.vim
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "vim/.vim.symlink/bundle/javascript.vim"]
+	path = vim/.vim.symlink/bundle/javascript.vim
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/.vim.symlink/bundle/airline.vim"]
+	path = vim/.vim.symlink/bundle/airline.vim
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "vim/.vim.symlink/bundle/airline-themes.vim"]
+	path = vim/.vim.symlink/bundle/airline-themes.vim
+	url = https://github.com/vim-airline/vim-airline-themes.git

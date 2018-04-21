@@ -1,5 +1,6 @@
 " Use vim settings, rather than Vi (much better!)
 set nocompatible
+set t_Co=256
 
 execute pathogen#infect()
 
@@ -11,6 +12,7 @@ set whichwrap+=<,>,h,l
 set matchpairs+=<:>             "For % matching
 set history=1000                "Store lots of :cmdline history
 set updatetime=100              "Reduce update time
+set ttimeoutlen=50
 set showcmd                     "Show incomplete cmds at the bottom
 set showmode                    "Show current mode at the bottom
 set visualbell                  "No sounds
@@ -49,6 +51,7 @@ set expandtab
 " Auto indent pasted text
 nnoremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
+
 " Enable filetype plugins and indentation
 filetype plugin indent on
 
@@ -90,8 +93,14 @@ map <Leader>k <Plug>(easymotion-k)
 set so=7
 " Always show current position
 set ruler
+" Highlight current line
+set cursorline
+" hi CursorLine   cterm=NONE ctermbg=23 ctermfg=white guibg=darkred guifg=white
+" hi CursorLine   cterm=NONE ctermbg=29 ctermfg=white guibg=darkred guifg=white
+" hi CursorLine   cterm=NONE ctermbg=59 ctermfg=white guibg=darkred guifg=white
+hi CursorLine   cterm=NONE ctermbg=23 ctermfg=white guibg=darkred guifg=white
 " Height of the command bar
-set cmdheight=2
+set cmdheight=1
 " Extra margin to the left
 "set foldcolumn=1
 " Show matching brackets when indicator is over them
@@ -110,13 +119,24 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 
 " ====== MAPPINGS ======
 " Remap VIM 0 to first non-blank character
-"map 0 ^
+map 0 ^
+
+" Fix Alt-key mappings
+for i in range(97,122)
+  let c = nr2char(i)
+    exec "map \e".c." <M-".c.">"
+    exec "map! \e".c." <M-".c.">"
+endfor " "
 
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
+nmap <∆> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <∆> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+" Duplicate the current lime and paste it below
+imap <M-C-j> <Esc>Ypi
+nmap <M-C-j> <Esc>Yp
 
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
@@ -134,6 +154,8 @@ endif
 " ======== LANGUAGE-SPECIFIC CONFIG ===========
 
 let g:typescript_indent_disable = 1
+
+let g:javascript_plugin_jsdoc = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
