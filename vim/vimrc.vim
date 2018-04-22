@@ -5,6 +5,7 @@ set t_Co=256
 execute pathogen#infect()
 
 set number                      "Line numbers are good
+set relativenumber              " +1 for relative line numbers
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set encoding=utf-8              " Encoding
 set ttyfast                     " Rendering
@@ -12,12 +13,15 @@ set whichwrap+=<,>,h,l
 set matchpairs+=<:>             "For % matching
 set history=1000                "Store lots of :cmdline history
 set updatetime=100              "Reduce update time
-set ttimeoutlen=50
+set noesckeys                   "(hopefully) fix the delay returning to Normal mode
+set ttimeout
+set ttimeoutlen=1
 set showcmd                     "Show incomplete cmds at the bottom
 set showmode                    "Show current mode at the bottom
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
-
+set wildmenu                    "Better completion on command line
+set wildmode=list:full          "What to do when I press 'wildchar'. Worth tweaking to see what feels right.
 syntax on                       "Enable syntax highlighting
 colorscheme ThemerVim           "Colorscheme
 set hidden                      "Allow buffers in the background
@@ -59,6 +63,7 @@ filetype plugin indent on
 set list listchars=tab:\ \ ,trail:·
 
 set nowrap       "Don't wrap lines
+set shiftround   "When at 3 spaces and I hit >>, go to 4, not 5.
 set linebreak    "Wrap lines at convenient points
 
 " == Folds ==
@@ -74,8 +79,15 @@ set smartcase       " ...unless we type a capital
 set magic           " Turn magic on for regular expressions
 
 " ====== LEADER COMMANDS ======
+
 nmap <leader>w :w!<cr>                " Quick saving
-command W w !sudo tee % > /dev/null   " Sudo save
+" Make it easier to make life easier
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+" Surround word in quotes
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+nnoremap <leader>` viw<esc>a`<esc>bi`<esc>lel
 
 " ====== EASYMOTION CONFIG =======
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
@@ -88,6 +100,16 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+" Use Silver Searcher instead of grep
+set grepprg=ag
+
+" Make the omnicomplete text readable
+highlight PmenuSel ctermfg=black
+
+" Make CtrlP use ag for listing the files. Way faster and no useless files.
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_use_caching = 0"
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
@@ -105,10 +127,20 @@ set cmdheight=1
 "set foldcolumn=1
 " Show matching brackets when indicator is over them
 set showmatch
+" Make it more obvious which paren I'm on
+hi MatchParen cterm=none ctermbg=black ctermfg=yellow
 " Spaces over tabs
 set expandtab
 " Be smart with the tab action
 set smarttab
+inoremap <Tab> <C-P>
+
+" Let's be reasonable, shall we?
+nmap k gk
+nmap j gj
+
+" Don't automatically continue comments after newline
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 " Return to last edit position when opening files :)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -121,6 +153,8 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
+" Esc remap in insert mode
+inoremap jk <esc>
 " Fix Alt-key mappings
 for i in range(97,122)
   let c = nr2char(i)
@@ -156,6 +190,9 @@ endif
 let g:typescript_indent_disable = 1
 
 let g:javascript_plugin_jsdoc = 1
+
+" By default, vim thinks .md is Modula-2.
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
