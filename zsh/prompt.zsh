@@ -18,7 +18,7 @@ set_prompt() {
 	fi
 
 	# Status Code
-	PS1+='%(?.. %{$fg[red]%}%?%{$reset_color%})'
+	# PS1+='%(?.. %{$fg[red]%}%?%{$reset_color%})'
 
 	# Sudo: https://superuser.com/questions/195781/sudo-is-there-a-command-to-check-if-i-have-sudo-and-or-how-much-time-is-left
 	CAN_I_RUN_SUDO=$(sudo -n uptime 2>&1|grep "load"|wc -l)
