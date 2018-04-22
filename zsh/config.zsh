@@ -9,7 +9,7 @@ HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-source $HOME/.oh-my-zsh/oh-my-zsh.sh
+# source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 fpath=($DOTFILES_HOME/functions $fpath)
 
@@ -45,17 +45,6 @@ setopt no_complete_aliases
 
 unsetopt histverify # Allow usage of !$ without confirmation
 setopt RM_STAR_SILENT # dont ask for confirmation in rm globs*
-
-# Keybindings for word/sentence/line nagivation
-bindkey '^[^[[D' backward-word
-bindkey '^[^[[C' forward-word
-bindkey '^[[3~' delete-char
-bindkey '^?' backward-delete-char
-
-bindkey '^[begin' beginning-of-line
-bindkey '^[end' end-of-line
-bindkey '^[backclearline' backward-kill-line
-bindkey '^[forwardclearline' forward-kill-line
 
 # Better history
 # Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys

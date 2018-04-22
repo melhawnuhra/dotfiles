@@ -1,26 +1,58 @@
-# Purity
-# by Kevin Lanni
-# https://github.com/therealklanni/purity
-# MIT License
+autoload -U colors && colors
 
-# For my own and others sanity
-# git:
-# %b => current branch
-# %a => current action (rebase/merge)
-# prompt:
-# %F => color dict
-# %f => reset color
-# %~ => current path
-# %* => time
-# %n => username
-# %m => shortname host
-# %(?..) => prompt conditional - %(condition.true.false)
+setopt PROMPT_SUBST
 
+set_prompt() {
+	PS1="%{$reset_color%}"
 
-# turns seconds into human readable time
-# 165392 => 1d 21h 56m 32s
-prompt_purity_human_time() {
-	local tmp=$1
+	# Path: http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
+	PS1+="%{$fg_bold[cyan]%}${PWD/#$HOME/~}%{$reset_color%}"
+
+	# Git
+	if git rev-parse --is-inside-work-tree 2> /dev/null | grep -q 'true' ; then
+		PS1+=' '
+		PS1+="%{$fg[magenta]%}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%{$reset_color%}"
+		if [ $(git status --short | wc -l) -gt 0 ]; then
+			PS1+="%{$fg[red]%}+$(git status --short | wc -l | awk '{$1=$1};1')%{$reset_color%}"
+		fi
+	fi
+
+	# Status Code
+	PS1+='%(?.. %{$fg[red]%}%?%{$reset_color%})'
+
+	# Sudo: https://superuser.com/questions/195781/sudo-is-there-a-command-to-check-if-i-have-sudo-and-or-how-much-time-is-left
+	CAN_I_RUN_SUDO=$(sudo -n uptime 2>&1|grep "load"|wc -l)
+	if [ ${CAN_I_RUN_SUDO} -gt 0 ]
+	then
+		PS1+=', '
+		PS1+="%{$fg_bold[red]%}SUDO%{$reset_color%}"
+	fi
+
+    PS1+="%{$fg[green] %(?.%F{green}.%F{red})❯ %{$reset_color%}% "
+}
+
+# precmd_functions+=set_prompt
+# zmodload zsh/datetime
+autoload -Uz add-zsh-hook
+# autoload -Uz vsc_info
+add-zsh-hook preexec prompt_preexec
+
+add-zsh-hook precmd prompt_precmd
+add-zsh-hook precmd set_prompt
+
+prompt_preexec () {
+   cmd_timestamp=$EPOCHSECONDS
+}
+
+prompt_precmd () {
+    print -P ' %F{yellow}`cmd_exec_time`%f'
+    unset cmd_timestamp
+
+    # set_prompt
+}
+
+human_time() {
+    local tmp=$1
 	local days=$(( tmp / 60 / 60 / 24 ))
 	local hours=$(( tmp / 60 / 60 % 24 ))
 	local minutes=$(( tmp / 60 % 60 ))
@@ -32,87 +64,10 @@ prompt_purity_human_time() {
 	echo "${seconds}s"
 }
 
-# displays the exec time of the last command if set threshold was exceeded
-prompt_purity_cmd_exec_time() {
-	local stop=$EPOCHSECONDS
+cmd_exec_time() {
+    local stop=$EPOCHSECONDS
 	local start=${cmd_timestamp:-$stop}
 	integer elapsed=$stop-$start
-	(($elapsed > ${PURITY_CMD_MAX_EXEC_TIME:=5})) && prompt_purity_human_time $elapsed
+
+	(($elapsed > 2)) && human_time $elapsed
 }
-
-prompt_purity_preexec() {
-	cmd_timestamp=$EPOCHSECONDS
-
-	# shows the current dir and executed command in the title when a process is active
-	print -Pn "\e]0;"
-	echo -nE "$PWD:t: $2"
-	print -Pn "\a"
-}
-
-# string length ignoring ansi escapes
-prompt_purity_string_length() {
-	echo ${#${(S%%)1//(\%([KF1]|)\{*\}|\%[Bbkf])}}
-}
-
-prompt_purity_precmd() {
-	# shows the full path in the title
-	print -Pn '\e]0;%~\a'
-
-	local prompt_purity_preprompt="%c$(git_prompt_info) $(git_prompt_status)"
-	print -P ' %F{yellow}`prompt_purity_cmd_exec_time`%f'
-
-	# check async if there is anything to pull
-	(( ${PURITY_GIT_PULL:-1} )) && {
-		# check if we're in a git repo
-		command git rev-parse --is-inside-work-tree &>/dev/null &&
-		# check check if there is anything to pull
-		command git fetch &>/dev/null &&
-		# check if there is an upstream configured for this branch
-		command git rev-parse --abbrev-ref @'{u}' &>/dev/null &&
-		(( $(command git rev-list --right-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) &&
-		# some crazy ansi magic to inject the symbol into the previous line
-		print -Pn "\e7\e[0G\e[`prompt_purity_string_length $prompt_purity_preprompt`C%F{cyan}⇣%f\e8"
-	} &!
-
-	# reset value since `preexec` isn't always triggered
-	unset cmd_timestamp
-}
-
-
-prompt_purity_setup() {
-	# prevent percentage showing up
-	# if output doesn't end with a newline
-	export PROMPT_EOL_MARK=''
-
-	prompt_opts=(cr subst percent)
-
-	zmodload zsh/datetime
-	autoload -Uz add-zsh-hook
-	autoload -Uz vcs_info
-
-	add-zsh-hook precmd prompt_purity_precmd
-	add-zsh-hook preexec prompt_purity_preexec
-
-	# show username@host if logged in through SSH
-	[[ "$SSH_CONNECTION" != '' ]] && prompt_purity_username='%n@%m '
-
-	ZSH_THEME_GIT_PROMPT_PREFIX=" %F{cyan}git:%f%F{yellow}"
-	ZSH_THEME_GIT_PROMPT_SUFFIX="%b"
-	ZSH_THEME_GIT_PROMPT_DIRTY=""
-	ZSH_THEME_GIT_PROMPT_CLEAN=""
-
-	ZSH_THEME_GIT_PROMPT_ADDED="%F{green}✓%f "
-	ZSH_THEME_GIT_PROMPT_MODIFIED="%F{red}✶%f "
-	ZSH_THEME_GIT_PROMPT_DELETED="%F{red}✗%f "
-	ZSH_THEME_GIT_PROMPT_RENAMED="%F{magenta}➜%f "
-	ZSH_THEME_GIT_PROMPT_UNMERGED="%F{yellow}═%f "
-	ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{cyan}✩%f "
-
-	# prompt turns red if the previous command didn't exit with 0
-	PROMPT='%F{magenta}%c$(git_prompt_info) $(git_prompt_status) %(?.%F{green}.%F{red})❯%f '
-	RPROMPT='%F{red}%(?..⏎)%f'
-}
-
-# autoload -U promptinit; promptinit
-# prompt purity
-prompt_purity_setup
