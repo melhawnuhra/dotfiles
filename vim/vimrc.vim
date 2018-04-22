@@ -9,6 +9,7 @@ set relativenumber              " +1 for relative line numbers
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set encoding=utf-8              " Encoding
 set ttyfast                     " Rendering
+set mouse=a
 set whichwrap+=<,>,h,l
 set matchpairs+=<:>             "For % matching
 set history=1000                "Store lots of :cmdline history
@@ -22,6 +23,8 @@ set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set wildmenu                    "Better completion on command line
 set wildmode=list:full          "What to do when I press 'wildchar'. Worth tweaking to see what feels right.
+set lazyredraw
+set ttyfast
 syntax on                       "Enable syntax highlighting
 colorscheme ThemerVim           "Colorscheme
 set hidden                      "Allow buffers in the background
@@ -116,10 +119,11 @@ set so=7
 " Always show current position
 set ruler
 " Highlight current line
-set cursorline
+" set cursorline
 " hi CursorLine   cterm=NONE ctermbg=23 ctermfg=white guibg=darkred guifg=white
 " hi CursorLine   cterm=NONE ctermbg=29 ctermfg=white guibg=darkred guifg=white
 " hi CursorLine   cterm=NONE ctermbg=59 ctermfg=white guibg=darkred guifg=white
+hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 hi CursorLine   cterm=NONE ctermbg=23 ctermfg=white guibg=darkred guifg=white
 " Height of the command bar
 set cmdheight=1
@@ -138,6 +142,12 @@ inoremap <Tab> <C-P>
 " Let's be reasonable, shall we?
 nmap k gk
 nmap j gj
+nnoremap H 0
+nnoremap L $
+nnoremap J G
+nnoremap K gg
+
+nnoremap vv 0v$
 
 " Don't automatically continue comments after newline
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
@@ -161,6 +171,21 @@ for i in range(97,122)
     exec "map \e".c." <M-".c.">"
     exec "map! \e".c." <M-".c.">"
 endfor " "
+
+" File and Window Management 
+inoremap <leader>w <Esc>:w<CR>
+nnoremap <leader>w :w<CR>
+
+inoremap <leader>q <ESC>:q<CR>
+nnoremap <leader>q :q<CR>
+
+inoremap <leader>x <ESC>:x<CR>
+nnoremap <leader>x :x<CR>
+
+nnoremap <leader>e :Ex<CR>
+nnoremap <leader>t :tabnew<CR>:Ex<CR>
+nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
+nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
 
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
 nmap <∆> mz:m+<cr>`z

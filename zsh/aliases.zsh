@@ -8,3 +8,10 @@ if $(which thefuck &>/dev/null)
 then
     eval $(thefuck --alias)
 fi
+
+# Custom cd
+chd() {
+  cd $1;
+  ls;
+}
+alias cd="chd"

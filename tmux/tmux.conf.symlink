@@ -30,8 +30,7 @@ set-window-option -g window-status-bg default
 setw -g mode-keys vi
 
 # Decrease command delay for vim responsiveness
-set -g escape-time 0
-set -sg escape-time 0
+set-option -s escape-time 1
 
 # Increase repeat time for repeatable commands
 set -g repeat-time 1000
@@ -121,7 +120,7 @@ bind-key -Tcopy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-names
 bind-key -Tcopy-mode-vi Escape send -X cancel
 
 # color
-set -g default-terminal "screen-256color"
+set -g default-terminal "xterm-256color"
 
 # https://github.com/edkolev/dots/blob/master/tmux.conf
 # Updates for tmux 1.9's current pane splitting paths.
