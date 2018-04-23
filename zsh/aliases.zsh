@@ -11,7 +11,8 @@ then
 fi
 
 # Custom cd
-unalias cd
+unalias cd 2>/dev/null
+
 function chd() {
   cd $1 && ls
 }
