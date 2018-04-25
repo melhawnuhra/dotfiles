@@ -143,5 +143,6 @@
         "statusBar.debuggingBackground": "#474247",
         "statusBar.noFolderBackground": "#282629",
         "statusBar.foreground": "#C1BCC2"
-    }
+    },
+    "git.path": "/usr/local/bin/hub"
 }

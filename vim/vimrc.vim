@@ -83,7 +83,9 @@ set magic           " Turn magic on for regular expressions
 
 " ====== LEADER COMMANDS ======
 
-nmap <leader>w :w!<cr>                " Quick saving
+" Quick saving
+nmap <leader>w :w!<cr>
+
 " Make it easier to make life easier
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -148,6 +150,8 @@ nnoremap J G
 nnoremap K gg
 
 nnoremap vv 0v$
+
+inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 
 " Don't automatically continue comments after newline
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
