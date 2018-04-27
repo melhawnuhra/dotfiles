@@ -1,6 +1,6 @@
 # shortcut to this dotfiles path is $ZSH
-export DOTFILES_HOME=$HOME/.dotfiles
-export FORTUNE_FILE=$HOME/.dotfiles/fortunes
+export DOTFILES_HOME=$HOME/dotfiles
+export FORTUNE_FILE=$HOME/dotfiles/fortunes
 export ZSH=$HOME/.oh-my-zsh
 
 # First of all, feature a fortune-telling cow...
@@ -32,7 +32,7 @@ do
 done
 
 # initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
+autoload -Uz compinit
 compinit
 
 # load every completion after autocomplete loads
@@ -43,5 +43,5 @@ done
 
 unset config_files
 wd() {
-  . /Users/jaredmurphy/bin/wd/wd.sh
+  . /Users/jared/bin/wd/wd.sh
 }

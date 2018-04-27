@@ -1,45 +1,45 @@
-[submodule "vim/.vim.symlink/bundle/autoclose.vim"]
-	path = vim/.vim.symlink/bundle/autoclose.vim
+[submodule "vim/vim.symlink/bundle/autoclose.vim"]
+	path = vim/vim.symlink/bundle/autoclose.vim
 	url = https://github.com/Townk/vim-autoclose.git
-[submodule "vim/.vim.symlink/bundle/ctrlp.vim"]
-	path = vim/.vim.symlink/bundle/ctrlp.vim
+[submodule "vim/vim.symlink/bundle/ctrlp.vim"]
+	path = vim/vim.symlink/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule "vim/.vim.symlink/bundle/gitgutter.vim"]
-	path = vim/.vim.symlink/bundle/gitgutter.vim
+[submodule "vim/vim.symlink/bundle/gitgutter.vim"]
+	path = vim/vim.symlink/bundle/gitgutter.vim
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "vim/.vim.symlink/bundle/nerdtree.vim"]
-	path = vim/.vim.symlink/bundle/nerdtree.vim
+[submodule "vim/vim.symlink/bundle/nerdtree.vim"]
+	path = vim/vim.symlink/bundle/nerdtree.vim
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/.vim.symlink/bundle/surround.vim"]
-	path = vim/.vim.symlink/bundle/surround.vim
+[submodule "vim/vim.symlink/bundle/surround.vim"]
+	path = vim/vim.symlink/bundle/surround.vim
 	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/.vim.symlink/bundle/easymotion.vim"]
-	path = vim/.vim.symlink/bundle/easymotion.vim
+[submodule "vim/vim.symlink/bundle/easymotion.vim"]
+	path = vim/vim.symlink/bundle/easymotion.vim
 	url = https://github.com/easymotion/vim-easymotion.git
-[submodule "vim/.vim.symlink/bundle/ale.vim"]
-	path = vim/.vim.symlink/bundle/ale.vim
+[submodule "vim/vim.symlink/bundle/ale.vim"]
+	path = vim/vim.symlink/bundle/ale.vim
 	url = https://github.com/w0rp/ale.git
-[submodule "vim/.vim.symlink/bundle/js-indent.vim"]
-	path = vim/.vim.symlink/bundle/js-indent.vim
+[submodule "vim/vim.symlink/bundle/js-indent.vim"]
+	path = vim/vim.symlink/bundle/js-indent.vim
 	url = https://github.com/jason0x43/vim-js-indent.git
-[submodule "vim/.vim.symlink/bundle/js-pretty-template.vim"]
-	path = vim/.vim.symlink/bundle/js-pretty-template.vim
+[submodule "vim/vim.symlink/bundle/js-pretty-template.vim"]
+	path = vim/vim.symlink/bundle/js-pretty-template.vim
 	url = https://github.com/Quramy/vim-js-pretty-template.git
-[submodule "vim/.vim.symlink/bundle/typescript.vim"]
-	path = vim/.vim.symlink/bundle/typescript.vim
+[submodule "vim/vim.symlink/bundle/typescript.vim"]
+	path = vim/vim.symlink/bundle/typescript.vim
 	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "vim/.vim.symlink/bundle/YouCompleteMe.vim"]
-	path = vim/.vim.symlink/bundle/YouCompleteMe.vim
+[submodule "vim/vim.symlink/bundle/YouCompleteMe.vim"]
+	path = vim/vim.symlink/bundle/YouCompleteMe.vim
 	url = https://github.com/Valloric/YouCompleteMe.git
-[submodule "vim/.vim.symlink/bundle/javascript.vim"]
-	path = vim/.vim.symlink/bundle/javascript.vim
+[submodule "vim/vim.symlink/bundle/javascript.vim"]
+	path = vim/vim.symlink/bundle/javascript.vim
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule "vim/.vim.symlink/bundle/airline.vim"]
-	path = vim/.vim.symlink/bundle/airline.vim
+[submodule "vim/vim.symlink/bundle/airline.vim"]
+	path = vim/vim.symlink/bundle/airline.vim
 	url = https://github.com/vim-airline/vim-airline.git
-[submodule "vim/.vim.symlink/bundle/airline-themes.vim"]
-	path = vim/.vim.symlink/bundle/airline-themes.vim
+[submodule "vim/vim.symlink/bundle/airline-themes.vim"]
+	path = vim/vim.symlink/bundle/airline-themes.vim
 	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "vim/.vim.symlink/bundle/bufferline.vim"]
-	path = vim/.vim.symlink/bundle/bufferline.vim
+[submodule "vim/vim.symlink/bundle/bufferline.vim"]
+	path = vim/vim.symlink/bundle/bufferline.vim
 	url = https://github.com/bling/vim-bufferline.git

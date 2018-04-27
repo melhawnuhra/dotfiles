@@ -1742,7 +1742,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/jaredmurphy</string>
+			<string>/Users/jared</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -2587,7 +2587,7 @@
 			<key>Window Type</key>
 			<integer>1</integer>
 			<key>Working Directory</key>
-			<string>/Users/jaredmurphy</string>
+			<string>/Users/jared</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -2946,7 +2946,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/jaredmurphy</string>
+			<string>/Users/jared</string>
 		</dict>
 	</array>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
@@ -3001,7 +3001,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/jaredmurphy/.dotfiles/iterm</string>
+	<string>/Users/jared/dotfiles/iterm</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>

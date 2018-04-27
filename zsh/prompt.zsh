@@ -28,7 +28,7 @@ set_prompt() {
 		PS1+="%{$fg_bold[red]%}SUDO%{$reset_color%}"
 	fi
 
-    PS1+="%{$fg[green] %(?.%F{green}.%F{red})❯ %{$reset_color%}% "
+  PS1+="%{$fg[green] %(?.%F{green}.%F{red})%}❯ %{$reset_color%}"
 }
 
 # precmd_functions+=set_prompt

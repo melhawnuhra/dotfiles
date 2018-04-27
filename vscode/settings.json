@@ -76,7 +76,7 @@
     "html.suggest.angular1": false,
     "html.suggest.ionic": false,
 
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "vscode-icons",
     "workbench.colorTheme": "Themer Dark",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.tabSizing": "shrink",
