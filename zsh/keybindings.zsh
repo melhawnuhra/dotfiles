@@ -9,6 +9,9 @@ bindkey '^[end' end-of-line
 bindkey '^[backclearline' backward-kill-line
 # bindkey '^[forwardclearline' forward-kill-line
 
+bindkey -v
+bindkey '^R' history-incremental-pattern-search-backward
+
 # up directory
 function up_widget() {
     BUFFER="cd .."
