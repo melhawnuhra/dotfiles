@@ -169,6 +169,7 @@ map 0 ^
 
 " Esc remap in insert mode
 inoremap jk <esc>
+
 " Fix Alt-key mappings
 for i in range(97,122)
   let c = nr2char(i)

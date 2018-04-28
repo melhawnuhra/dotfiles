@@ -39,6 +39,10 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_EXPIRE_DUPS_FIRST
 
+setopt PROMPT_SUBST
+setopt PROMPT_BANG
+setopt PROMPT_PERCENT
+
 # Allow autocompletion of aliases
 setopt no_complete_aliases
 

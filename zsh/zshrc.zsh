@@ -16,7 +16,7 @@ antibody bundle < $DOTFILES_HOME/zsh/zsh_plugins.txt
 # all of our zsh files
 setopt EXTENDED_GLOB
 typeset -U config_files
-config_files=($DOTFILES_HOME/**/(^zshrc).zsh)
+config_files=($DOTFILES_HOME/(^prompt/)#/(^zshrc).zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
@@ -40,6 +40,9 @@ for file in ${(M)config_files:#*/completion.zsh}
 do
   source $file
 done
+
+# Source the prompt
+source $DOTFILES_HOME/zsh/prompt/prompt.zsh
 
 unset config_files
 wd() {
