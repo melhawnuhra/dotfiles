@@ -13,6 +13,9 @@ export PROJECTS=~/code
 source <(antibody init)
 antibody bundle < $DOTFILES_HOME/zsh/zsh_plugins.txt
 
+# Init fasd hook
+eval "$(fasd --init posix-alias zsh-hook)"
+
 # all of our zsh files
 setopt EXTENDED_GLOB
 typeset -U config_files

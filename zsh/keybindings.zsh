@@ -7,7 +7,7 @@ bindkey '^?' backward-delete-char
 bindkey '^[begin' beginning-of-line
 bindkey '^[end' end-of-line
 bindkey '^[backclearline' backward-kill-line
-bindkey '^[forwardclearline' forward-kill-line
+# bindkey '^[forwardclearline' forward-kill-line
 
 # up directory
 function up_widget() {
