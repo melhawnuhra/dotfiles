@@ -12,3 +12,9 @@ if test ! $(which fd)
 then
   sudo npm install fd -g
 fi
+
+if test ! $(which ng)
+then
+  sudo npm install @angular/cli -g
+fi
+

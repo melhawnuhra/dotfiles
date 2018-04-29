@@ -8,6 +8,7 @@ PROMPT_ORDER=(
   user
   dir
   git
+  node
   line_sep
   exit_code
   char
