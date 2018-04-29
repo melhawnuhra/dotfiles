@@ -30,7 +30,7 @@ set-window-option -g window-status-bg default
 setw -g mode-keys vi
 
 # Decrease command delay for vim responsiveness
-set-option -s escape-time 1
+set -sg escape-time 0
 
 # Increase repeat time for repeatable commands
 set -g repeat-time 1000

@@ -37,3 +37,6 @@
 [submodule "vim/vim.symlink/bundle/ycm.vim"]
 	path = vim/vim.symlink/bundle/ycm.vim
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "vim/vim.symlink/bundle/markdown.vim"]
+	path = vim/vim.symlink/bundle/markdown.vim
+	url = https://github.com/gabrielelana/vim-markdown.git
