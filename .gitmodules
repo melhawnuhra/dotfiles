@@ -13,9 +13,6 @@
 [submodule "vim/vim.symlink/bundle/surround.vim"]
 	path = vim/vim.symlink/bundle/surround.vim
 	url = https://github.com/tpope/vim-surround
-[submodule "vim/vim.symlink/bundle/easymotion.vim"]
-	path = vim/vim.symlink/bundle/easymotion.vim
-	url = https://github.com/easymotion/vim-easymotion.git
 [submodule "vim/vim.symlink/bundle/ale.vim"]
 	path = vim/vim.symlink/bundle/ale.vim
 	url = https://github.com/w0rp/ale
