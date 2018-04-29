@@ -94,17 +94,7 @@ nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 nnoremap <leader>` viw<esc>a`<esc>bi`<esc>lel
 
-" ====== EASYMOTION CONFIG =======
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
-nmap s <Plug>(easymotion-overwin-f2)
-
-" Turn on case insensitive feature
-let g:EasyMotion_smartcase = 1
-
-" JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+" ====== PLUGIN CONFIG ======
 
 " Use Silver Searcher instead of grep
 set grepprg=ag
@@ -116,11 +106,15 @@ highlight PmenuSel ctermfg=black
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0"
 
+" Disable ale highlighting, show error in status bar
+let g:ale_set_highlights = 0
+let g:airline#extensions#ale#enabled = 1
+
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 " Always show current position
 set ruler
-" Highlight current line
+" Highlight current line - disabled for performance
 " set cursorline
 " hi CursorLine   cterm=NONE ctermbg=23 ctermfg=white guibg=darkred guifg=white
 " hi CursorLine   cterm=NONE ctermbg=29 ctermfg=white guibg=darkred guifg=white
@@ -134,12 +128,12 @@ set cmdheight=1
 " Show matching brackets when indicator is over them
 set showmatch
 " Make it more obvious which paren I'm on
-hi MatchParen cterm=none ctermbg=black ctermfg=yellow
+hi MatchParen cterm=none ctermbg=cyan ctermfg=yellow
 " Spaces over tabs
 set expandtab
 " Be smart with the tab action
 set smarttab
-inoremap <Tab> <C-P>
+" inoremap <Tab> <C-P>
 
 " Let's be reasonable, shall we?
 nmap k gk

@@ -28,9 +28,6 @@
 [submodule "vim/vim.symlink/bundle/typescript.vim"]
 	path = vim/vim.symlink/bundle/typescript.vim
 	url = https://github.com/leafgarland/typescript-vim
-[submodule "vim/vim.symlink/bundle/YouCompleteMe.vim"]
-	path = vim/vim.symlink/bundle/YouCompleteMe.vim
-	url = https://github.com/Valloric/YouCompleteMe
 [submodule "vim/vim.symlink/bundle/javascript.vim"]
 	path = vim/vim.symlink/bundle/javascript.vim
 	url = https://github.com/pangloss/vim-javascript
@@ -40,6 +37,3 @@
 [submodule "vim/vim.symlink/bundle/airline-themes.vim"]
 	path = vim/vim.symlink/bundle/airline-themes.vim
 	url = https://github.com/vim-airline/vim-airline-themes
-[submodule "vim/vim.symlink/bundle/bufferline.vim"]
-	path = vim/vim.symlink/bundle/bufferline.vim
-	url = https://github.com/bling/vim-bufferline
