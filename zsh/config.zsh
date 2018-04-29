@@ -27,7 +27,7 @@ setopt LOCAL_TRAPS # allow functions to have local traps
 setopt HIST_VERIFY
 setopt SHARE_HISTORY # share history between sessions ???
 setopt EXTENDED_HISTORY # add timestamps to history
-setopt CORRECT
+unsetopt correct_all
 setopt COMPLETE_IN_WORD
 setopt IGNORE_EOF
 

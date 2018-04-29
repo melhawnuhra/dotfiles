@@ -18,3 +18,8 @@ function chd() {
 }
 
 alias cd="chd"
+
+# Page markdown in color
+function md() {
+  mdv $1 | less -R
+}
