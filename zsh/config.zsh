@@ -9,8 +9,6 @@ HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# source $HOME/.oh-my-zsh/oh-my-zsh.sh
-
 fpath=($DOTFILES_HOME/functions $fpath)
 
 autoload -U $DOTFILES_HOME/functions/*(:t)
