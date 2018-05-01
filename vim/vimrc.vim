@@ -209,6 +209,12 @@ nmap <silent> <c-l> :wincmd l<CR>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
+" Easier switching between buffers
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> [B :blast<CR>
+
 " if has("mac") || has("macunix")
   " nmap <D-j> <M-j>
   " nmap <D-k> <M-k>
