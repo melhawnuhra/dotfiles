@@ -155,6 +155,26 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
+" Automatically open NerdTree if we start vim with no args
+autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists(“s:std_in”) | NERDTree | endif
+
+nnoremap <silent> <Leader>f :NERDTreeToggle<CR>
+
+" Close NerdTree as soon as we open a file
+let NERDTreeQuitOnOpen = 1
+
+" Remove the buffer when we delete the file in NerdTree
+let NERDTreeAutoDeleteBuffer = 1
+
+" Close the tab if the only remaining window is NerdTree
+" autocmd bufenter * if (winnr(“$”) == 1 && exists(“b:NERDTreeType”) && b:NERDTreeType == “primary”) | q | endif
+
+" Make NerdTree a bit prettier
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
@@ -213,7 +233,7 @@ cnoremap <C-n> <Down>
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> [B :blast<CR>
+nnoremap <silent> ]B :blast<CR>
 
 " if has("mac") || has("macunix")
   " nmap <D-j> <M-j>
