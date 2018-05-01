@@ -52,3 +52,12 @@
 [submodule "vim/vim.symlink/bundle/nerdtree-git.vim"]
 	path = vim/vim.symlink/bundle/nerdtree-git.vim
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "vim/vim.symlink/bundle/sort-motion.vim"]
+	path = vim/vim.symlink/bundle/sort-motion.vim
+	url = https://github.com/christoomey/vim-sort-motion.git
+[submodule "vim/vim.symlink/bundle/indent-object.vim"]
+	path = vim/vim.symlink/bundle/indent-object.vim
+	url = https://github.com/michaeljsmith/vim-indent-object.git
+[submodule "vim/vim.symlink/bundle/system-copy.vim"]
+	path = vim/vim.symlink/bundle/system-copy.vim
+	url = https://github.com/christoomey/vim-system-copy.git

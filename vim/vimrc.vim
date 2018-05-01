@@ -45,6 +45,9 @@ if has('persistent_undo') && isdirectory(expand('~').'/.vim/backups')
   set undofile
 endif
 
+" change to directory of current file automatically
+autocmd BufEnter * lcd %:p:h
+
 " == Indentation ==
 set autoindent
 set cindent
@@ -157,7 +160,7 @@ let g:airline_symbols.linenr = ''
 
 " Automatically open NerdTree if we start vim with no args
 autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists(“s:std_in”) | NERDTree | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 nnoremap <silent> <Leader>f :NERDTreeToggle<CR>
 
@@ -168,7 +171,7 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 
 " Close the tab if the only remaining window is NerdTree
-" autocmd bufenter * if (winnr(“$”) == 1 && exists(“b:NERDTreeType”) && b:NERDTreeType == “primary”) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Make NerdTree a bit prettier
 let NERDTreeMinimalUI = 1
@@ -186,6 +189,10 @@ set ruler
 hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 hi CursorLine   cterm=NONE ctermbg=23 ctermfg=white guibg=darkred guifg=white
 
+" Line number colors
+highlight LineNr ctermfg=grey
+highlight CursorLineNr term=bold cterm=bold ctermfg=red
+
 " Height of the command bar
 set cmdheight=1
 
@@ -196,15 +203,13 @@ set cmdheight=1
 set showmatch
 
 " Make it more obvious which paren I'm on
-hi MatchParen cterm=none ctermbg=cyan ctermfg=yellow
-
+hi MatchParen cterm=bold ctermbg=red ctermfg=black
 
 " Don't automatically continue comments after newline
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 " Return to last edit position when opening files :)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
 
 " ====== MAPPINGS ======
 " Remap VIM 0 to first non-blank character
@@ -235,6 +240,9 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
+" Easy expansion of the Active File Directory
+cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 " if has("mac") || has("macunix")
   " nmap <D-j> <M-j>
   " nmap <D-k> <M-k>
@@ -244,9 +252,16 @@ nnoremap <silent> ]B :blast<CR>
 
 " ======== LANGUAGE-SPECIFIC CONFIG ===========
 
+if !exists("g:ycm_semantic_triggers")
+  let g:ycm_semantic_triggers = {}
+endif
+
 let g:typescript_indent_disable = 1
 
 let g:javascript_plugin_jsdoc = 1
+
+let g:ycm_semantic_triggers['typescript'] = ['.']
+let g:ycm_semantic_triggers['javascript'] = ['.']
 
 " By default, vim thinks .md is Modula-2.
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown

@@ -25,6 +25,7 @@ brew 'jp2a'
 brew 'jq'
 # brew 'libcaca', args: ['with-imlib2']
 brew 'libgit2'
+brew 'libpcap'
 brew 'lolcat'
 brew 'macvim', args: ['--with-override-system-vi']
 brew 'node'
