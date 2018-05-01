@@ -68,7 +68,7 @@ nnoremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
 
 " Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
+set list listchars=tab:»·,trail:·
 
 " == Folds ==
 set foldmethod=indent   "fold based on indent
@@ -172,6 +172,9 @@ let NERDTreeAutoDeleteBuffer = 1
 
 " Close the tab if the only remaining window is NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Trim trailing whitespace for whitelisted filetypes
+autocmd FileType c,cpp,java,php,javascript,typescript,python autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " Make NerdTree a bit prettier
 let NERDTreeMinimalUI = 1
