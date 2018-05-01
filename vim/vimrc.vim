@@ -15,7 +15,7 @@ set history=1000                " Store lots of :cmdline history
 set updatetime=100              " Reduce update time
 set noesckeys                   " (hopefully) fix the delay returning to Normal mode
 set timeout ttimeout
-set timeoutlen=300
+set timeoutlen=500
 set ttimeoutlen=0
 set showcmd                     " Show incomplete cmds at the bottom
 set showmode                    " Show current mode at the bottom
