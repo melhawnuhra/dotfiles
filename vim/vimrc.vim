@@ -8,16 +8,16 @@ set backspace=indent,eol,start  " Allow backspace in insert mode
 set encoding=utf-8              " Encoding
 set ttyfast                     " Rendering
 set mouse=a                     " Enable mouse mode
+set mousehide                   " Hide mouse when typing
 set whichwrap+=<,>,h,l
-set matchpairs+=<:>             " For % matching
+set matchpairs+=<:>             " For html tag matching
 set history=1000                " Store lots of :cmdline history
 set updatetime=100              " Reduce update time
 set noesckeys                   " (hopefully) fix the delay returning to Normal mode
 set timeout ttimeout
 set timeoutlen=500
 set ttimeoutlen=0
-set showcmd                     " Show incomplete cmds at the bottom
-set showmode                    " Show current mode at the bottom
+set showcmd                     " Show incomplete cmds in bottom right
 set visualbell                  " No sounds
 set autoread                    " Reload files changed outside vim
 set wildmenu                    " Better completion on command line
@@ -31,6 +31,12 @@ syntax on                       " Enable syntax highlighting
 filetype plugin indent on       " Enable filetype plugins and indentation
 colorscheme ThemerVim           " Colorscheme
 let mapleader=","               " Remap the leader key
+
+" Scrolloff distance and cursor for each mode (for tmux in iTerm)
+set scrolloff=8
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
 " == Turn off swapfiles ==
 set noswapfile
@@ -112,6 +118,9 @@ nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
 " Placeholder mappings
 nnoremap <leader><leader> i<++><Esc>
 inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+
+" Jump-to-definition (made possible by Gutentags + CtrlP)
+map <silent> <leader>jd :CtrlPTag<cr><C-\>w
 
 " ====== PLUGIN CONFIG ======
 
@@ -198,9 +207,6 @@ let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js', '*.json', '*.xml',
                             \ '*vendor/*/test*', '*vendor/*/Test*',
                             \ '*vendor/*/fixture*', '*vendor/*/Fixture*',
                             \ '*var/cache*', '*var/log*', '*.vim']
-
-" Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
 
 " Always show current position
 set ruler
