@@ -18,3 +18,8 @@ then
   sudo npm install @angular/cli -g
 fi
 
+if test ! $(which localtunnel)
+then
+  sudo npm install localtunnel -g
+fi
+

@@ -9,6 +9,7 @@ PROMPT_ORDER=(
   dir
   git
   node
+  php
   line_sep
   exit_code
   char

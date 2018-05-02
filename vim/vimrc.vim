@@ -61,8 +61,6 @@ set nowrap        " Don't wrap lines
 set shiftround    " When at 3 spaces and I hit >>, go to 4, not 5.
 set linebreak     " Wrap lines at convenient points
 
-" inoremap {<CR> {<CR>}<ESC>O      " Won't work with autoclose plugin
-
 " Auto indent pasted text
 nnoremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
@@ -211,6 +209,9 @@ hi MatchParen cterm=bold ctermbg=red ctermfg=black
 " Don't automatically continue comments after newline
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
+" Ctrl-Enter for editing inside {}s
+inoremap <c-Return> <CR><CR><C-o>k<C-t>
+
 " Return to last edit position when opening files :)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -243,6 +244,12 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
+" Easier switching between tabs
+nnoremap <silent> [t :tabprevious<CR>
+nnoremap <silent> ]t :tabnext<CR>
+nnoremap <silent> [T :tfirst<CR>
+nnoremap <silent> ]T :tlast<CR>
+
 " Easy expansion of the Active File Directory
 cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
@@ -272,7 +279,6 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Because Vim doesn't like
 " pasting that works.
-
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 
