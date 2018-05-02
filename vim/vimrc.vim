@@ -68,6 +68,9 @@ nnoremap P P=`]<C-o>
 " Display tabs and trailing spaces visually
 set list listchars=tab:»·,trail:·
 
+" Make autocompletion text readable
+highlight PmenuSel ctermfg=white
+
 " == Folds ==
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
@@ -115,16 +118,15 @@ inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 " Use Silver Searcher instead of grep
 set grepprg=ag
 
-" Make autocompletion text readable
-highlight PmenuSel ctermfg=white
-
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0"
 
 
 " Load only the integrations we want - performance boost
-let g:airline_extensions = [ 'ale', 'branch', 'tabline', 'ctrlp', 'gutentags', 'ycm', 'hunks', 'quickfix', 'whitespace' ]
+let g:airline_extensions = ['ale', 'branch', 'tabline',
+                      \ 'ctrlp', 'gutentags', 'ycm',
+                      \ 'hunks', 'quickfix', 'whitespace']
 
 " Disable ale highlighting, show error in status bar
 let g:ale_set_highlights = 0
@@ -190,6 +192,12 @@ autocmd FileType c,cpp,java,php,javascript,typescript,python autocmd BufWritePre
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
+let g:gutentags_cache_dir = '~/.vim/gutentags'
+let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js', '*.json', '*.xml',
+                            \ '*.phar', '*.ini', '*.rst', '*.md',
+                            \ '*vendor/*/test*', '*vendor/*/Test*',
+                            \ '*vendor/*/fixture*', '*vendor/*/Fixture*',
+                            \ '*var/cache*', '*var/log*', '*.vim']
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7

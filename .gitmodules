@@ -61,3 +61,6 @@
 [submodule "vim/vim.symlink/bundle/system-copy.vim"]
 	path = vim/vim.symlink/bundle/system-copy.vim
 	url = https://github.com/christoomey/vim-system-copy.git
+[submodule "vim/vim.symlink/bundle/gutentags.vim"]
+	path = vim/vim.symlink/bundle/gutentags.vim
+	url = https://github.com/ludovicchabant/vim-gutentags.git

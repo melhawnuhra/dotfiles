@@ -12,3 +12,5 @@ atom.symlink/recovery
 
 git/gitconfig.local.symlink
 zsh/local.zsh
+
+vim/vim.symlink/gutentags
