@@ -5,6 +5,7 @@ tap 'getantibody/tap'
 
 brew 'ack'
 brew 'ag'
+brew 'atool'
 brew 'autoenv'
 brew 'cmake'
 brew 'coreutils'
