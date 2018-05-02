@@ -2,7 +2,6 @@
 execute pathogen#infect()
 
 set nocompatible                " Use vim settings, rather than Vi (much better!)
-set t_Co=256                    " Use 256-color space
 set number                      " Line numbers are good
 set relativenumber              " +1 for relative line numbers
 set backspace=indent,eol,start  " Allow backspace in insert mode
@@ -23,6 +22,7 @@ set visualbell                  " No sounds
 set autoread                    " Reload files changed outside vim
 set wildmenu                    " Better completion on command line
 set wildmode=full               " What to do when I press 'wildchar'. Worth tweaking to see what feels right.
+set noshowmode                  " Status bar already shows mode
 set lazyredraw
 set hidden                      " Allow buffers in the background
 set hid                         " A buffer becomes hidden when abandoned
@@ -122,39 +122,51 @@ highlight PmenuSel ctermfg=white
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0"
 
+
+" Load only the integrations we want - performance boost
+let g:airline_extensions = [ 'ale', 'branch', 'tabline', 'ctrlp', 'gutentags', 'ycm', 'hunks', 'quickfix', 'whitespace' ]
+
 " Disable ale highlighting, show error in status bar
 let g:ale_set_highlights = 0
-let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#ale#enabled = 1
+
+" Free performance boost
+let g:airline_highlighting_cache = 1
+
+" Fix bleeding color artifacts
+let airline#extensions#default#section_use_groupitems = 0
+
+" Show quickfix and location contexts
+let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
+let g:airline#extensions#quickfix#location_text = 'Location'
+
+" Only show non-zero hunks
+let g:airline#extensions#hunks#non_zero_only = 1
 
 " Use powerline symbols in the status bar
 let g:airline_powerline_fonts = 1
 
+" airline symbols
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-
-" airline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
+let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.whitespace = 'Ξ'
+
+" Airline tabline and related configuration
+" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#show_splits = 1
+
 
 " Automatically open NerdTree if we start vim with no args
 autocmd StdinReadPre * let s:std_in=1
