@@ -119,8 +119,8 @@ nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
 nnoremap <leader><leader> i<++><Esc>
 inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 
-" Jump-to-definition (made possible by Gutentags + CtrlP)
-map <silent> <leader>jd :CtrlPTag<cr><C-\>w
+" Go-to-definition (made possible by Gutentags + CtrlP)
+map <silent> <leader>gd :CtrlPTag<cr><C-\>w
 
 " ====== PLUGIN CONFIG ======
 
@@ -131,15 +131,16 @@ set grepprg=ag
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0"
 
+" Disable ale highlighting
+let g:ale_set_highlights = 0
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 1
+
 
 " Load only the integrations we want - performance boost
 let g:airline_extensions = ['ale', 'branch', 'tabline',
                       \ 'ctrlp', 'gutentags', 'ycm',
                       \ 'hunks', 'quickfix', 'whitespace']
-
-" Disable ale highlighting, show error in status bar
-let g:ale_set_highlights = 0
-" let g:airline#extensions#ale#enabled = 1
 
 " Free performance boost
 let g:airline_highlighting_cache = 1
@@ -173,11 +174,9 @@ let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.whitespace = 'Ξ'
 
-" Airline tabline and related configuration
-" let g:airline#extensions#tabline#enabled = 1
+" Tabline configuration
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#tabline#show_splits = 1
-
 
 " Automatically open NerdTree if we start vim with no args
 autocmd StdinReadPre * let s:std_in=1
@@ -194,14 +193,12 @@ let NERDTreeAutoDeleteBuffer = 1
 " Close the tab if the only remaining window is NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" Trim trailing whitespace for whitelisted filetypes
-autocmd FileType c,cpp,java,php,javascript,typescript,python autocmd BufWritePre <buffer> %s/\s\+$//e
-
 " Make NerdTree a bit prettier
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
 let g:gutentags_cache_dir = '~/.vim/gutentags'
+let g:gutentags_project_root = ['composer.lock', 'package.json']
 let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js', '*.json', '*.xml',
                             \ '*.phar', '*.ini', '*.rst', '*.md',
                             \ '*vendor/*/test*', '*vendor/*/Test*',
@@ -241,6 +238,9 @@ inoremap <c-Return> <CR><CR><C-o>k<C-t>
 " Return to last edit position when opening files :)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+" Trim trailing whitespace for the following filetypes:
+autocmd FileType c,cpp,java,php,javascript,typescript,python autocmd BufWritePre <buffer> %s/\s\+$//e
+
 " ====== MAPPINGS ======
 " Remap VIM 0 to first non-blank character
 map 0 ^
@@ -275,6 +275,11 @@ nnoremap <silent> [t :tabprevious<CR>
 nnoremap <silent> ]t :tabnext<CR>
 nnoremap <silent> [T :tfirst<CR>
 nnoremap <silent> ]T :tlast<CR>
+
+" Make n always search forward
+" nnoremap <expr> n 'Nn'[v:searchforward]
+" Make N always search backward
+" nnoremap <expr> N 'nN'[v:searchforward]
 
 " Easy expansion of the Active File Directory
 cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
