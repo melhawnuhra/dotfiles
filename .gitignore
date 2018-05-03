@@ -14,3 +14,6 @@ git/gitconfig.local.symlink
 zsh/local.zsh
 
 vim/vim.symlink/gutentags
+
+node/nvm.symlink/
+!node/nvm.symlink/.gitkeep
