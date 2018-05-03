@@ -2,14 +2,14 @@
 execute pathogen#infect()
 
 " General config
-so ./config.vim
+so $DOTFILES_HOME/vim/config.vim
 
 " Plugin-specific config
-so ./plugins.vim
+so $DOTFILES_HOME/vim/plugins.vim
 
 " Mappings
-so ./mappings.vim
+so $DOTFILES_HOME/vim/mappings.vim
 
 " Language-specific config
-so ./languages.vim
+so $DOTFILES_HOME/vim/languages.vim
 
