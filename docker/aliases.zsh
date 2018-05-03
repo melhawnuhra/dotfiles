@@ -1,5 +1,6 @@
 alias d='docker $*'
 alias ds='docker ps'
+alias dl='docker logs'
 alias dp='docker volume prune && docker system prune && docker container prune && docker image prune'
 de() {
 	docker exec -it $1 bash
