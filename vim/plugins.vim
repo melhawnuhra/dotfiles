@@ -82,3 +82,22 @@ let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js', '*.json', '*.xml',
       \ '*vendor/*/fixture*', '*vendor/*/Fixture*',
       \ '*var/cache*', '*var/log*', '*.vim']
 
+" Refresh the status bar when tagging has started/finished
+augroup MyGutentagsStatusLineRefresher
+  autocmd!
+  autocmd User GutentagsUpdating call airline#update_statusline()
+  autocmd User GutentagsUpdated call airline#update_statusline()
+augroup END
+
+" Slightly increase the min number of characters for identifier-based
+" completion
+let g:ycm_min_num_of_chars_for_completion = 2
+
+" Turn off autocompletion for the following files:
+let g:ycm_filetype_blacklist = {}
+
+" Pull in ultisnips snippet suggestions
+let g:ycm_use_ultisnips_completer = 0
+
+" Collect identifiers from tags
+let g:ycm_collect_identifiers_from_tags_files = 1

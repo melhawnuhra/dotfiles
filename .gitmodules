@@ -64,3 +64,6 @@
 [submodule "vim/vim.symlink/bundle/gutentags.vim"]
 	path = vim/vim.symlink/bundle/gutentags.vim
 	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "vim/vim.symlink/bundle/textobj-comment.vim"]
+	path = vim/vim.symlink/bundle/textobj-comment.vim
+	url = https://github.com/glts/vim-textobj-comment.git

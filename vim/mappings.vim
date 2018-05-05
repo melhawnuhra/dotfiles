@@ -64,8 +64,8 @@ nnoremap <leader>w :w<CR>
 inoremap <leader>q <ESC>:q<CR>
 nnoremap <leader>q :q<CR>
 
-inoremap <leader>Q <ESC>:Q<CR>
-nnoremap <leader>Q :Q<CR>
+inoremap <leader>Q <ESC>:q!<CR>
+nnoremap <leader>Q :q!<CR>
 
 inoremap <leader>x <ESC>:x<CR>
 nnoremap <leader>x :x<CR>
@@ -82,3 +82,10 @@ inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 " Go-to-definition (made possible by Gutentags + CtrlP)
 map <silent> <leader>gd :CtrlPTag<cr><C-\>w
 
+" Map Null to C-Space to trigger autocompletion popup
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+        \ "\<lt>C-n>" :
+        \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+        \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+        \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>

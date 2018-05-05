@@ -1,35 +1,45 @@
 " =-=-=--=-=-=-= GENERAL CONFIG =-=-=--=-=-=-=
 
+if !has('nvim')
+  set nocompatible                " Use vim settings, rather than Vi (much better!)
+  set ttyfast                     " Faster rendering
+  set mouse=a                     " Enable mouse mode
+  set sidescroll=1                " Enable sideways scrolling
+  set ruler                       " Show current line:col numbers
+  set showcmd                     " Show incomplete cmds in bottom right
 
-set nocompatible                " Use vim settings, rather than Vi (much better!)
+  filetype plugin indent on       " Enable filetype plugins and indentation
+  set autoindent
+  set smarttab
+  set autoread                    " Reload files changed outside vim
+  set backspace=indent,eol,start  " Allow backspace in insert mode
+  set history=1000                " Store lots of :cmdline history
+  set noesckeys                   " (hopefully) fix the delay returning to Normal mode
+
+  set incsearch                   " Find the next match as we type the search
+  set hlsearch                    " Highlight searches by default
+
+  set wildmenu                    " Better completion on command line
+  set wildmode=full               " What to do when I press 'wildchar'. Worth tweaking to see what feels right.
+endif
+
+syntax on
 set number                      " Line numbers are good
 set relativenumber              " +1 for relative line numbers
-set backspace=indent,eol,start  " Allow backspace in insert mode
 set encoding=utf-8              " Encoding
-set ttyfast                     " Rendering
-set mouse=a                     " Enable mouse mode
 set mousehide                   " Hide mouse when typing
 set whichwrap+=<,>,h,l
 set matchpairs+=<:>             " For html tag matching
-set history=1000                " Store lots of :cmdline history
 set updatetime=100              " Reduce update time for responsiveness
-set noesckeys                   " (hopefully) fix the delay returning to Normal mode
 set timeout ttimeout
 set timeoutlen=500
 set ttimeoutlen=0
-set showcmd                     " Show incomplete cmds in bottom right
 set visualbell                  " No sounds
-set autoread                    " Reload files changed outside vim
-set wildmenu                    " Better completion on command line
-set wildmode=full               " What to do when I press 'wildchar'. Worth tweaking to see what feels right.
 set noshowmode                  " Status bar already shows mode
 set lazyredraw
 set hidden                      " Allow buffers in the background
 set hid                         " A buffer becomes hidden when abandoned
-set ruler                       " Show current line:col numbers
 
-syntax on                       " Enable syntax highlighting
-filetype plugin indent on       " Enable filetype plugins and indentation
 colorscheme ThemerVim           " Colorscheme
 let mapleader=","               " Remap the leader key
 
@@ -56,10 +66,8 @@ endif
 autocmd BufEnter * lcd %:p:h
 
 " == Indentation ==
-set autoindent
 set cindent
 set smartindent
-set smarttab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
@@ -84,8 +92,6 @@ set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
 " Search
-set incsearch       " Find the next match as we type the search
-set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 set magic           " Turn magic on for regular expressions
