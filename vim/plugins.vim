@@ -101,3 +101,9 @@ let g:ycm_use_ultisnips_completer = 0
 
 " Collect identifiers from tags
 let g:ycm_collect_identifiers_from_tags_files = 1
+
+hi GitGutterAdd cterm=bold ctermfg=LightGreen
+hi GitGutterChange cterm=bold ctermfg=yellow
+hi GitGutterDelete cterm=bold ctermfg=red
+hi GitGutterChangeDelete cterm=bold ctermfg=red
+

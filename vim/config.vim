@@ -89,7 +89,7 @@ highlight PmenuSel ctermfg=white
 " Folds
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
+set nofoldenable        "don't fold by default
 
 " Search
 set ignorecase      " Ignore case when searching...
@@ -100,6 +100,9 @@ set magic           " Turn magic on for regular expressions
 " set cursorline
 hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 hi CursorLine   cterm=NONE ctermbg=23 ctermfg=white guibg=darkred guifg=white
+
+" Search highlight colors
+hi Search cterm=bold,underline ctermfg=Yellow ctermbg=NONE
 
 " Line number colors
 highlight LineNr ctermfg=grey
