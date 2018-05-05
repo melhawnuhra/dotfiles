@@ -753,6 +753,8 @@
 	<true/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
+	<key>DoubleClickPerformsSmartSelection</key>
+	<true/>
 	<key>EnableProxyIcon</key>
 	<false/>
 	<key>GlobalKeyMap</key>
@@ -961,9 +963,9 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>635 1322 796 473 -306 900 1920 1200 </string>
+	<string>486 259 796 473 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 878 </string>
+	<string>155 94 650 427 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2456,7 +2458,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCode-Regular 13</string>
+			<string>FiraCode-Retina 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -2512,7 +2514,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.031944003807106602</real>
+			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -2898,6 +2900,8 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>73B86C13-A23A-475D-80E5-E1E825D91E1D</string>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>546428596.66614401</real>
 	<key>OpenArrangementAtStartup</key>
@@ -2954,7 +2958,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-01T12:19:55Z</date>
+	<date>2018-05-04T12:28:44Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
