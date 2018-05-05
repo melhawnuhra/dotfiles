@@ -120,6 +120,9 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 fancy_echo_line "UX - Disable mouse enlargement with jiggle"
 defaults write ~/Library/Preferences/.GlobalPreferences CGDisableCursorLocationMagnification -bool true
 
+fancy_echo_line "UX - Set the Reduce Motion UI option"
+defaults write com.apple.universalaccess reduceMotion -bool true
+
 fancy_echo_line "UX - Disable annoying UI error sounds."
 defaults write com.apple.systemsound com.apple.sound.beep.volume -int 0
 defaults write com.apple.sound.beep feedback -int 0
