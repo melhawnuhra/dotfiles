@@ -67,3 +67,18 @@
 [submodule "vim/vim.symlink/bundle/textobj-comment.vim"]
 	path = vim/vim.symlink/bundle/textobj-comment.vim
 	url = https://github.com/glts/vim-textobj-comment.git
+[submodule "vim/vim.symlink/bundle/tmux-navigator.vim"]
+	path = vim/vim.symlink/bundle/tmux-navigator.vim
+	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule "vim/vim.symlink/bundle/ultisnips.vim"]
+	path = vim/vim.symlink/bundle/ultisnips.vim
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "vim/vim.symlink/bundle/yats.vim"]
+	path = vim/vim.symlink/bundle/yats.vim
+	url = https://github.com/HerringtonDarkholme/yats.vim.git
+[submodule "vim/vim.symlink/bundle/angular-snippets.vim"]
+	path = vim/vim.symlink/bundle/angular-snippets.vim
+	url = https://github.com/matthewsimo/angular-vim-snippets
+[submodule "vim/vim.symlink/bundle/angular.vim"]
+	path = vim/vim.symlink/bundle/angular.vim
+	url = https://github.com/burnettk/vim-angular.git

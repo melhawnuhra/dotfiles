@@ -1,19 +1,27 @@
 " =-=-=--=-=-=-= PLUGIN CONFIGURATION =-=-=--=-=-=-=
 
 
-" Use Silver Searcher (fuzzy-search) instead of grep
-set grepprg=ag
-
-" Make CtrlP use ag for listing the files. Way faster and no useless files.
+" --- CTRL-P ---
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0"
 
-" Disable ale highlighting
+" --- ALE ---
 let g:ale_set_highlights = 0
+let b:ale_warn_about_trailing_whitespace = 0
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 1
+let g:ale_lint_on_filetype_changed = 1
+let g:ale_lint_on_insert_leave = 1
+let g:ale_completion_enabled = 0
+let g:ale_change_sign_column_color = 1
+let g:ale_linter_aliases = {
+  \ "zsh": "sh"
+\}
+hi ALESignColumnWithErrors cterm=bold ctermbg=NONE ctermfg=Red
+hi ALEErrorLine cterm=NONE ctermbg=NONE ctermfg=NONE
+" hi ALESignColumnWithoutErrors cterm=NONE ctermbg=NONE ctermFG=NONE
 
-
+" --- AIRLINE ---
 " Load only the airline integrations we want - performance boost
 let g:airline_extensions = ['ale', 'branch', 'tabline',
       \ 'ctrlp', 'gutentags', 'ycm',
@@ -52,9 +60,10 @@ let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.whitespace = 'Ξ'
 
 " Tabline configuration
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#show_splits = 1
 
+" --- NERDTREE ---
 " Automatically open NerdTree if we start vim with no args
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -74,6 +83,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
+" --- GUTENTAGS ---
 let g:gutentags_cache_dir = '~/.vim/gutentags'
 let g:gutentags_project_root = ['composer.lock', 'package.json']
 let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js', '*.json', '*.xml',
@@ -89,6 +99,7 @@ augroup MyGutentagsStatusLineRefresher
   autocmd User GutentagsUpdated call airline#update_statusline()
 augroup END
 
+" --- YouCompleteMe ---
 " Slightly increase the min number of characters for identifier-based
 " completion
 let g:ycm_min_num_of_chars_for_completion = 2
@@ -97,13 +108,27 @@ let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_filetype_blacklist = {}
 
 " Pull in ultisnips snippet suggestions
-let g:ycm_use_ultisnips_completer = 0
+let g:ycm_use_ultisnips_completer = 1
 
 " Collect identifiers from tags
 let g:ycm_collect_identifiers_from_tags_files = 1
 
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_enable_diagnostic_highlighting = 0
+
+" --- ULTISNIPS ---
+let g:UltiSnipsExpandTrigger="§"
+let g:UltiSnipsJumpForwardTrigger="§"
+let g:UltiSnipsJumpBackwardTrigger="±"
+
+" --- GITGUTTER ---
 hi GitGutterAdd cterm=bold ctermfg=LightGreen
 hi GitGutterChange cterm=bold ctermfg=yellow
 hi GitGutterDelete cterm=bold ctermfg=red
 hi GitGutterChangeDelete cterm=bold ctermfg=red
 
+" --- TMUX-NAGIVATOR ---
+let g:tmux_navigator_disable_when_zoomed = 1
+" Write the current buffer if changed
+let g:tmux_navigator_save_on_switch = 1

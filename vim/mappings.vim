@@ -14,15 +14,17 @@ nnoremap L $
 inoremap jk <esc>
 
 " Use ctrl-[hjkl] to select the active split!
-nnoremap <silent> <c-k> :wincmd k<CR>
-nnoremap <silent> <c-j> :wincmd j<CR>
-nnoremap <silent> <c-h> :wincmd h<CR>
-nnoremap <silent> <c-l> :wincmd l<CR>
+" This is now handled by the tmux-navigator plugin
+" nnoremap <silent> <c-k> :wincmd k<CR>
+" nnoremap <silent> <c-j> :wincmd j<CR>
+" nnoremap <silent> <c-h> :wincmd h<CR>
+" nnoremap <silent> <c-l> :wincmd l<CR>
 
 " Easier switching between buffers
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ;b :b#<CR>
 
 " Easier switching between tabs
 nnoremap <silent> [t :tabprevious<CR>
@@ -32,9 +34,9 @@ nnoremap <silent> ]T :tlast<CR>
 nnoremap <silent> ]B :blast<CR>
 
 " Make n always search forward
-" nnoremap <expr> n 'Nn'[v:searchforward]
+nnoremap <expr> n 'Nn'[v:searchforward]
 " Make N always search backward
-" nnoremap <expr> N 'nN'[v:searchforward]
+nnoremap <expr> N 'nN'[v:searchforward]
 
 " Easy expansion of the Active File Directory
 cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
@@ -52,7 +54,7 @@ nnoremap <leader>ev :vsplit $DOTFILES_HOME/vim <cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Surround word in quotes
-" We don't technically need this - surround.vim gives us ysiw'
+" We don't technically need this anymore - surround.vim gives us ysiw'
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 nnoremap <leader>` viw<esc>a`<esc>bi`<esc>lel

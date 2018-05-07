@@ -3,7 +3,6 @@
 if !has('nvim')
   set nocompatible                " Use vim settings, rather than Vi (much better!)
   set ttyfast                     " Faster rendering
-  set mouse=a                     " Enable mouse mode
   set sidescroll=1                " Enable sideways scrolling
   set ruler                       " Show current line:col numbers
   set showcmd                     " Show incomplete cmds in bottom right
@@ -27,6 +26,7 @@ syntax on
 set number                      " Line numbers are good
 set relativenumber              " +1 for relative line numbers
 set encoding=utf-8              " Encoding
+set mouse=a                     " Enable mouse in all modes
 set mousehide                   " Hide mouse when typing
 set whichwrap+=<,>,h,l
 set matchpairs+=<:>             " For html tag matching
@@ -36,9 +36,10 @@ set timeoutlen=500
 set ttimeoutlen=0
 set visualbell                  " No sounds
 set noshowmode                  " Status bar already shows mode
-set lazyredraw
+set lazyredraw                  " Don't redraw the screen when executing macros, registers or other untyped commands
 set hidden                      " Allow buffers in the background
 set hid                         " A buffer becomes hidden when abandoned
+set grepprg=ag                  " Use Silver Searcher (fuzzy-search) instead of grep
 
 colorscheme ThemerVim           " Colorscheme
 let mapleader=","               " Remap the leader key
@@ -84,7 +85,7 @@ nnoremap P P=`]<C-o>
 set list listchars=tab:»·,trail:·
 
 " Make autocompletion text readable
-highlight PmenuSel ctermfg=white
+highlight PmenuSel ctermfg=black
 
 " Folds
 set foldmethod=indent   "fold based on indent
@@ -94,7 +95,7 @@ set nofoldenable        "don't fold by default
 " Search
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
-set magic           " Turn magic on for regular expressions
+set magic           " Turn magic on for regular expression
 
 " Highlight current line - disabled for performance
 " set cursorline
@@ -102,7 +103,11 @@ hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=b
 hi CursorLine   cterm=NONE ctermbg=23 ctermfg=white guibg=darkred guifg=white
 
 " Search highlight colors
-hi Search cterm=bold,underline ctermfg=Yellow ctermbg=NONE
+hi Search cterm=bold ctermbg=Yellow ctermfg=Black
+
+" Split bar styles
+hi VertSplit cterm=NONE ctermbg=Black ctermfg=Gray
+hi HorizontalSplit cterm=NONE ctermbg=Black ctermfg=Gray
 
 " Line number colors
 highlight LineNr ctermfg=grey
@@ -115,7 +120,7 @@ set cmdheight=1
 set showmatch
 
 " Make it more obvious which paren I'm on
-hi MatchParen cterm=bold ctermbg=red ctermfg=black
+hi MatchParen cterm=bold ctermbg=NONE ctermfg=yellow
 
 " Don't automatically continue comments after newline
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
