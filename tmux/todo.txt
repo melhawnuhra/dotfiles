@@ -1,0 +1,6 @@
+Battery status indicator: https://github.com/tmux-plugins/tmux-battery
+Online/offline status indicator: https://github.com/tmux-plugins/tmux-online-status
+Prefix highlight: https://github.com/tmux-plugins/tmux-prefix-highlight
+CPU load indicator: https://github.com/tmux-plugins/tmux-cpu
+Network speed?: https://github.com/tmux-plugins/tmux-net-speed
+

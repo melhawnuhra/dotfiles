@@ -16,5 +16,7 @@ zsh/local.zsh
 vim/vim.symlink/gutentags
 vim/vim.symlink/bundle/ycm.vim
 
+tmux/tmux.symlink/resurrect
+
 node/nvm.symlink/
 !node/nvm.symlink/.gitkeep

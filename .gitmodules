@@ -82,3 +82,6 @@
 [submodule "vim/vim.symlink/bundle/angular.vim"]
 	path = vim/vim.symlink/bundle/angular.vim
 	url = https://github.com/burnettk/vim-angular.git
+[submodule "tmux/tmux.symlink/plugins/tpm"]
+	path = tmux/tmux.symlink/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
