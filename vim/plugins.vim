@@ -15,7 +15,10 @@ let g:ale_lint_on_insert_leave = 1
 let g:ale_completion_enabled = 0
 let g:ale_change_sign_column_color = 1
 let g:ale_linter_aliases = {
-  \ "zsh": "sh"
+  \ "zsh": "sh",
+  \ "tmux.symlink": "tmux",
+  \ "zsh.symlink": "sh",
+  \ "yml": "yaml"
 \}
 hi ALESignColumnWithErrors cterm=bold ctermbg=NONE ctermfg=Red
 hi ALEErrorLine cterm=NONE ctermbg=NONE ctermfg=NONE

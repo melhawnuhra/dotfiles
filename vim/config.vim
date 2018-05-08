@@ -109,6 +109,10 @@ hi Search cterm=bold ctermbg=Yellow ctermfg=Black
 hi VertSplit cterm=NONE ctermbg=Black ctermfg=Gray
 hi HorizontalSplit cterm=NONE ctermbg=Black ctermfg=Gray
 
+" More natural splits
+set splitbelow
+set splitright
+
 " Line number colors
 highlight LineNr ctermfg=grey
 highlight CursorLineNr term=bold cterm=bold ctermfg=red
