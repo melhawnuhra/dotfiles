@@ -12,6 +12,10 @@ nnoremap L $
 
 " Quick Esc in insert mode
 inoremap jk <esc>
+inoremap kj <esc>
+inoremap <leader>w <esc><leader>w
+inoremap <leader>q <esc><leader>q
+inoremap <leader>x <esc><leader>x
 
 " Use ctrl-[hjkl] to select the active split!
 " This is now handled by the tmux-navigator plugin
@@ -25,6 +29,7 @@ nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ;b :b#<CR>
+nnoremap <silent> ;; :b#<CR>
 
 " Easier switching between tabs
 nnoremap <silent> [t :tabprevious<CR>
@@ -48,6 +53,7 @@ cnoremap <C-n> <Down>
 
 " =-=-=--=-=-=-= LEADER MAPPINGS =-=-=--=-=-=-=
 
+let mapleader=","               " Remap the leader key
 
 " Make it easier to make life easier
 nnoremap <leader>ev :vsplit $DOTFILES_HOME/vim <cr>
