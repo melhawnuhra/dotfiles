@@ -26,7 +26,7 @@ syntax on
 set number                      " Line numbers are good
 set relativenumber              " +1 for relative line numbers
 set encoding=utf-8              " Encoding
-set mouse=a                     " Enable mouse in all modes
+set mouse=i                     " Enable mouse in insert mode only
 set mousehide                   " Hide mouse when typing
 set whichwrap+=<,>,h,l
 set matchpairs+=<:>             " For html tag matching
