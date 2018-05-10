@@ -1,6 +1,9 @@
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
+#export LC_CTYPE=en_US.UTF-8
+#export LC_ALL=en_US.UTF-8
+
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 ZSH_THEME=""

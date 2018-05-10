@@ -26,9 +26,8 @@ hi ALEErrorLine cterm=NONE ctermbg=NONE ctermfg=NONE
 
 " --- AIRLINE ---
 " Load only the airline integrations we want - performance boost
-let g:airline_extensions = ['ale', 'branch', 'tabline',
-      \ 'ctrlp', 'gutentags', 'ycm',
-      \ 'hunks', 'quickfix', 'whitespace']
+let g:airline_extensions = ['branch', 'tabline',
+      \ 'ctrlp', 'hunks', 'quickfix', 'whitespace']
 
 " Free performance boost
 let g:airline_highlighting_cache = 1
@@ -67,9 +66,9 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#show_splits = 1
 
 " --- NERDTREE ---
-" Automatically open NerdTree if we start vim with no args
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" " Automatically open NerdTree if we start vim with no args
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 nnoremap <silent> <Leader>f :NERDTreeToggle<CR>
 
@@ -126,6 +125,7 @@ let g:UltiSnipsJumpForwardTrigger="§"
 let g:UltiSnipsJumpBackwardTrigger="±"
 
 " --- GITGUTTER ---
+set signcolumn=yes
 hi GitGutterAdd cterm=bold ctermfg=LightGreen
 hi GitGutterChange cterm=bold ctermfg=yellow
 hi GitGutterDelete cterm=bold ctermfg=red
@@ -135,3 +135,14 @@ hi GitGutterChangeDelete cterm=bold ctermfg=red
 let g:tmux_navigator_disable_when_zoomed = 1
 " Write the current buffer if changed
 let g:tmux_navigator_save_on_switch = 1
+
+" --- INDENT LINE ---
+let g:indentLine_char = '┆'
+
+" --- NEOMAKE ---
+" call neomake#configure#automake('nrw', 500)
+
+" --- DEOPLETE ---
+let g:deoplete#enable_at_startup = 1
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

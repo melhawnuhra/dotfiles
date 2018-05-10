@@ -13,6 +13,7 @@ endif
 set number                      " Line numbers are good...
 set relativenumber              " ...and even better when they're relative
 set noshowmode                  " Status bar already shows mode
+set updatetime=100              " How often to write swapfile to disk
 set lazyredraw
 
 set whichwrap+=<,>,h,l
@@ -29,6 +30,7 @@ colorscheme ThemerVim           " Colorscheme
 " == Indentation ==
 set cindent
 set smartindent
+set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab                   " Spaces over tabs

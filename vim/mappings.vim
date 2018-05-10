@@ -12,7 +12,6 @@ nnoremap L $
 
 " Quick Esc in insert mode
 inoremap jk <esc>
-inoremap kj <esc>
 inoremap <leader>w <esc><leader>w
 inoremap <leader>q <esc><leader>q
 inoremap <leader>x <esc><leader>x
