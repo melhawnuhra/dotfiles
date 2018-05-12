@@ -7,7 +7,7 @@
 # Configuration
 # ------------------------------------------------------------------------------
 
-PROMPT_GIT_BRANCH_PREFIX=" "
+PROMPT_GIT_BRANCH_PREFIX="  "
 PROMPT_GIT_BRANCH_SUFFIX=""
 PROMPT_GIT_BRANCH_COLOR="magenta"
 

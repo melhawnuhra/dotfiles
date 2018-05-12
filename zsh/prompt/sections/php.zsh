@@ -29,6 +29,6 @@ prompt_php() {
   prompt::section \
     "$PROMPT_PHP_COLOR" \
     "$PROMPT_PHP_PREFIX" \
-    "${PROMPT_PHP_SYMBOL}v${php_version}" \
+    "${PROMPT_PHP_SYMBOL}${php_version}" \
     "${PROMPT_PHP_SUFFIX}"
 }

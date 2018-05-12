@@ -42,6 +42,6 @@ prompt_node() {
   prompt::section \
     "$PROMPT_NODE_COLOR" \
     "$PROMPT_NODE_PREFIX" \
-    "${PROMPT_NODE_SYMBOL}${node_version}" \
+    "${PROMPT_NODE_SYMBOL}${node_version:1}" \
     "$PROMPT_NODE_SUFFIX"
 }

@@ -35,7 +35,7 @@ do
 done
 
 # initialize autocomplete here, otherwise functions won't be loaded
-autoload -Uz compinit
+autoload -U compaudit compinit
 compinit
 
 # load every completion after autocomplete loads
@@ -48,6 +48,4 @@ done
 source $DOTFILES_HOME/zsh/prompt/prompt.zsh
 
 unset config_files
-wd() {
-  . /Users/jared/bin/wd/wd.sh
-}
+

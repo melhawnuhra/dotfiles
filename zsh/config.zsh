@@ -1,8 +1,8 @@
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
-#export LC_CTYPE=en_US.UTF-8
-#export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
@@ -12,7 +12,7 @@ HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-fpath=($DOTFILES_HOME/functions $fpath)
+fpath=($ZSH/functions $ZSH/completions $DOTFILES_HOME/functions $fpath)
 
 autoload -U $DOTFILES_HOME/functions/*(:t)
 
