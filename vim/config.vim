@@ -42,9 +42,10 @@ set linebreak                   " When wrapping is on, wrap lines at sensible po
 set list listchars=tab:»·,trail:·
 
 " Search
-set ignorecase      " Ignore case when searching...
-set smartcase       " ...unless we type a capital
-set magic           " Turn magic on for regular expression
+set ignorecase        " Ignore case when searching...
+set smartcase         " ...unless we type a capital
+set magic             " Turn magic on for regular expression
+set inccommand=split  " Some neovim substitute-preview magic
 
 " Search highlight colors
 hi Search cterm=bold ctermbg=Yellow ctermfg=Black
