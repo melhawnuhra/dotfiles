@@ -12,6 +12,7 @@ PROMPT_ORDER=(
   php
   line_sep
   exit_code
+  jobs
   char
 )
 RPROMPT_ORDER=(
