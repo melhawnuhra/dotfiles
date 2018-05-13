@@ -36,12 +36,15 @@ Plug 'vim-airline/vim-airline-themes'
 "" Plug 'leafgarland/typescript-vim'
 Plug 'othree/yajs.vim'
 Plug 'HerringtonDarkholme/yats.vim'
+
 " Plug 'neomake/neomake'
+"
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'mhartington/nvim-typescript'
+Plug 'Shougo/echodoc.vim'
 Plug 'SirVer/ultisnips'
 
 call plug#end()

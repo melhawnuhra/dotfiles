@@ -1,5 +1,6 @@
+"
 " =-=-=--=-=-=-= PLUGIN CONFIGURATION =-=-=--=-=-=-=
-
+"
 
 " --- CTRL-P ---
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
@@ -160,3 +161,6 @@ let g:indentLine_char = '┆'
 let g:deoplete#enable_at_startup = 1
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+let g:nvim_typescript#type_info_on_hold = 1
+
