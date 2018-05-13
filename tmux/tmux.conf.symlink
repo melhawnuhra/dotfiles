@@ -9,14 +9,14 @@ set-option -g status-attr default
 set-option -g status-position bottom
 
 # set window split
-bind-key v split-window -h
-bind-key b split-window
+bind-key v split-window -h -c '#{pane_current_path}'
+bind-key b split-window -v -c '#{pane_current_path}'
 
 # ---- Numbering and Naming ----
 set -g base-index 1         # start windows numbering at 1
 setw -g pane-base-index 1   # make pane numbering consistent with windows
 
-setw -g automatic-rename off # don't automatically rename windows
+setw -g automatic-rename on # rename windows to context when it makes sense
 set -g renumber-windows on  # renumber windows when a window is closed
 
 set -g set-titles on                        # set terminal title
@@ -49,12 +49,6 @@ set -g repeat-time 1000
 # pane border
 set-option -g pane-border-fg colour239 #base02
 set-option -g pane-active-border-fg colour6 #base01
-
-# switch panes using Alt-arrow without prefix
-# bind -n M-Left select-pane -L
-# bind -n M-Right select-pane -R
-# bind -n M-Up select-pane -U
-# bind -n M-Down select-pane -D
 
 # message text
 set-option -g message-bg colour235 #base02
@@ -111,21 +105,12 @@ bind -n M-7 select-window -t 7
 bind -n M-8 select-window -t 8
 bind -n M-9 select-window -t 9
 
-unbind c
-bind-key c command-prompt -p "Name of new window: " "new-window -n '%%'"
 bind-key C command-prompt -p "Name of new session: " "new -s '%%'"
 
 bind @ setw synchronize-panes
 
 # reload config
 bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."
-
-# auto window rename
-set-window-option -g automatic-rename
-set-option -g allow-rename off
-
-# Start copy mode when scrolling up
-# bind -n WheelUpPane copy-mode
 
 # Enable pbcopy/pbpaste
 set-option -g default-command "reattach-to-user-namespace -l zsh"
@@ -150,15 +135,6 @@ set-window-option -g mode-keys vi
 if-shell "test '\( #{$TMUX_VERSION_MAJOR} -eq 2 -a #{$TMUX_VERSION_MINOR} -ge 4 \)'" 'bind-key -Tcopy-mode-vi v send -X begin-selection; bind-key -Tcopy-mode-vi y send -X copy-selection-and-cancel'
 if-shell '\( #{$TMUX_VERSION_MAJOR} -eq 2 -a #{$TMUX_VERSION_MINOR} -lt 4\) -o #{$TMUX_VERSION_MAJOR} -le 1' 'bind-key -t vi-copy v begin-selection; bind-key -t vi-copy y copy-selection'
 
-# Enable mouse support
-set -g mouse on
-# Black bar
-if-shell '\( #{$TMUX_VERSION_MAJOR} -eq 2 -a #{$TMUX_VERSION_MINOR} -lt 2\) -o #{$TMUX_VERSION_MAJOR} -le 1' 'set-option -g status-utf8 on'
-
-# fix pane_current_path on new window and splits
-if-shell "test '#{$TMUX_VERSION_MAJOR} -gt 1 -o \( #{$TMUX_VERSION_MAJOR} -eq 1 -a #{$TMUX_VERSION_MINOR} -ge 8 \)'" 'unbind c; bind c new-window -c "#{pane_current_path}"'
-if-shell "test '#{$TMUX_VERSION_MAJOR} -gt 1 -o \( #{$TMUX_VERSION_MAJOR} -eq 1 -a #{$TMUX_VERSION_MINOR} -ge 8 \)'" "unbind '\"'; bind '\"' split-window -v -c '#{pane_current_path}'"
-if-shell "test '#{$TMUX_VERSION_MAJOR} -gt 1 -o \( #{$TMUX_VERSION_MAJOR} -eq 1 -a #{$TMUX_VERSION_MINOR} -ge 8 \)'" 'unbind v; bind v split-window -h -c "#{pane_current_path}"'
 source "/Users/jared/dotfiles/themer/themer-tmux/themer-tmux.dark.double.v2.tmuxtheme"
 
 # Seamlessly nagivate between tmux and vim panes/splits
@@ -169,10 +145,19 @@ bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iq v
 bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys 'C-\\') || tmux select-pane -l"
 
 # PLUGINS
-
 # Prefix-I to install and source new plugins
+
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-urlview'
+
+# Better mouse mode
+set -g @plugin 'nhdaly/tmux-better-mouse-mode'
+set -g @scroll-down-exit-copy-mode "on"
+set -g @scroll-without-changing-pane "on"
+set -g @scroll-in-moused-over-pane "on"
+set -g @scroll-speed-num-lines-per-scroll "2"
+set -g @emulate-scroll-for-no-mouse-alternate-buffer "on"
+set -g mouse on
 
 # set -g @plugin 'tmux-plugins/tmux-resurrect'
 # set -g @plugin 'tmux-plugins/tmux-continuum'
