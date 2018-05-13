@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-sayonara'
 Plug 'tpope/vim-sensible'
 
+Plug 'mileszs/ack.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'

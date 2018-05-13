@@ -12,9 +12,6 @@ nnoremap L $
 
 " Quick Esc in insert mode
 inoremap jk <esc>
-inoremap <leader>w <esc><leader>w
-inoremap <leader>q <esc><leader>q
-inoremap <leader>x <esc><leader>x
 
 " Use ctrl-[hjkl] to select the active split!
 " This is now handled by the tmux-navigator plugin
@@ -74,8 +71,8 @@ nnoremap <leader>q :q<CR>
 inoremap <leader>Q <ESC>:q!<CR>
 nnoremap <leader>Q :q!<CR>
 
-inoremap <leader>x <ESC>:x<CR>
-nnoremap <leader>x :x<CR>
+inoremap <leader>x <ESC>:Sayonara<CR>
+nnoremap <leader>x :Sayonara<CR>
 
 nnoremap <leader>e :Ex<CR>
 nnoremap <leader>t :tabnew<CR>:Ex<CR>

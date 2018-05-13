@@ -71,3 +71,6 @@ hi MatchParen cterm=bold ctermbg=NONE ctermfg=yellow
 " Return to last edit position when opening files :)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+" Set the current working directory when entering a buffer
+autocmd BufEnter * silent! lcd %:p:h
+

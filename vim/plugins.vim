@@ -4,6 +4,20 @@
 " --- CTRL-P ---
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0"
+let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_reuse_window = 'netrw\|NerdTree'
+
+" --- ACK ---
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+nnoremap \ :Ack!<Space>
+
+" bind K to grep word under cursor
+nnoremap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " --- ALE ---
 let g:ale_set_highlights = 0
