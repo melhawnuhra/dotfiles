@@ -18,6 +18,7 @@ vim/vim.symlink/bundle/ycm.vim
 vim/vim.symlink/plugged
 
 tmux/tmux.symlink/resurrect
+tmux/tmux.symlink/plugins
 
 node/nvm.symlink/
 !node/nvm.symlink/.gitkeep

@@ -9,6 +9,9 @@ alias xx='atool -x'               # todo: replace extract() after auditioning th
 alias killit='kill -9 %%'         # Kill the last suspended process (because sometimes Ctrl-C is not enough)
 alias _='sudo'
 
+alias t='tmux'
+alias mux='tmuxinator'
+
 # Tired of piping?
 alias -g L='|less'
 alias -g H='|head'

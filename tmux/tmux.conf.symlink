@@ -172,6 +172,7 @@ bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iq v
 
 # Prefix-I to install and source new plugins
 set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-urlview'
 
 # set -g @plugin 'tmux-plugins/tmux-resurrect'
 # set -g @plugin 'tmux-plugins/tmux-continuum'
