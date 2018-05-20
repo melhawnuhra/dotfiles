@@ -98,6 +98,7 @@ set -g @online_icon "✓"
 set -g @offline_icon "✗"
 
 set -g @plugin 'tmux-plugins/tmux-battery'
+# set -g @plugin 'thewtex/tmux-mem-cpu-load'
 
 # Better mouse mode
 set -g @plugin 'nhdaly/tmux-better-mouse-mode'
