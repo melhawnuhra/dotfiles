@@ -145,5 +145,6 @@
         "statusBar.foreground": "#C1BCC2"
     },
     "git.path": "/usr/local/bin/hub",
-    "vim.disableExtension": true
+    "vim.disableExtension": true,
+    "gitlens.historyExplorer.enabled": true
 }
