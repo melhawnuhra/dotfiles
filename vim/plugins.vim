@@ -2,11 +2,18 @@
 " =-=-=--=-=-=-= PLUGIN CONFIGURATION =-=-=--=-=-=-=
 "
 
+" --- ROOTER ---
+let g:rooter_change_directory_for_non_project_files = 'current'
+let g:rooter_patterns = ['composer.json', 'package.json', '.git/']
+let g:rooter_silent_chdir = 1
+
 " --- CTRL-P ---
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0"
 let g:ctrlp_switch_buffer = 'Et'
 let g:ctrlp_reuse_window = 'netrw\|NerdTree'
+
+noremap <c-i> :CtrlPTag<CR>
 
 " --- ACK ---
 if executable('ag')
@@ -14,30 +21,10 @@ if executable('ag')
 endif
 
 cnoreabbrev Ack Ack!
-nnoremap <Leader>a :Ack!<Space>
 nnoremap \ :Ack!<Space>
 
 " bind K to grep word under cursor
 nnoremap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-" --- ALE ---
-let g:ale_set_highlights = 0
-let b:ale_warn_about_trailing_whitespace = 0
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 1
-let g:ale_lint_on_filetype_changed = 1
-let g:ale_lint_on_insert_leave = 1
-let g:ale_completion_enabled = 0
-let g:ale_change_sign_column_color = 1
-let g:ale_linter_aliases = {
-  \ "zsh": "sh",
-  \ "tmux.symlink": "tmux",
-  \ "zsh.symlink": "sh",
-  \ "yml": "yaml"
-\}
-hi ALESignColumnWithErrors cterm=bold ctermbg=NONE ctermfg=Red
-hi ALEErrorLine cterm=NONE ctermbg=NONE ctermfg=NONE
-" hi ALESignColumnWithoutErrors cterm=NONE ctermbg=NONE ctermFG=NONE
 
 " --- AIRLINE ---
 " Load only the airline integrations we want - performance boost
@@ -79,12 +66,9 @@ let g:airline_symbols.whitespace = 'Ξ'
 " Tabline configuration
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#show_splits = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " --- NERDTREE ---
-" " Automatically open NerdTree if we start vim with no args
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 nnoremap <silent> <Leader>f :NERDTreeToggle<CR>
 
 " Close NerdTree as soon as we open a file
@@ -116,24 +100,6 @@ augroup MyGutentagsStatusLineRefresher
   autocmd User GutentagsUpdated call airline#update_statusline()
 augroup END
 
-" --- YouCompleteMe ---
-" Slightly increase the min number of characters for identifier-based
-" completion
-let g:ycm_min_num_of_chars_for_completion = 2
-
-" Turn off autocompletion for the following files:
-let g:ycm_filetype_blacklist = {}
-
-" Pull in ultisnips snippet suggestions
-let g:ycm_use_ultisnips_completer = 1
-
-" Collect identifiers from tags
-let g:ycm_collect_identifiers_from_tags_files = 1
-
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_enable_diagnostic_highlighting = 0
-
 " --- ULTISNIPS ---
 let g:UltiSnipsExpandTrigger="§"
 let g:UltiSnipsJumpForwardTrigger="§"
@@ -158,9 +124,21 @@ let g:indentLine_char = '┆'
 " call neomake#configure#automake('nrw', 500)
 
 " --- DEOPLETE ---
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
+autocmd InsertEnter * call deoplete#enable()
+let g:deoplete#auto_complete_delay = 10
+
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 let g:nvim_typescript#type_info_on_hold = 1
 
+" let g:LanguageClient_serverCommands = {
+"     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+"     \ 'javascript': ['javascript-typescript-stdio'],
+"     \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+"     \ }
+
+" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
