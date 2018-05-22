@@ -37,6 +37,7 @@ set expandtab                   " Spaces over tabs
 set shiftround                  " When at 3 spaces and I hit >>, go to 4. Not 5.
 set nowrap                      " Don't wrap lines
 set linebreak                   " When wrapping is on, wrap lines at sensible points
+set fixeol                      " Append <EOL> to file if none exists
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:»·,trail:·
