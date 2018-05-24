@@ -17,7 +17,7 @@ PROMPT_JOBS_COLOR="yellow"
 
 # Show icon if there's a working jobs in the background
 prompt_jobs() {
-  local jobs_amount=$( (jobs) | wc -l )
+  local jobs_amount=$( (jobs) | wc -l | xargs )
 
   [[ $jobs_amount -gt 0 ]] || return
   [[ $jobs_amount -eq 1 ]] && jobs_amount=''
