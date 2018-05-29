@@ -13,12 +13,9 @@ nnoremap L $
 " Quick Esc in insert mode
 inoremap jk <esc>
 
-" Use ctrl-[hjkl] to select the active split!
-" This is now handled by the tmux-navigator plugin
-" nnoremap <silent> <c-k> :wincmd k<CR>
-" nnoremap <silent> <c-j> :wincmd j<CR>
-" nnoremap <silent> <c-h> :wincmd h<CR>
-" nnoremap <silent> <c-l> :wincmd l<CR>
+" Easier switching between windows
+nnoremap <silent> <c-[> :wincmd k<CR>
+nnoremap <silent> <c-]> :wincmd l<CR>
 
 " Easier switching between buffers
 nnoremap <silent> [b :bprevious<CR>
@@ -49,17 +46,12 @@ cnoremap <C-n> <Down>
 
 " =-=-=--=-=-=-= LEADER MAPPINGS =-=-=--=-=-=-=
 
+
 let mapleader=","               " Remap the leader key
 
 " Make it easier to make life easier
 nnoremap <leader>ev :vsplit $DOTFILES_HOME/vim <cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" Surround word in quotes
-" We don't technically need this anymore - surround.vim gives us ysiw'
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
-nnoremap <leader>` viw<esc>a`<esc>bi`<esc>lel
 
 " File and Window Management
 inoremap <leader>w <Esc>:w<CR>
@@ -86,10 +78,3 @@ inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 " Go-to-definition (made possible by Gutentags + CtrlP)
 map <silent> <leader>gd :CtrlPTag<cr><C-\>w
 
-" Map Null to C-Space to trigger autocompletion popup
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-        \ "\<lt>C-n>" :
-        \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-        \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-        \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>

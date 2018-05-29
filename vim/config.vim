@@ -27,7 +27,7 @@ set grepprg=ag                  " Use Silver Searcher (fuzzy-search) instead of 
 colorscheme ThemerVim           " Colorscheme
 
 
-" == Indentation ==
+" Indentation
 set cindent
 set smartindent
 set shiftwidth=2

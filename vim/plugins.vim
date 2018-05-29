@@ -112,6 +112,21 @@ hi GitGutterChange cterm=bold ctermfg=yellow
 hi GitGutterDelete cterm=bold ctermfg=red
 hi GitGutterChangeDelete cterm=bold ctermfg=red
 
+" --- FUGITIVE ---
+set diffopt+=vertical
+
+hi DiffAdd guifg=NONE ctermfg=NONE guibg=#464632 ctermbg=238 gui=NONE cterm=NONE
+hi DiffChange guifg=NONE ctermfg=NONE guibg=#335261 ctermbg=239 gui=NONE cterm=NONE
+hi DiffDelete guifg=#f43753 ctermfg=203 guibg=#79313c ctermbg=237 gui=NONE cterm=NONE
+hi DiffText guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=reverse cterm=reverse
+
+" command! -nargs=1 -bar Diffput <args> diffput <args>|diffupdate
+" command! -nargs=1 -bar Diffget <args> diffget <args>|diffupdate
+" command! -nargs=1 -bar Dp <args> diffput <args>|diffupdate
+" command! -nargs=1 -bar Dg <args> diffget <args>|diffupdate
+" command! -nargs=1 -bar Dgl <args> diffget //2|diffupdate
+" command! -nargs=1 -bar Dgr <args> diffget //3|diffupdate
+
 " --- TMUX-NAGIVATOR ---
 let g:tmux_navigator_disable_when_zoomed = 1
 " Write the current buffer if changed
