@@ -14,7 +14,7 @@ nnoremap L $
 inoremap jk <esc>
 
 " Easier switching between windows
-nnoremap <silent> <c-[> :wincmd k<CR>
+nnoremap <silent> <c-[> :wincmd h<CR>
 nnoremap <silent> <c-]> :wincmd l<CR>
 
 " Easier switching between buffers

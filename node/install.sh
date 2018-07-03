@@ -23,3 +23,4 @@ then
   sudo npm install localtunnel -g
 fi
 
+npm i -g alfred-npms

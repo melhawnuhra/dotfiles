@@ -14,7 +14,7 @@ Plug 'airblade/vim-rooter'
 
 Plug 'Raimondi/delimitMate'
 Plug 'justinmk/vim-matchparenalways'
-" Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 " Plug 'justinmk/vim-sneak'
 
 Plug 'tmux-plugins/vim-tmux-focus-events'

@@ -2,6 +2,7 @@ alias reload='. ~/.zshrc'   # Re-source .zshrc
 alias c='clear'             # Keep the screen tidy
 alias q='exit'
 alias dux='du -x --max-depth=1 | sort -n'   # Which directory is hiding all the bytes?
+alias alert='terminal-notifier -title "Terminal Alert" -message Done!'
 alias cats='pygmentize -g'          # Syntax-highlighted cat
 alias cpwd='pwd|tr -d "\n"|pbcopy'  # Copy pwd
 alias code='code-insiders'
@@ -27,6 +28,9 @@ then
     eval $(thefuck --alias)
 fi
 
+# cd to project root
+alias cd.='cd $(git rev-parse --show-toplevel)'
+
 alias cd..="cd .." # I often do this
 
 # Because sometimes you just don't have the time for those extra keystrokes
@@ -46,6 +50,12 @@ function chd() {
   cd $1 && ls
 }
 alias cd="chd"
+
+# Mkdir, deeply if required and cd into it
+function take() {
+  mkdir -p $1
+  cd $1
+}
 
 # Page markdown in color
 function md() {

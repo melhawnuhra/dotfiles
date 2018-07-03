@@ -133,7 +133,10 @@ let g:tmux_navigator_disable_when_zoomed = 1
 let g:tmux_navigator_save_on_switch = 1
 
 " --- INDENT LINE ---
-let g:indentLine_char = '┆'
+let g:indentLine_char = '¦'
+let g:indentLine_setColors = 1
+let g:indentLine_enabled = 1
+let g:indentLine_setConceal = 2
 
 " --- NEOMAKE ---
 " call neomake#configure#automake('nrw', 500)
