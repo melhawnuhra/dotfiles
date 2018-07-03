@@ -1,0 +1,35 @@
+#!/usr/bin/env zsh
+
+# Currently the script will choke on tilde characters used in either search or
+# replace terms
+
+# inspired by
+# https://gist.github.com/hlissner/db74d23fc00bed81ff62
+# https://gist.github.com/kates/5915285
+
+# ag
+# -0 --> Separate the filenames with \0, rather than \n: this allows 
+#        xargs -0 <command> to correctly process filenames containing spaces 
+#        or newlines.
+# --files-with-matches --> Only print the names of files containing matches, 
+#        not the matching lines. An empty query will print all files that 
+#        would be searched.
+
+# xargs
+# -0 --> see ag description
+
+# sed
+# -r --> Use extended regular expressions rather than basic regular expressions
+# -i replace in place, if followed by a suffix will create backup files
+# -e --> execute the following command on any processed file
+
+if [ $# -eq 3 ]; then
+  ag -0 --files-with-matches $1 $3 | xargs -0 -I {} sed -i '' -e "s~$1~$2~g" {}
+elif [ $# -eq 4 ]; then
+  ag -0 --files-with-matches $1 $3 | xargs -0 -I {} sed -i.$4 -e "s~$1~$2~g" {}
+elif [ $# -eq 2 ]; then
+  ag -0 --files-with-matches $1 | xargs -0 -I {} sed -i '' -e "s~$1~$2~g" {}
+else
+  echo 'usage: $ ag-replace SEARCH_TERM REPLACE_TERM [PATH] [BACKUP_EXTENSION]'
+  echo 'eg: $ ag-replace red green src'
+fi
