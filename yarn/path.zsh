@@ -6,4 +6,3 @@
   # export PATH="$PATH:`yarn global bin`"
 # fi
 
-export PATH="$PATH:/usr/local/bin"
