@@ -61,3 +61,9 @@ function take() {
 function md() {
   mdv $1 | less -R
 }
+
+# Download youtube videos as m4a audio
+function m4a() {
+  youtube-dl $1 -x --audio-format m4a
+}
+
