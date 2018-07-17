@@ -65,6 +65,7 @@ nnoremap <leader>Q :q!<CR>
 
 inoremap <leader>x <ESC>:Sayonara<CR>
 nnoremap <leader>x :Sayonara<CR>
+nnoremap q<CR> :Sayonara<CR>
 
 nnoremap <leader>e :Ex<CR>
 nnoremap <leader>t :tabnew<CR>:Ex<CR>
