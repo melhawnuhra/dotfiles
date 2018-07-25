@@ -43,6 +43,8 @@ alias ......='cd ../../../../..'
 
 # We need rainbows
 alias ls='exa'
+alias l='exa -l'
+alias la='exa -la'
 
 # I do this almost every time I 'cd' anyway
 unalias cd 2>/dev/null
