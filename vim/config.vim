@@ -72,5 +72,7 @@ hi MatchParen cterm=bold ctermbg=NONE ctermfg=yellow
 " Return to last edit position when opening files :)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" Path to python3
+" Path to pythons
+let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/Users/jared/.pyenv/versions/neovim3/bin/python'
+
