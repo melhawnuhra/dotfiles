@@ -17,7 +17,7 @@ window:
   # Window dimensions in character columns and lines
   # (changes require restart)
   dimensions:
-    columns: 83
+    columns: 85
     lines: 25
 
   # Adds this many blank pixels of padding around the window
@@ -58,7 +58,7 @@ font:
     style: Italic
 
   # Point size of the font
-  size: 12.0
+  size: 13.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -213,7 +213,7 @@ hide_cursor_when_typing: false
 cursor_style: Block
 
 # Live config reload (changes require restart)
-live_config_reload: false
+live_config_reload: true
 
 # Shell
 #
