@@ -74,5 +74,5 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " Path to pythons
 let g:python_host_prog = '/usr/local/bin/python2'
-let g:python3_host_prog = '/Users/jared/.pyenv/versions/neovim3/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
