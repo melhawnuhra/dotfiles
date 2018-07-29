@@ -35,6 +35,7 @@ brew 'libgit2'
 brew 'libpcap'
 brew 'lolcat'
 brew 'macvim', args: ['--with-override-system-vi']
+brew 'mas'
 brew 'most'
 brew 'node'
 brew 'nvm'
