@@ -54,6 +54,8 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
+bind-key , command-prompt -p "Name of current window:" "rename-window '%%'"
+bind-key c command-prompt -p "Name of current window:" "rename-window '%%'"
 bind-key C command-prompt -p "Name of new session: " "new -s '%%'"
 
 bind @ setw synchronize-panes
