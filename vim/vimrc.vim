@@ -1,4 +1,10 @@
+if $SHELL =~ 'fish'
+  set shell=/bin/sh
+endif
+
 call plug#begin('~/.vim/plugged')
+
+Plug 'morhetz/gruvbox'
 
 Plug 'mhinz/vim-sayonara'
 Plug 'tpope/vim-sensible'
@@ -74,3 +80,4 @@ so ~/dotfiles/vim/config.vim
 so ~/dotfiles/vim/mappings.vim
 so ~/dotfiles/vim/plugins.vim
 so ~/dotfiles/vim/languages.vim
+

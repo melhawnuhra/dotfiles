@@ -38,7 +38,9 @@ set -g repeat-time 1000
 set -g status-left '#[fg=red,bright]#H #[fg=black]• #[fg=lightgrey,bright]#(uname -r)#[default]'
 set -g status-right '#[fg=green,bg=default,bright]#(tmux-mem-cpu-load) #[fg=red,dim,bg=default]#(uptime | cut -f 4-5 -d " " | cut -f 1 -d ",") #[fg=white,bg=default]%a %l:%M:%S %p#[default]'
 
-source "$HOME/dotfiles/tmux/status-bar.conf"
+source "$DOTFILES_HOME/tmux/status-bar.conf"
+
+source "$DOTFILES_HOME/tmux/theme_gruvbox.conf"
 
 # C-b is not acceptable -- Vim uses it
 set -g prefix C-a

@@ -24,8 +24,9 @@ set hidden                      " Allow buffers in the background
 set hid                         " A buffer becomes hidden when abandoned
 set grepprg=ag                  " Use Silver Searcher (fuzzy-search) instead of grep
 
-colorscheme ThemerVim           " Colorscheme
-
+set background=dark
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'medium'
 
 " Indentation
 set cindent
@@ -52,16 +53,16 @@ set inccommand=split  " Some neovim substitute-preview magic
 hi Search cterm=bold ctermbg=Yellow ctermfg=Black
 
 " Split bar styles
-hi VertSplit cterm=NONE ctermbg=Black ctermfg=Gray
-hi HorizontalSplit cterm=NONE ctermbg=Black ctermfg=Gray
+" hi VertSplit cterm=NONE ctermbg=Black ctermfg=Gray
+" hi HorizontalSplit cterm=NONE ctermbg=Black ctermfg=Gray
 
 " More natural splits
 set splitbelow
 set splitright
 
 " Line number colors
-highlight LineNr ctermfg=grey
-highlight CursorLineNr term=bold cterm=bold ctermfg=red
+" highlight LineNr ctermfg=grey
+" highlight CursorLineNr term=bold cterm=bold ctermfg=red
 
 " Height of the command bar
 set cmdheight=1
@@ -75,4 +76,3 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Path to pythons
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
-

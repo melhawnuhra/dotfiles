@@ -106,11 +106,11 @@ let g:UltiSnipsJumpForwardTrigger="§"
 let g:UltiSnipsJumpBackwardTrigger="±"
 
 " --- GITGUTTER ---
-set signcolumn=yes
-hi GitGutterAdd cterm=bold ctermfg=LightGreen
-hi GitGutterChange cterm=bold ctermfg=yellow
-hi GitGutterDelete cterm=bold ctermfg=red
-hi GitGutterChangeDelete cterm=bold ctermfg=red
+" set signcolumn=yes
+" hi GitGutterAdd cterm=bold ctermfg=LightGreen
+" hi GitGutterChange cterm=bold ctermfg=yellow
+" hi GitGutterDelete cterm=bold ctermfg=red
+" hi GitGutterChangeDelete cterm=bold ctermfg=red
 
 " --- FUGITIVE ---
 set diffopt+=vertical
