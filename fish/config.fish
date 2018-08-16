@@ -27,7 +27,7 @@ end
 set -x PAGER 'less'
 set LESS '--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 
-# Set colors for less. Borrowed from https://wiki.archlinux.org/index.php/Color_output_in_console#less .
+## Set colors for less. Borrowed from https://wiki.archlinux.org/index.php/Color_output_in_console#less .
 # set LESS_TERMCAP_mb '\E[1;31m'     # begin bold
 # set LESS_TERMCAP_md '\E[1;36m'     # begin blink
 # set LESS_TERMCAP_me '\E[0m'        # reset bold/blink
