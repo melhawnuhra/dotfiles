@@ -18,10 +18,9 @@ set -g set-titles-string '#h ❐ #S ● #I #W'
 # default window title colors
 set-window-option -g window-status-fg colour244 #base0
 set-window-option -g window-status-bg default
-#set-window-option -g window-status-attr dim
 
 # tmux messages are displayed for 4 seconds
-set -g display-time 4000
+set -g display-time 2000
 
 # focus events enabled for terminals that support them
 set -g focus-events on
@@ -35,12 +34,8 @@ set -sg escape-time 10
 # Increase repeat time for repeatable commands
 set -g repeat-time 1000
 
-set -g status-left '#[fg=red,bright]#H #[fg=black]• #[fg=lightgrey,bright]#(uname -r)#[default]'
-set -g status-right '#[fg=green,bg=default,bright]#(tmux-mem-cpu-load) #[fg=red,dim,bg=default]#(uptime | cut -f 4-5 -d " " | cut -f 1 -d ",") #[fg=white,bg=default]%a %l:%M:%S %p#[default]'
-
-source "$DOTFILES_HOME/tmux/status-bar.conf"
-
-source "$DOTFILES_HOME/tmux/theme_gruvbox.conf"
+# source "/Users/jared/dotfiles/tmux/status-bar.conf"
+source "/Users/jared/dotfiles/tmux/theme_gruvbox.conf"
 
 # C-b is not acceptable -- Vim uses it
 set -g prefix C-a
@@ -61,23 +56,20 @@ bind-key C command-prompt -p "Name of new session: " "new -s '%%'"
 
 bind @ setw synchronize-panes
 
-# Enable pbcopy/pbpaste
-set-option -g default-command "reattach-to-user-namespace -l $SHELL"
+set -g default-command /usr/local/bin/fish
+set -g default-shell /usr/local/bin/fish
+
+# # No escape time for vi mode
+# set -sg escape-time 0
 
 # Allow yanking to global clipboard
 set -g set-clipboard on
+set-option -g default-command "reattach-to-user-namespace -l $SHELL"
 bind-key -Tcopy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 bind-key -Tcopy-mode-vi Escape send -X cancel
 
 # color
-set -g default-terminal "screen-256color"
-
-# https://github.com/edkolev/dots/blob/master/tmux.conf
-# Updates for tmux 1.9's current pane splitting paths.
-
-# from powerline
-# run-shell "tmux set-environment -g TMUX_VERSION_MAJOR $(tmux -V | cut -d' ' -f2 | cut -d'.' -f1 | sed 's/[^0-9]*//g')"
-# run-shell "tmux set-environment -g TMUX_VERSION_MINOR $(tmux -V | cut -d' ' -f2 | cut -d'.' -f2 | sed 's/[^0-9]*//g')"
+set -g default-terminal screen-256color
 
 # Vi copypaste mode
 set-window-option -g mode-keys vi
@@ -111,11 +103,6 @@ set -g @scroll-in-moused-over-pane "on"
 set -g @scroll-speed-num-lines-per-scroll "2"
 set -g @emulate-scroll-for-no-mouse-alternate-buffer "on"
 set -g mouse on
-
-# set -g @plugin 'tmux-plugins/tmux-resurrect'
-# set -g @plugin 'tmux-plugins/tmux-continuum'
-set -g @resurrect-strategy-nvim 'session' 
-set -g @continuum-restore 'on'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
