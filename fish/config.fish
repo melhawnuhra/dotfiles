@@ -41,58 +41,41 @@ set LESS '--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW
 # set LESS_TERMCAP_us '\E[1;32m'     # begin underline
 # set LESS_TERMCAP_ue '\E[0m'        # reset underline
 
+# ---- ABBREVIATIONS ----
+
+if not set -q abbrs_initialized
+  set -U abbrs_initialized
+  echo -n Setting abbreviations...
+
+  abbr c 'clear'
+  abbr q 'exit'
+  abbr dux 'du -x --max-depth=1 | sort -n'  # Where are all the bytes hiding?
+  abbr cats 'pygmentize -g'                 # Syntax-highlighted cat
+  abbr cpwd 'pwd | tr -d "\n" | pbcopy'     # Copy pwd
+  abbr xx 'atool -x'                        # Extract ANYTHING
+  abbr killit 'kill -9 %%'                  # Kill the last suspended process (because sometimes Ctrl-C is not enough)
+  abbr _ 'sudo'
+  abbr t 'tmux'
+  abbr mux 'tmuxinator'
+
+  abbr cd. 'cd (git rev-parse --show-toplevel)' # cd to the project root
+  abbr cd.. 'cd ..'                         # Correct my typos, please
+
+  abbr .. 'cd ..'
+  abbr ... 'cd ../..'
+  abbr .... 'cd ../../..'
+  abbr ..... 'cd ../../../..'
+  abbr ...... 'cd ../../../../..'
+  # ...because sometimes you just don't have the time for those extra keystrokes.
+
+  echo 'Done'
+end
+
 # ---- ALIASES -----
 
-alias c='clear'             # Keep the screen tidy
-alias q='exit'
-alias dux='du -x --max-depth=1 | sort -n'   # Which directory is hiding all the bytes?
 alias alert='terminal-notifier -title "Terminal Alert" -message Done!'
-alias cats='pygmentize -g'          # Syntax-highlighted cat
-alias cpwd='pwd|tr -d "\n"|pbcopy'  # Copy pwd
-alias xx='atool -x'               # todo: replace extract() after auditioning this
-alias killit='kill -9 %%'         # Kill the last suspended process (because sometimes Ctrl-C is not enough)
-alias _='sudo'
-
-alias t='tmux'
-alias mux='tmuxinator'
-
-# cd to project root
-alias cd.='cd (git rev-parse --show-toplevel)'
-
-
-alias cd..="cd .." # I often do this
-
-# Because sometimes you just don't have the time for those extra keystrokes
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
-# Do we need more?
-
 # We need rainbows
 alias ls='exa'
 alias l='exa -l'
 alias la='exa -la'
-
-# I do this almost every time I 'cd' anyway
-function cd --description 'ls immediately after changing directory'
-    if count $argv > /dev/null
-        builtin cd "$argv"; and ls
-    else
-        builtin cd ~; and ls
-    end
-end
-
-function take --description 'mkdir, deeply if required, and then cd into it'
-  mkdir -p $argv; and cd $argv
-end
-
-function md --description 'Page markdown in color'
-  mdv $argv | less -R
-end
-
-function m4a --description 'Download youtube videos as m4a audio'
-  youtube-dl $argv -x --audio-format m4a
-end
 

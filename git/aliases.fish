@@ -1,37 +1,38 @@
-
 # Use `hub` as our git wrapper:
 #   http://defunkt.github.com/hub/
 if which hub > /dev/null
   alias git=(which hub)
 end
 
-alias g="git"
+if not set -q git_abbrs_initialized
+  set -U git_abbrs_initialized
+  echo -n Setting Git abbreviations... 
 
-# Commit / staging
-alias ga='git add'
-alias gc='git commit -m'
-alias gca='git-amend'
-alias gaa='git add -A'
-alias gac='git add -A; and git commit -m'
-alias ge='git-edit-new'
+  abbr g 'git'
+  abbr ga 'git add'
+  abbr gaa 'git add -A'
+  abbr gb 'git branch'
+  abbr gbl 'git blame'
+  abbr gc 'git commit -m'
+  abbr gca 'git-amend'
+  abbr ge 'git-edit-new'
+  abbr go 'git checkout'
+  abbr gcp 'git cherry-pick'
+  abbr gd 'git diff --color-words'
+  abbr gf 'git fetch'
+  abbr gl 'git log'
+  abbr gm 'git merge'
+  abbr gp 'git push'
+  abbr gpl 'git pull'
+  abbr gr 'git remote'
+  abbr gs 'git status -sb'
+  abbr gst 'git stash'
+  abbr gw 'git-wtf'
+  abbr st 'open -a SourceTree .'
 
-# Branching
-alias gb='git branch'
-alias go='git checkout'
-alias gcb='git-copy-branch-name'
+  echo 'Done'
+end
 
 # Log / status
-alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
-alias gl='git log --oneline'
 alias gh="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
-# Remove `+` and `-` from start of diff lines; just rely upon color.
-alias gd='git diff --color-words'
-
-# Pull / push
-alias gu='git push'
-alias gp='git pull --rebase --prune'
-alias gpp='git pull --rebase; and git push'
-
-alias gw='git-wtf'
-alias st='open -a SourceTree .'
