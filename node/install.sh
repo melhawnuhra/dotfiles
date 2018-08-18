@@ -23,4 +23,6 @@ then
   sudo npm install localtunnel -g
 fi
 
+npm i -g neovim
+npm i -g typescript
 npm i -g alfred-npms

@@ -10,5 +10,8 @@ cd "$(dirname $0)"/..
 echo "› brew bundle"
 brew bundle
 
+# make the .config directory if it doesn't already exit
+mkdir -p ~/.config
+
 # find the installers and run them iteratively
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done

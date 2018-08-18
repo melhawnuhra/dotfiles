@@ -68,6 +68,9 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
+" --- SAYONARA ---
+let g:sayonara_confirm_quit = 0
+
 " --- NERDTREE ---
 nnoremap <silent> <Leader>f :NERDTreeToggle<CR>
 

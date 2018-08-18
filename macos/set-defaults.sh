@@ -61,7 +61,7 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 fancy_echo_line "Trackpad - Reverse scroll direction"
-defaults write -g com.apple.swipescrolldirection -bool YES
+defaults write -g com.apple.swipescrolldirection -bool true
 
 fancy_echo_line "Bluetooth - Increase sound quality for headphones/headsets"
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40

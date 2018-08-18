@@ -59,13 +59,13 @@ nnoremap <leader>w :w<CR>
 
 inoremap <leader>q <ESC>:q<CR>
 nnoremap <leader>q :q<CR>
+nnoremap q<CR> :q<CR>
 
 inoremap <leader>Q <ESC>:q!<CR>
 nnoremap <leader>Q :q!<CR>
 
-inoremap <leader>x <ESC>:Sayonara<CR>
-nnoremap <leader>x :Sayonara<CR>
-nnoremap q<CR> :Sayonara<CR>
+inoremap <leader>x <ESC>:Sayonara!<CR>
+nnoremap <leader>x :Sayonara!<CR>
 
 nnoremap <leader>e :Ex<CR>
 nnoremap <leader>t :tabnew<CR>:Ex<CR>

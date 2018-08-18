@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Description: Sets all network interfaces but only
 # for the network interfaces that are not compliant.
 
@@ -34,3 +34,4 @@ function process {
 export -f process
 
 networksetup listallnetworkservices | xargs -I{} bash -c 'process "{}"'
+
