@@ -49,7 +49,7 @@ if not set -q abbrs_initialized
 
   abbr c 'clear'
   abbr q 'exit'
-  abbr dux 'du -x --max-depth=1 | sort -n'  # Where are all the bytes hiding?
+  abbr dux 'du -h | sort -rh | head -5'     # Where are all the bytes hiding?
   abbr cats 'pygmentize -g'                 # Syntax-highlighted cat
   abbr cpwd 'pwd | tr -d "\n" | pbcopy'     # Copy pwd
   abbr xx 'atool -x'                        # Extract ANYTHING
