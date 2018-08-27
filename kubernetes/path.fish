@@ -1,2 +1,2 @@
-source $DOTFILES_HOME/kubernetest/abbr.fish
+source $DOTFILES_HOME/kubernetes/abbr.fish
 
