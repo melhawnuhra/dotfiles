@@ -72,9 +72,16 @@ nnoremap <leader>t :tabnew<CR>:Ex<CR>
 nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
 nnoremap <leader>b :split<CR>:w<CR>:Ex<CR>
 
-" Placeholder mappings
-nnoremap <leader><leader> i<++><Esc>
-inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+" Placeholder mappings TODO Start using
+" nnoremap <leader><leader> i<++><Esc>
+" inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+
+" Html mappings
+" close last open tag
+inoremap <leader>/ </<C-x><C-o>
+" quick attributes
+inoremap <leader>id id=""<esc>i
+inoremap <leader>cl class=""<esc>i
 
 " Go-to-definition (made possible by Gutentags + CtrlP)
 map <silent> <leader>gd :CtrlPTag<cr><C-\>w
