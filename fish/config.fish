@@ -77,6 +77,11 @@ alias ls='exa'
 alias l='exa -l'
 alias la='exa -la'
 
+alias ip='curl icanhazip.com'               # Get external ip
+alias ports='lsof -iTCP -sTCP:LISTEN -P'    # List listening ports on localhost
+
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
 # TODO
 # alias colors='for code in {0..255}; do echo -e "\e[38;05;${code}m $code: test"; done'
 # alias today='vi ~/notes/today/$(date "+%Y-%m-%d").md'
