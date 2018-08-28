@@ -1,32 +1,43 @@
-"
 " =-=-=--=-=-=-= PLUGIN CONFIGURATION =-=-=--=-=-=-=
-"
 
-" --- ROOTER ---
+" Rooter {{{
 let g:rooter_change_directory_for_non_project_files = 'current'
 let g:rooter_patterns = ['composer.json', 'package.json', '.git/']
 let g:rooter_silent_chdir = 1
-
-" --- CTRL-P ---
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-let g:ctrlp_use_caching = 0"
-let g:ctrlp_switch_buffer = 'Et'
-let g:ctrlp_reuse_window = 'netrw\|NerdTree'
-
-noremap <c-i> :CtrlPTag<CR>
-
-" --- ACK ---
+" }}}
+" Ack {{{
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
-
 cnoreabbrev Ack Ack!
 nnoremap \ :Ack!<Space>
+" }}}
+" CtrlP {{{
+let g:ctrlp_match_window = 'bottom,order:btt'
+let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_use_caching = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_reuse_window = 'netrw\|NerdTree'
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+noremap <c-i> :CtrlPTag<CR>
+" }}}
+" NerdTree {{{
+nnoremap <silent> <Leader>f :NERDTreeToggle<CR>
 
-" bind K to grep word under cursor
-nnoremap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" Close NerdTree as soon as we open a file
+let NERDTreeQuitOnOpen = 1
 
-" --- AIRLINE ---
+" Remove the buffer when we delete the file in NerdTree
+let NERDTreeAutoDeleteBuffer = 1
+
+" Close the tab if the only remaining window is NerdTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Make NerdTree a bit prettier
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+" }}}
+" Airline {{{
 " Load only the airline integrations we want - performance boost
 let g:airline_extensions = ['branch', 'tabline',
       \ 'ctrlp', 'hunks', 'quickfix', 'whitespace']
@@ -67,27 +78,8 @@ let g:airline_symbols.whitespace = 'Ξ'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-
-" --- SAYONARA ---
-let g:sayonara_confirm_quit = 0
-
-" --- NERDTREE ---
-nnoremap <silent> <Leader>f :NERDTreeToggle<CR>
-
-" Close NerdTree as soon as we open a file
-let NERDTreeQuitOnOpen = 1
-
-" Remove the buffer when we delete the file in NerdTree
-let NERDTreeAutoDeleteBuffer = 1
-
-" Close the tab if the only remaining window is NerdTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" Make NerdTree a bit prettier
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-
-" --- GUTENTAGS ---
+" }}}
+" Gutentags {{{
 let g:gutentags_cache_dir = '~/.vim/gutentags'
 let g:gutentags_project_root = ['composer.lock', 'package.json']
 let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js', '*.json', '*.xml',
@@ -102,49 +94,17 @@ augroup MyGutentagsStatusLineRefresher
   autocmd User GutentagsUpdating call airline#update_statusline()
   autocmd User GutentagsUpdated call airline#update_statusline()
 augroup END
-
-" --- ULTISNIPS ---
-let g:UltiSnipsExpandTrigger="§"
-let g:UltiSnipsJumpForwardTrigger="§"
-let g:UltiSnipsJumpBackwardTrigger="±"
-
-" --- GITGUTTER ---
-" set signcolumn=yes
-" hi GitGutterAdd cterm=bold ctermfg=LightGreen
-" hi GitGutterChange cterm=bold ctermfg=yellow
-" hi GitGutterDelete cterm=bold ctermfg=red
-" hi GitGutterChangeDelete cterm=bold ctermfg=red
-
-" --- FUGITIVE ---
-set diffopt+=vertical
-
-hi DiffAdd guifg=NONE ctermfg=NONE guibg=#464632 ctermbg=238 gui=NONE cterm=NONE
-hi DiffChange guifg=NONE ctermfg=NONE guibg=#335261 ctermbg=239 gui=NONE cterm=NONE
-hi DiffDelete guifg=#f43753 ctermfg=203 guibg=#79313c ctermbg=237 gui=NONE cterm=NONE
-hi DiffText guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=reverse cterm=reverse
-
-" command! -nargs=1 -bar Diffput <args> diffput <args>|diffupdate
-" command! -nargs=1 -bar Diffget <args> diffget <args>|diffupdate
-" command! -nargs=1 -bar Dp <args> diffput <args>|diffupdate
-" command! -nargs=1 -bar Dg <args> diffget <args>|diffupdate
-" command! -nargs=1 -bar Dgl <args> diffget //2|diffupdate
-" command! -nargs=1 -bar Dgr <args> diffget //3|diffupdate
-
-" --- TMUX-NAGIVATOR ---
-let g:tmux_navigator_disable_when_zoomed = 1
-" Write the current buffer if changed
-let g:tmux_navigator_save_on_switch = 1
-
-" --- INDENT LINE ---
+" }}}
+" Sayonara {{{
+let g:sayonara_confirm_quit = 0
+" }}}
+" IndentLine {{{
 let g:indentLine_char = '¦'
 let g:indentLine_setColors = 1
 let g:indentLine_enabled = 1
 let g:indentLine_setConceal = 2
-
-" --- NEOMAKE ---
-" call neomake#configure#automake('nrw', 500)
-
-" --- DEOPLETE ---
+" }}}
+" Deoplete {{{
 let g:deoplete#enable_at_startup = 0
 autocmd InsertEnter * call deoplete#enable()
 let g:deoplete#auto_complete_delay = 10
@@ -153,7 +113,22 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 let g:nvim_typescript#type_info_on_hold = 1
-
+" }}}
+" Python {{{
+let g:python_host_prog = '/usr/local/bin/python2'
+let g:python3_host_prog = '/usr/local/bin/python3'
+" }}}
+" Ultisnips {{{
+let g:UltiSnipsExpandTrigger="§"
+let g:UltiSnipsJumpForwardTrigger="§"
+let g:UltiSnipsJumpBackwardTrigger="±"
+" }}}
+" Tmux Navigator {{{
+let g:tmux_navigator_disable_when_zoomed = 1
+" Write the current buffer if changed
+let g:tmux_navigator_save_on_switch = 1
+" }}}
+" LanguageClient TODO {{{
 " let g:LanguageClient_serverCommands = {
 "     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
 "     \ 'javascript': ['javascript-typescript-stdio'],
@@ -163,3 +138,6 @@ let g:nvim_typescript#type_info_on_hold = 1
 " nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 " nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 " nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0

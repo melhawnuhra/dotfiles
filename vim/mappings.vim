@@ -1,14 +1,19 @@
 " =-=-=--=-=-=-= BASIC MAPPINGS =-=-=--=-=-=-=
 
 
-" Remap 0 to first non-blank character
-map 0 ^
 
-" Let's be reasonable, shall we?
+" Movement {{{
+" Allow moving around in visual mode
 nnoremap k gk
 nnoremap j gj
+" Remap 0 to first non-blank character
+map 0 ^
+" Jump to start or end of line
 nnoremap H 0
 nnoremap L $
+" highlight last inserted text
+nnoremap gV `[v`]
+" }}}
 
 " Quick Esc in insert mode
 inoremap jk <esc>
@@ -72,6 +77,9 @@ nnoremap <leader>t :tabnew<CR>:Ex<CR>
 nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
 nnoremap <leader>b :split<CR>:w<CR>:Ex<CR>
 
+" save session
+nnoremap <leader>s :mksession<CR>
+
 " Placeholder mappings TODO Start using
 " nnoremap <leader><leader> i<++><Esc>
 " inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
@@ -86,3 +94,10 @@ inoremap <leader>cl class=""<esc>i
 " Go-to-definition (made possible by Gutentags + CtrlP)
 map <silent> <leader>gd :CtrlPTag<cr><C-\>w
 
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
+" space open/closes folds
+nnoremap <space> za
+
+" vim:foldmethod=marker:foldlevel=0
