@@ -1,5 +1,6 @@
 # ---- ENVIRONMENT -----
 
+# Environment {{{
 set DOTFILES_HOME "$HOME/dotfiles"
 
 if [ -n "$TMUX" ]
@@ -26,9 +27,8 @@ for file in (ls $DOTFILES_HOME/**/path.fish | grep -v "fish/")
     source $file
   end
 end
-
-# ---- PAGER ----
-
+# }}}
+# Pager {{{
 set -x PAGER 'less'
 set LESS '--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 
@@ -40,9 +40,8 @@ set LESS '--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW
 # set LESS_TERMCAP_se '\E[0m'        # reset reverse video
 # set LESS_TERMCAP_us '\E[1;32m'     # begin underline
 # set LESS_TERMCAP_ue '\E[0m'        # reset underline
-
-# ---- ABBREVIATIONS ----
-
+# }}}
+# Abbreviations {{{
 if not set -q abbrs_initialized
   set -U abbrs_initialized
   echo -n Setting abbreviations...
@@ -70,12 +69,19 @@ if not set -q abbrs_initialized
 
   echo 'Done'
 end
-
-# ---- ALIASES -----
-
+# }}}
+# Aliases {{{
 alias alert='terminal-notifier -title "Terminal Alert" -message Done!'
-# We need rainbows
+
 alias ls='exa'
 alias l='exa -l'
 alias la='exa -la'
 
+# TODO
+# alias colors='for code in {0..255}; do echo -e "\e[38;05;${code}m $code: test"; done'
+# alias today='vi ~/notes/today/$(date "+%Y-%m-%d").md'
+# alias yesterday='vi ~/notes/today/$(ls ~/notes/today | sort | tail -n 1)'
+# alias clean="git reset --hard HEAD && git clean -df"
+# }}}
+
+# vim:foldmethod=marker:foldlevel=0
