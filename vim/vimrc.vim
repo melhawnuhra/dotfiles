@@ -82,5 +82,6 @@ so ~/dotfiles/vim/config.vim
 so ~/dotfiles/vim/mappings.vim
 so ~/dotfiles/vim/plugins.vim
 so ~/dotfiles/vim/languages.vim
+so ~/dotfiles/vim/functions.vim
 
 " vim:foldmethod=marker:foldlevel=0
