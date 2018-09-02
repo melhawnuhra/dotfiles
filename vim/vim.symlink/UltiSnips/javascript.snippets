@@ -1,15 +1,14 @@
-# GENERAL
 
+# GENERAL {{{
 snippet ife
 if ($1) {
-    $2
+	$2
 } else {
-    $3
+	$3
 }
 endsnippet
-
-# LOGGING
-
+# }}}
+# LOGGING {{{
 snippet clv
 console.log('$1: ', ${1})
 endsnippet
@@ -25,66 +24,105 @@ endsnippet
 snippet ce
 console.error('${1}')
 endsnippet
+# }}}
+# OBJECT {{{
+snippet : "key-value"
+${1:value_name}: ${2:value},
+endsnippet
 
-# PROMISES
+snippet o "object" 
+{
+  ${1:key}: ${2:value},
+}$3
+endsnippet
+# }}}
+# FUNCTIONS {{{
+snippet fun "function"
+function ($1) {
+  $2
+}
+endsnippet
 
+snippet af "arrow function"
+($1) => $2
+endsnippet
+# }}}
+# PROMISES {{{
 snippet then "then" i
 then(($1) => {
-  $2
+	$2
 })
 endsnippet
 
 snippet then( "then" i
 then(($1) => {
-  $2
+	$2
 })
 endsnippet
 
 snippet }).t "then" i
 }).then(($1) => {
-  $2
+	$2
 })
 endsnippet
 
 snippet })t "then" i
 }).then(($1) => {
-  $2
+	$2
 })
 endsnippet
 
 snippet catch "catch" i
 catch(err => {
-  $1
+	$1
 })
 endsnippet
 
 snippet catch( "catch" i
 catch(err => {
-  $1
+	$1
 })
 endsnippet
 
 snippet }).c "catch" i
 }).catch(err => {
-  $1
+	$1
 })
 endsnippet
 
 snippet })c "catch" i
 }).catch(err => {
-  $1
+	$1
 })
 endsnippet
 
 snippet })f "finally" i
 }).finally(() => {
-  $1
+	$1
 })
 endsnippet
-
-# IMPORTS
-
+# }}}
+# IMPORTS {{{
 snippet require
 const $1 = require('${1}')
 endsnippet
+# }}}
+# EXPRESS {{{
+snippet eget "express GET"
+${1:app}.get('$2', $3);
+endsnippet
 
+snippet epost "express POST"
+${1:app}.post('$2', $3);
+endsnippet
+
+snippet eput "express PUT"
+${1:app}.put('$2', $3);
+endsnippet
+
+snippet edelete "express DELETE"
+${1:app}.delete('$2', $3);
+endsnippet
+# }}}
+
+# vim:foldmethod=marker:foldlevel=0
