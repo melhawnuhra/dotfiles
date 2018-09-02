@@ -101,7 +101,7 @@ let g:sayonara_confirm_quit = 0
 " IndentLine {{{
 let g:indentLine_char = '¦'
 let g:indentLine_setColors = 1
-let g:indentLine_enabled = 1
+let g:indentLine_enabled = 0
 let g:indentLine_setConceal = 2
 " }}}
 " Deoplete {{{
