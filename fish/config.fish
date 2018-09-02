@@ -52,6 +52,7 @@ if not set -q abbrs_initialized
   abbr cats 'pygmentize -g'                 # Syntax-highlighted cat
   abbr cpwd 'pwd | tr -d "\n" | pbcopy'     # Copy pwd
   abbr xx 'atool -x'                        # Extract ANYTHING
+  abbr lst 'tree -I "node_modules|dist"'
   abbr killit 'kill -9 %%'                  # Kill the last suspended process (because sometimes Ctrl-C is not enough)
   abbr _ 'sudo'
   abbr t 'tmux'
