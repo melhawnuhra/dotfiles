@@ -25,7 +25,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/gv.vim'
 
   Plug 'Raimondi/delimitMate'
-  Plug 'justinmk/vim-matchparenalways'
+  Plug 'andymass/vim-matchup' " TODO Check available options for this - show scope
   Plug 'Yggdroot/indentLine'
 
   Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -58,7 +58,6 @@ call plug#begin('~/.vim/plugged')
   " e.g. g:polyglot_disabled = ['typescript']
 
   " Code completion
-  " Plug 'Shougo/vimproc.vim', {'do' : 'make'}
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'Shougo/denite.nvim'
   Plug 'Shougo/neopairs.vim'
