@@ -118,6 +118,15 @@ let g:nvim_typescript#type_info_on_hold = 1
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 " }}}
+" DelimitMate {{{
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
+let g:delimitMate_jump_expansion = 0
+let g:delimitMate_smart_quotes = 1
+let g:delimitMate_smart_matchpairs = 1
+let g:delimitMate_balance_matchpairs = 1
+let g:delimitMate_backspace = 1
+" }}}
 " Ultisnips {{{
 let g:UltiSnipsExpandTrigger="§"
 let g:UltiSnipsJumpForwardTrigger="§"
