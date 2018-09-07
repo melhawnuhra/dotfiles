@@ -1,4 +1,5 @@
-set fish_prompt_pwd_dir_length 0
+# Number of characters to show for each directory along path
+set fish_prompt_pwd_dir_length 3
 
 # Git prompt
 set __fish_git_prompt_showdirtystate 'yes'
