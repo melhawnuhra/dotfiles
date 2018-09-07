@@ -1,5 +1,11 @@
 
 # GENERAL {{{
+snippet if
+if ($1) {
+	$2
+}
+endsnippet
+
 snippet ife
 if ($1) {
 	$2
@@ -30,21 +36,21 @@ snippet : "key-value"
 ${1:value_name}: ${2:value},
 endsnippet
 
-snippet o "object" 
+snippet o "object"
 {
-  ${1:key}: ${2:value},
+	${1:key}: ${2:value},
 }$3
 endsnippet
 # }}}
 # FUNCTIONS {{{
 snippet fun "function"
 function ($1) {
-  $2
+	$2
 }
 endsnippet
 
 snippet af "arrow function"
-($1) => $2
+$1 => $2
 endsnippet
 # }}}
 # PROMISES {{{
