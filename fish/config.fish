@@ -27,6 +27,8 @@ for file in (ls $DOTFILES_HOME/**/path.fish | grep -v "fish/")
     source $file
   end
 end
+
+set PATH $PATH /usr/local/bin/google-cloud-sdk/bin
 # }}}
 # Pager {{{
 set -x PAGER 'less'
