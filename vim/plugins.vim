@@ -104,6 +104,12 @@ let g:indentLine_setColors = 1
 let g:indentLine_enabled = 0
 let g:indentLine_setConceal = 2
 " }}}
+" TextObjs {{{
+" g:argumentobject_force_toplevel = 1
+" }}}
+" Polyglot {{{
+" e.g. g:polyglot_disabled = ['typescript']
+" }}}
 " Deoplete {{{
 let g:deoplete#enable_at_startup = 0
 autocmd InsertEnter * call deoplete#enable()
@@ -115,8 +121,14 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:nvim_typescript#type_info_on_hold = 1
 " }}}
 " Python {{{
+let g:loaded_python_provider = 1
+let g:python_host_skip_check= 1
 let g:python_host_prog = '/usr/local/bin/python2'
+let g:python3_host_skip_check = 1
 let g:python3_host_prog = '/usr/local/bin/python3'
+" }}}
+" Matchup {{{
+let g:loaded_matchparen = 1
 " }}}
 " DelimitMate {{{
 let g:delimitMate_expand_cr = 1

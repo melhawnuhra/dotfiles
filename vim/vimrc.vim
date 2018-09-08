@@ -25,7 +25,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/gv.vim'
 
   Plug 'Raimondi/delimitMate'
-  Plug 'andymass/vim-matchup' " TODO Check available options for this - show scope
+  Plug 'andymass/vim-matchup'
   Plug 'Yggdroot/indentLine'
 
   Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -46,7 +46,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'kana/vim-textobj-entire'
   Plug 'michaeljsmith/vim-indent-object'
   Plug 'gaving/vim-textobj-argument'
-  " Plug 'PeterRincker/vim-argumentative' " TODO Try this
+  Plug 'kana/vim-textobj-line'
 
   " Theme
   Plug 'vim-airline/vim-airline'
@@ -55,7 +55,6 @@ call plug#begin('~/.vim/plugged')
 
   " Syntax highlighting
   Plug 'sheerun/vim-polyglot'
-  " e.g. g:polyglot_disabled = ['typescript']
 
   " Code completion
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -64,10 +63,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'Shougo/echodoc.vim'
   Plug 'mhartington/nvim-typescript', {'for': ['typescript', 'tsx'], 'do': './install.sh' }
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-  " Plug 'autozimu/LanguageClient-neovim', {
-  "     \ 'branch': 'next',
-  "     \ 'do': 'bash install.sh',
-  "     \ }
   Plug 'lvht/phpcd.vim'
 
   " Snippets
