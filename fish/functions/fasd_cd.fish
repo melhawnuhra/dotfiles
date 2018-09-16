@@ -1,0 +1,1 @@
+/Users/jared/.config/fisherman/fasd/functions/fasd_cd.fish
