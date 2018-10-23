@@ -19,7 +19,7 @@ set __fish_git_prompt_char_upstream_behind '⇣'
 set __fish_git_prompt_char_upstream_diverged '⇡⇣'
 
 function _fish_jobs_prompt
-  set -l jobs_amount (jobs | wc -l | xargs)
+  set -l jobs_amount (jobs | grep -v "fasd \-\-sanitize" | wc -l | xargs)
 
   if test $jobs_amount -eq 0
     echo ""
