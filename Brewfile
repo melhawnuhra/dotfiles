@@ -68,9 +68,12 @@ brew 'yarn'
 brew 'youtube-dl'
 brew 'zsh'
 
+cask 'java'
+
 cask '1password'
 cask 'caffeine'
 cask 'couleurs'
+cask 'dbeaver-community'
 cask 'etcher'
 cask 'flycut'
 cask 'google-chrome'

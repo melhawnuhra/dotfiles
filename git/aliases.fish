@@ -24,6 +24,7 @@ if not set -q git_abbrs_initialized
   abbr gl 'git log'
   abbr gm 'git merge'
   abbr gp 'git push'
+  abbr gpom 'git push origin master'
   abbr gpl 'git pull'
   abbr gr 'git remote'
   abbr gs 'git status -sb'
