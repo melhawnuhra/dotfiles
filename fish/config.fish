@@ -52,6 +52,9 @@ set PATH $PATH /usr/local/bin/google-cloud-sdk/bin
 set -g fish_color_quote d7af5f
 set -g fish_color_valid_path --none
 
+# set the color of the selected on in the drop list of TAB #4695
+set -g fish_color_search_match --background=blue
+
 set fish_new_pager 1
 set -gx fish_color_user magenta
 set -gx fish_color_host yellow
