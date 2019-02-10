@@ -32,44 +32,48 @@ set PATH $PATH /usr/local/bin/google-cloud-sdk/bin
 # Colors {{{
 
 # Readline colors
-#set -g fish_color_autosuggestion 555 yellow
+# set -g fish_color_autosuggestion 555 yellow
 #set -g fish_color_command 5f87d7
 #set -g fish_color_comment 808080
 #set -g fish_color_cwd 87af5f
-#set -g fish_color_cwd_root 5f0000
-#set -g fish_color_error 870000 --bold
-#set -g fish_color_escape af5f5f
+# set -g fish_color_cwd_root 5f0000
+# set -g fish_color_error 870000 --bold
+# set -g fish_color_escape af5f5f
 #set -g fish_color_history_current 87afd7
 #set -g fish_color_host 5f87af
-#set -g fish_color_match d7d7d7 --background=303030
+# set -g fish_color_match d7d7d7 --background=303030
 #set -g fish_color_normal normal
 #set -g fish_color_operator d7d7d7
-#set -g fish_color_param 5f87af
-#set -g fish_color_quote d7af5f
+# set -g fish_color_param 5f87af
 #set -g fish_color_redirection normal
-#set -g fish_color_search_match --background=purple
-#set -g fish_color_status 5f0000
+# set -g fish_color_search_match --background=purple
+# set -g fish_color_status 5f0000
 #set -g fish_color_user 5f875f
-#set -g fish_color_valid_path --underline
+set -g fish_color_quote d7af5f
+set -g fish_color_valid_path --none
+
+set fish_new_pager 1
+set -gx fish_color_user magenta
+set -gx fish_color_host yellow
 
 #set -g fish_color_dimmed 555
 #set -g fish_color_separator 999
 
 ## Git prompt status
-#set -g __fish_git_prompt_showdirtystate 'yes'
-#set -g __fish_git_prompt_showupstream auto
+set -g __fish_git_prompt_showdirtystate 'yes'
+set -g __fish_git_prompt_showupstream auto
 #set -g pure_git_untracked_dirty false
 
 ## Status Chars
-##set __fish_git_prompt_char_dirtystate '*'
-#set __fish_git_prompt_char_upstream_equal ''
-#set __fish_git_prompt_char_upstream_ahead '↑'
-#set __fish_git_prompt_char_upstream_behind '↓'
-#set __fish_git_prompt_color_branch yellow
-#set __fish_git_prompt_color_dirtystate 'red'
+# set __fish_git_prompt_char_dirtystate '*'
+# set __fish_git_prompt_char_upstream_equal ''
+# set __fish_git_prompt_char_upstream_ahead '↑'
+# set __fish_git_prompt_char_upstream_behind '↓'
 
-#set __fish_git_prompt_color_upstream_ahead ffb90f
-#set __fish_git_prompt_color_upstream_behind blue
+# set __fish_git_prompt_color_branch yellow
+# set __fish_git_prompt_color_dirtystate red
+# set __fish_git_prompt_color_upstream_ahead ffb90f
+# set __fish_git_prompt_color_upstream_behind blue
 
 ## Local prompt customization
 #set -g fish_pager_color_completion normal
@@ -140,9 +144,8 @@ alias pubkey "more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 
 # TODO
 # alias colors 'for code in {0..255}; do echo -e "\e[38;05;${code}m $code: test"; done'
-# alias today 'vi ~/journal/$(date "+%Y-%m-%d").md'
-# alias yesterday 'vi ~/journal/$(ls ~/journal | sort | tail -n 1)'
-# alias clean "git reset --hard HEAD && git clean -df"
+# alias today 'vim ~/journal/$(date "+%Y-%m-%d").md'
+# alias yesterday 'vim ~/journal/$(ls ~/journal | sort | tail -n 1)'
 # }}}
 
 # vim:foldmethod=marker:foldlevel=0
