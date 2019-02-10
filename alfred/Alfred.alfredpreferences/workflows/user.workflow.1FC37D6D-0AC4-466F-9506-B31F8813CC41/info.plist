@@ -6,11 +6,11 @@
 	<string>com.alfredapp.vero.gettingstarted.keywords</string>
 	<key>connections</key>
 	<dict>
-		<key>3E554F3A-9D95-4D8B-9797-FDE6FDA14DCD</key>
+		<key>481700B2-846B-419F-8C51-3301378824DA</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>945EDF1B-3F3A-4F72-9B74-D21613073E82</string>
+				<string>A87B538C-D210-4763-AAD8-2D8204F497FF</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -23,30 +23,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>D180E361-6765-4E9C-9B47-672121066FD2</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>77269867-DF3F-43FA-AD1A-893B32E5B492</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>55E07C0A-AB1B-4463-8153-95F88851DAE7</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>6B3EF151-5604-48BF-B910-EC8360DD6BAC</string>
+				<string>A87B538C-D210-4763-AAD8-2D8204F497FF</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -63,57 +40,56 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Launch Nirvana with Keyword</string>
+	<string>Launch Nirvana with Hotkey/Shortcut</string>
 	<key>objects</key>
 	<array>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
+				<key>action</key>
 				<integer>0</integer>
-				<key>keyword</key>
-				<string>large</string>
-				<key>subtext</key>
-				<string>Show '{query}' across the screen</string>
-				<key>text</key>
-				<string>Display text in Large Type</string>
-				<key>withspace</key>
-				<true/>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>45</integer>
+				<key>hotmod</key>
+				<integer>1310720</integer>
+				<key>hotstring</key>
+				<string>N</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>3E554F3A-9D95-4D8B-9797-FDE6FDA14DCD</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>largetypetext</key>
-				<string>{query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>945EDF1B-3F3A-4F72-9B74-D21613073E82</string>
+			<string>481700B2-846B-419F-8C51-3301378824DA</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Safari.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
+				<key>browser</key>
+				<string>com.google.chrome</string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://focus.nirvanahq.com/</string>
+				<key>utf8</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
+			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>55E07C0A-AB1B-4463-8153-95F88851DAE7</string>
+			<string>D180E361-6765-4E9C-9B47-672121066FD2</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -141,57 +117,19 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string>com.google.chrome</string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://focus.nirvanahq.com/</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>D180E361-6765-4E9C-9B47-672121066FD2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>gettingstarted</string>
-				<key>subtext</key>
-				<string>From the Getting Started - Keywords guide</string>
-				<key>text</key>
-				<string>Launch Safari and my Downloads folder</string>
-				<key>withspace</key>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Nirvana.app</string>
+				</array>
+				<key>toggle</key>
 				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
-			<string>77269867-DF3F-43FA-AD1A-893B32E5B492</string>
+			<string>A87B538C-D210-4763-AAD8-2D8204F497FF</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string>~/Downloads</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>6B3EF151-5604-48BF-B910-EC8360DD6BAC</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -200,16 +138,12 @@
 Type your keyword into Alfred, followed by your input text if needed, and you'll be on your way to boosting your productivity!</string>
 	<key>uidata</key>
 	<dict>
-		<key>3E554F3A-9D95-4D8B-9797-FDE6FDA14DCD</key>
+		<key>481700B2-846B-419F-8C51-3301378824DA</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>4</integer>
-			<key>note</key>
-			<string>1. Add a keyword object by right-clicking the canvas and choosing Inputs &gt; Keyword. Set the keyword and title to show it in Alfred's results.</string>
 			<key>xpos</key>
-			<integer>50</integer>
+			<integer>30</integer>
 			<key>ypos</key>
-			<integer>50</integer>
+			<integer>180</integer>
 		</dict>
 		<key>4D940636-3477-4E76-A2B3-64528A161313</key>
 		<dict>
@@ -218,54 +152,19 @@ Type your keyword into Alfred, followed by your input text if needed, and you'll
 			<key>ypos</key>
 			<integer>300</integer>
 		</dict>
-		<key>55E07C0A-AB1B-4463-8153-95F88851DAE7</key>
+		<key>A87B538C-D210-4763-AAD8-2D8204F497FF</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>2</integer>
 			<key>xpos</key>
-			<integer>670</integer>
-			<key>ypos</key>
-			<integer>260</integer>
-		</dict>
-		<key>6B3EF151-5604-48BF-B910-EC8360DD6BAC</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>2</integer>
-			<key>xpos</key>
-			<integer>670</integer>
-			<key>ypos</key>
-			<integer>420</integer>
-		</dict>
-		<key>77269867-DF3F-43FA-AD1A-893B32E5B492</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>2</integer>
-			<key>note</key>
-			<string>1. This keyword is set to not require additional input text, so that you can type "gettingstarted" and press return to launch the two attached actions at once.</string>
-			<key>xpos</key>
-			<integer>390</integer>
+			<integer>280</integer>
 			<key>ypos</key>
 			<integer>340</integer>
-		</dict>
-		<key>945EDF1B-3F3A-4F72-9B74-D21613073E82</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>4</integer>
-			<key>note</key>
-			<string>2. Attach your Keyword to a Large Type object (Outputs &gt; Large Type). 
-
-3. In Alfred's search, type the keyword "large" followed by text and press return to show it in Large Type on your screen.</string>
-			<key>xpos</key>
-			<integer>310</integer>
-			<key>ypos</key>
-			<integer>50</integer>
 		</dict>
 		<key>D180E361-6765-4E9C-9B47-672121066FD2</key>
 		<dict>
 			<key>xpos</key>
-			<integer>200</integer>
+			<integer>280</integer>
 			<key>ypos</key>
-			<integer>310</integer>
+			<integer>200</integer>
 		</dict>
 	</dict>
 	<key>version</key>

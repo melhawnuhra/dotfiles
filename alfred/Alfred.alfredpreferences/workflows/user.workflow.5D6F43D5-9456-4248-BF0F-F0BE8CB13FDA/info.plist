@@ -33,6 +33,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Airmail 3.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>4BC71114-DA20-42EF-B857-10912FF84A16</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -61,23 +78,6 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Airmail 3.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>4BC71114-DA20-42EF-B857-10912FF84A16</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -93,9 +93,9 @@
 		<key>B9F808F8-7137-477C-B386-55180E413664</key>
 		<dict>
 			<key>xpos</key>
-			<integer>50</integer>
+			<integer>60</integer>
 			<key>ypos</key>
-			<integer>50</integer>
+			<integer>70</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
