@@ -53,6 +53,8 @@ bind l select-pane -R
 
 bind c new-window -c "#{pane_current_path}"
 
+bind j command-prompt -p "Join pane from:" "join-pane -s '%%'"
+
 bind-key , command-prompt -p "Name of current window:" "rename-window '%%'"
 bind-key C command-prompt -p "Name of new session: " "new -s '%%'"
 
