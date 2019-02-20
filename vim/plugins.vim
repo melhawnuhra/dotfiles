@@ -140,9 +140,20 @@ let g:delimitMate_balance_matchpairs = 1
 let g:delimitMate_backspace = 1
 " }}}
 " Ultisnips {{{
-let g:UltiSnipsExpandTrigger="§"
-let g:UltiSnipsJumpForwardTrigger="§"
-let g:UltiSnipsJumpBackwardTrigger="±"
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="±"
+let g:UltiSnipsExpandTrigger = "<nop>"
+let g:ulti_expand_or_jump_res = 0
+function ExpandSnippetOrCarriageReturn()
+    let snippet = UltiSnips#ExpandSnippetOrJump()
+    if g:ulti_expand_or_jump_res > 0
+        return snippet
+    else
+        return "\<CR>"
+    endif
+endfunction
+inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
 " }}}
 " Tmux Navigator {{{
 let g:tmux_navigator_disable_when_zoomed = 1

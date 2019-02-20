@@ -67,6 +67,7 @@ call plug#begin('~/.vim/plugged')
 
   " Snippets
   Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
   Plug 'mattn/emmet-vim'
 
 call plug#end()

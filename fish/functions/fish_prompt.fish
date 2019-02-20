@@ -57,4 +57,5 @@ function fish_prompt
   printf "\n"
   _print_in_color (_fish_jobs_prompt) "yellow"
   _print_in_color "❯ " (_prompt_color_for_status $last_status)
+  # ➢ ➣, ↩ ↪ ➥ ➦, ▶ ▷ ◀ ◁, ❥, ❯
 end

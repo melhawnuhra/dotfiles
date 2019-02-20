@@ -37,4 +37,10 @@ end
 
 # Log / status
 alias gh="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-
+# add and remove new/deleted files from git index automatically
+alias gitar="git ls-files -d -m -o -z --exclude-standard | xargs -0 git update-index --add --remove"
+# git push
+alias gpd="git push origin develop"
+alias gpm="git push origin master"
+# Remove git from a project
+alias ungit="find . -name '.git' -exec rm -rf {} \;"
