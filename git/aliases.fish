@@ -20,6 +20,7 @@ if not set -q git_abbrs_initialized
   abbr go 'git checkout'
   abbr gcp 'git cherry-pick'
   abbr gd 'git diff --color-words'
+  abbr gds 'git diff --color-words --staged'
   abbr gf 'git fetch'
   abbr gl 'git log'
   abbr gm 'git merge'
