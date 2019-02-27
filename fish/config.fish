@@ -219,7 +219,7 @@ alias hosts 'sudo $EDITOR /etc/hosts'
 alias pubkey "more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 # copy output of last command to clipboard
-alias cl "fc -e -|pbcopy"
+alias cl "echo \$history[1] | pbcopy"
 
 # copy the working directory path
 alias cpwd 'pwd|tr -d "\n"|pbcopy'
