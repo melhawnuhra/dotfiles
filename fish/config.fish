@@ -1,4 +1,6 @@
-# ---- ENVIRONMENT -----
+
+# Profile loading time >>
+# fish --profile prompt.prof -ic 'fish_prompt; exit'; sort -nk 2 prompt.prof
 
 # Environment {{{
 set DOTFILES_HOME "$HOME/dotfiles"
@@ -20,12 +22,18 @@ set -x LC_MESSAGES "en_US.UTF-8"
 set -x LC_ALL "en_US.UTF-8"
 set -x LC_COLLATE C
 
-# TODO Use find instead. Include aliases.fish and fix git/path.fish hack
-for file in (ls $DOTFILES_HOME/**/path.fish | grep -v "fish/")
-  if [ "$file" != 'ls' ]
-    source $file
-  end
-end
+# Custom bin/
+set PATH $PATH $DOTFILES_HOME/bin
+# Ranger
+set RANGER_LOAD_DEFAULT_RC "false"
+# Docker
+source $DOTFILES_HOME/docker/aliases.fish
+# Node
+source $DOTFILES_HOME/node/nvm.fish
+# Kubernetes
+source $DOTFILES_HOME/kubernetes/abbr.fish
+# Git
+source $DOTFILES_HOME/git/aliases.fish
 
 set PATH $PATH /usr/local/bin/google-cloud-sdk/bin
 varclear PATH
