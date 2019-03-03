@@ -8,9 +8,6 @@ nnoremap k gk
 nnoremap j gj
 " Remap 0 to first non-blank character
 map 0 ^
-" Jump to start or end of line
-nnoremap H 0
-nnoremap L $
 " highlight last inserted text
 nnoremap gV `[v`]
 
