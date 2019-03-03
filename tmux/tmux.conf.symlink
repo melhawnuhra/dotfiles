@@ -51,6 +51,12 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
+# shift-movement keys will resize panes
+bind J resize-pane -D 5
+bind K resize-pane -U 5
+bind H resize-pane -L 5
+bind L resize-pane -R 5
+
 bind c new-window -c "#{pane_current_path}"
 
 bind j command-prompt -p "Join pane from:" "join-pane -s '%%'"
