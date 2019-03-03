@@ -13,6 +13,17 @@ nnoremap H 0
 nnoremap L $
 " highlight last inserted text
 nnoremap gV `[v`]
+
+" don't use arrowkeys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+" really, just don't
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
 " }}}
 
 " Quick Esc in insert mode
