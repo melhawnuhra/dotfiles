@@ -22,9 +22,10 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 noremap <c-i> :CtrlPTag<CR>
 " }}}
 " NerdTree {{{
+let NERDTreeShowHidden=1
 nnoremap <silent> <Leader>f :NERDTreeToggle<CR>
 
-" Close NerdTree as soon as we open a file
+" Close NerdTree after a file is opened
 let NERDTreeQuitOnOpen = 1
 
 " Remove the buffer when we delete the file in NerdTree

@@ -23,6 +23,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'airblade/vim-rooter'
   Plug 'junegunn/gv.vim'
+  Plug 'editorconfig/editorconfig-vim'
 
   Plug 'Raimondi/delimitMate'
   Plug 'andymass/vim-matchup'
