@@ -1,7 +1,5 @@
 " =-=-=--=-=-=-= BASIC MAPPINGS =-=-=--=-=-=-=
 
-
-
 " Movement {{{
 " Allow moving around in visual mode
 nnoremap k gk
@@ -26,23 +24,17 @@ inoremap <Right> <NOP>
 " Quick Esc in insert mode
 inoremap jk <esc>
 
-" Easier switching between windows
-nnoremap <silent> <c-[> :wincmd h<CR>
-nnoremap <silent> <c-]> :wincmd l<CR>
-
 " Easier switching between buffers
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ;b :b#<CR>
+nnoremap <silent> ]B :blast<CR>
 nnoremap <silent> ;; :b#<CR>
-
 " Easier switching between tabs
 nnoremap <silent> [t :tabprevious<CR>
 nnoremap <silent> ]t :tabnext<CR>
 nnoremap <silent> [T :tfirst<CR>
 nnoremap <silent> ]T :tlast<CR>
-nnoremap <silent> ]B :blast<CR>
 
 " Make n always search forward
 nnoremap <expr> n 'Nn'[v:searchforward]
@@ -63,7 +55,7 @@ cnoremap <C-n> <Down>
 let mapleader=","               " Remap the leader key
 
 " Make it easier to make life easier
-nnoremap <leader>ev :vsplit $DOTFILES_HOME/vim <cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " File and Window Management
