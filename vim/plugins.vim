@@ -112,14 +112,42 @@ let g:indentLine_setConceal = 2
 " e.g. g:polyglot_disabled = ['typescript']
 " }}}
 " Deoplete {{{
-let g:deoplete#enable_at_startup = 0
-autocmd InsertEnter * call deoplete#enable()
-let g:deoplete#auto_complete_delay = 10
+" let g:deoplete#enable_at_startup = 0
+" autocmd InsertEnter * call deoplete#enable()
+" let g:deoplete#auto_complete_delay = 10
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-let g:nvim_typescript#type_info_on_hold = 1
+" let g:nvim_typescript#type_info_on_hold = 1
+" }}}
+" NCM2 {{{
+
+  " enable ncm2 for all buffers
+  autocmd BufEnter * call ncm2#enable_for_buffer()
+
+  " IMPORTANT: :help Ncm2PopupOpen for more information
+  set completeopt=noinsert,menuone,noselect
+
+  " suppress the annoying 'match x of y', 'The only match' and 'Pattern not found' messages
+  set shortmess+=c
+
+  " CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
+  inoremap <c-c> <ESC>
+
+  " When the <Enter> key is pressed while the popup menu is visible, it only
+  " hides the menu. Use this mapping to close the menu and also start a new
+  " line.
+  inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr><CR><C-o>k<Tab>" : "\<CR><CR><C-o>k<Tab>")
+
+  " Use <TAB> to select the popup menu:
+  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+  " Press enter key to trigger snippet expansion
+  " The parameters are the same as `:help feedkeys()`
+  inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR><CR><C-o>k<Tab>", 'n')
+
 " }}}
 " Python {{{
 let g:loaded_python_provider = 1
@@ -144,17 +172,26 @@ let g:delimitMate_backspace = 1
 " let g:UltiSnipsExpandTrigger="<tab>"
 " let g:UltiSnipsJumpForwardTrigger="<tab>"
 " let g:UltiSnipsJumpBackwardTrigger="±"
-let g:UltiSnipsExpandTrigger = "<nop>"
-let g:ulti_expand_or_jump_res = 0
-function ExpandSnippetOrCarriageReturn()
-    let snippet = UltiSnips#ExpandSnippetOrJump()
-    if g:ulti_expand_or_jump_res > 0
-        return snippet
-    else
-        return "\<CR>"
-    endif
-endfunction
-inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
+" let g:UltiSnipsExpandTrigger = "<nop>"
+" let g:ulti_expand_or_jump_res = 0
+" function ExpandSnippetOrCarriageReturn()
+"     let snippet = UltiSnips#ExpandSnippetOrJump()
+"     if g:ulti_expand_or_jump_res > 0
+"         return snippet
+"     else
+"         return "\<CR>"
+"     endif
+" endfunction
+" inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
+" c-j c-k for moving in snippet
+let g:UltiSnipsExpandTrigger		= "<Plug>(ultisnips_expand)"
+let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
+let g:UltiSnipsRemoveSelectModeMappings = 0
+" }}}
+" Neosnippet {{{
+" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 " }}}
 " Tmux Navigator {{{
 let g:tmux_navigator_disable_when_zoomed = 1
