@@ -12,6 +12,7 @@ if not set -q git_abbrs_initialized
   abbr ga 'git add'
   abbr gaa 'git add -A'
   abbr gacp 'git add -A; and git-amend; and git push origin +master'
+  abbr gap 'git add -p'
   abbr gb 'git branch'
   abbr gbl 'git blame'
   abbr gc 'git commit -m'
