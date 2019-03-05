@@ -219,7 +219,10 @@ alias hosts 'sudo $EDITOR /etc/hosts'
 alias pubkey "more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 # copy output of last command to clipboard
-alias cl "echo \$history[1] | pbcopy"
+alias cl 'echo $history[1] | tr -d "\n" | pbcopy; and echo "Copied previous command."'
+
+# Quicker brew installs
+alias bi 'brew install'
 
 # copy the working directory path
 alias cpwd 'pwd|tr -d "\n"|pbcopy'
@@ -234,11 +237,12 @@ alias todos "ack -n --nogroup '(TODO|FIX(ME)?):'"
 # interactive fasd
 alias zi "fasd -e cd -i"
 
-# DNS (with update thanks to @blanco)
+# Flush DNS
 alias flush "sudo killall -HUP mDNSResponder"
 
 # Search running processes for a pattern
 alias psgrep "ps ax|grep -v grep|grep -iE"
+alias psg psgrep
 
 
 # TODO
