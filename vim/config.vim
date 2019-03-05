@@ -51,6 +51,7 @@ set cmdheight=1                 " Height of the command bar
 set showmatch                   " Highlight matching pairs
 set matchpairs+=<:>             " Add some pair definitions
 set diffopt+=vertical           " Use vertical split for Git diffs
+set mouse=nv                    " Enable mouse only in normal and visual modes"
 set splitbelow                  " Open horizonal splits below
 set splitright                  " Open vertical splits to the right
 " }}}
