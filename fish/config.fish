@@ -34,6 +34,8 @@ source $DOTFILES_HOME/node/nvm.fish
 source $DOTFILES_HOME/kubernetes/abbr.fish
 # Git
 source $DOTFILES_HOME/git/aliases.fish
+# Pisces
+set -U pisces_pairs $pisces_pairs '<,>' '`,`' '«,»'
 
 set PATH $PATH /usr/local/bin/google-cloud-sdk/bin
 varclear PATH
