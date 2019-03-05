@@ -16,7 +16,7 @@ nnoremap \ :Ack!<Space>
 let g:ctrlp_match_window = 'bottom,order:btt'
 let g:ctrlp_switch_buffer = 'Et'
 let g:ctrlp_use_caching = 0
-let g:ctrlp_working_path_mode = 0
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_reuse_window = 'netrw\|NerdTree'
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 noremap <c-i> :CtrlPTag<CR>
@@ -188,10 +188,6 @@ let g:UltiSnipsExpandTrigger		= "<Plug>(ultisnips_expand)"
 let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
-" }}}
-" Neosnippet {{{
-" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 " }}}
 " Tmux Navigator {{{
 let g:tmux_navigator_disable_when_zoomed = 1

@@ -69,8 +69,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'roxma/nvim-yarp'
   Plug 'ncm2/ncm2'
 
-  " NOTE: you need to install completion sources to get completions. Check
-  " our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+  " nvm2 sources wiki page: https://github.com/ncm2/ncm2/wiki
   Plug 'ncm2/ncm2-bufword'
   Plug 'ncm2/ncm2-cssomni'
   Plug 'ncm2/ncm2-path'
