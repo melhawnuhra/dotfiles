@@ -22,3 +22,6 @@ tmux/tmux.symlink/plugins
 
 node/nvm.symlink/
 !node/nvm.symlink/.gitkeep
+
+Session.vim
+
