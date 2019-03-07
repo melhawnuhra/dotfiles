@@ -16,6 +16,12 @@ set CLICOLOR "true"
 
 set -x EDITOR 'nvim'
 
+# Repaint screen upon exiting less
+set -x LESS r
+
+# Highlight color for grep matches
+set -x GREP_COLOR '1;32'
+
 set -x LANG en_US.UTF-8
 set -x LC_CTYPE "en_US.UTF-8"
 set -x LC_MESSAGES "en_US.UTF-8"
@@ -117,7 +123,6 @@ if not set -q abbrs_initialized
   abbr c 'clear'
   abbr q 'exit'
   abbr dux 'du -h | sort -rh | head -5'     # Where are all the bytes hiding?
-  abbr cats 'pygmentize -g'                 # Syntax-highlighted cat
   abbr cpwd 'pwd | tr -d "\n" | pbcopy'     # Copy pwd
   abbr xx 'atool -x'                        # Extract ANYTHING
   abbr lst 'tree -I "node_modules|dist"'
