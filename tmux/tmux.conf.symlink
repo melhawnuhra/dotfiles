@@ -52,10 +52,10 @@ bind k select-pane -U
 bind l select-pane -R
 
 # shift-movement keys will resize panes
-bind-key -n J resize-pane -D 15
-bind-key -n K resize-pane -U 15
-bind-key -n H resize-pane -L 25
-bind-key -n L resize-pane -R 25
+bind-key -r J resize-pane -D 15
+bind-key -r K resize-pane -U 15
+bind-key -r H resize-pane -L 25
+bind-key -r L resize-pane -R 25
 
 bind c new-window -c "#{pane_current_path}"
 
