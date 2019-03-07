@@ -16,9 +16,6 @@ set CLICOLOR "true"
 
 set -x EDITOR 'nvim'
 
-# Repaint screen upon exiting less
-set -x LESS r
-
 # Highlight color for grep matches
 set -x GREP_COLOR '1;32'
 
@@ -103,8 +100,12 @@ set -g __fish_git_prompt_showupstream auto
 
 # }}}
 # Pager {{{
+
+# Set less as default pager
 set -x PAGER 'less'
-set LESS '--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
+
+# Set less options
+set LESS '--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=2 --window=-4'
 
 # highlighting inside manpages and elsewhere
 set -gx LESS_TERMCAP_mb \e'[01;31m'       # begin blinking
