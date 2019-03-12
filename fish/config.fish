@@ -130,6 +130,10 @@ if not set -q abbrs_initialized
   abbr killit 'kill -9 %1'                  # Kill the last suspended process (because sometimes Ctrl-C is not enough)
   abbr _ 'sudo'
 
+  abbr fg1 'fg %1'
+  abbr fg2 'fg %2'
+  abbr fg3 'fg %3'
+
   abbr cd. 'cd (git rev-parse --show-toplevel)' # cd to the project root
   abbr cdc 'cd ~/Code'
   abbr cdf 'cd ~/dotfiles/fish'
