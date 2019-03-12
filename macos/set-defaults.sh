@@ -32,9 +32,6 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 echo "System - Avoid creating .DS_Store files on network volumes"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-echo "System - Don't try to Time Machine all my external drives."
-defaults write DoNotOfferNewDisksForBackup com.apple.TimeMachine -int 1
-
 echo "System - Set standby delay to 24 hours (default is 1 hour)"
 sudo pmset -a standbydelay 86400
 
@@ -292,7 +289,7 @@ sudo chflags nohidden /Volumes
 echo "Finder - Set the prefs for showing a few different volumes on the Desktop."
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
-defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 
 echo "Finder - Disable the warning before emptying the Trash"
