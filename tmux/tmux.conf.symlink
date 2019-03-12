@@ -43,7 +43,7 @@ bind-key C-a last-window
 
 # Highlight window when it has new activity
 setw -g monitor-activity on
-set -g visual-activity on
+set -g visual-activity off
 
 # hjkl pane traversal
 bind h select-pane -L
