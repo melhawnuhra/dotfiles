@@ -244,7 +244,7 @@ alias cpu 'top -o cpu'
 alias mem 'top -o rsize' # memory
 
 # list TODO/FIX lines from the current project
-alias todos "ag --ignore 'node_modules/* .git/*' -- '(FIX(ME)?:)|@todo|TODO'"
+alias todos "ag --ignore 'node_modules/* .git/* .map' -- '(FIX(ME)?:)|@todo|TODO'"
 
 # interactive fasd
 alias zi "fasd -e cd -i"
