@@ -63,6 +63,7 @@ set smartcase         " ...unless we type a capital
 set magic             " Turn magic on for regular expression
 set inccommand=split  " Show live previews for substitutions
 set grepprg=ag        " Use ag instead of grep for vim-search
+set wildignore+=*/.git/*,*/node_modules/*   " Ignore some folders when searching
 " }}}
 " Folding {{{
 set foldenable          " Enable folding
