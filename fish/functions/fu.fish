@@ -22,7 +22,7 @@ function fu -d 'fu command and prompt to ask to open it or not'
                 set -l argv_line (printf "alias %s " $argv)
                 set num_line (grep -n $argv_line $def_file | cut -d: -f1)
             end
-            vim $def_file +$num_line
+            e $def_file +$num_line
         end
     else if test (printf '%s\n' $result | head -1 | grep -i "is a builtin")
         return                  # is a builtin like if
@@ -40,7 +40,7 @@ function fu -d 'fu command and prompt to ask to open it or not'
             echo
             read -n 1 -p 'echo "Open the file?[y/N]: "' -l answer
             if test "$answer" = "y" -o "$answer" = " "
-                vim $file_path
+                e $file_path
             end
         else
             file $file_path
