@@ -6,7 +6,7 @@ if not set -q docker_abbrs_initialized
   abbr db 'docker build'
   abbr ds 'docker ps'
   abbr dl 'docker logs'
-  abbr dp 'docker volume prune && docker system prune && docker container prune && docker image prune'
+  abbr dp 'docker volume prune; and docker system prune; and docker container prune; and docker image prune'
   abbr dr 'docker run'
   abbr de 'docker exec -it'
 
