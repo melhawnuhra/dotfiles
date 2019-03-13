@@ -30,6 +30,15 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 nnoremap <silent> ;; :b#<CR>
+nnoremap <silent> ;1 :b1<CR>
+nnoremap <silent> ;2 :b2<CR>
+nnoremap <silent> ;3 :b3<CR>
+nnoremap <silent> ;4 :b4<CR>
+nnoremap <silent> ;5 :b5<CR>
+nnoremap <silent> ;6 :b6<CR>
+nnoremap <silent> ;7 :b7<CR>
+nnoremap <silent> ;8 :b8<CR>
+nnoremap <silent> ;9 :b9<CR>
 " Easier switching between tabs
 nnoremap <silent> [t :tabprevious<CR>
 nnoremap <silent> ]t :tabnext<CR>
