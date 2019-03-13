@@ -1,1 +1,3 @@
-/Users/jared/.config/fisherman/fasd/functions/zz.fish
+function zz -d "Change directory with interactive selection"
+  fasd_cd -id $argv
+end

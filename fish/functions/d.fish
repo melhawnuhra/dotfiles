@@ -1,1 +1,3 @@
-/Users/jared/.config/fisherman/fasd/functions/d.fish
+function d -d "Match directories only"
+  fasd -d $argv
+end

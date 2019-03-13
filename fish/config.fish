@@ -37,8 +37,6 @@ source $DOTFILES_HOME/node/nvm.fish
 source $DOTFILES_HOME/kubernetes/abbr.fish
 # Git
 source $DOTFILES_HOME/git/aliases.fish
-# Pisces
-set -U pisces_pairs $pisces_pairs '<,>' '`,`' '«,»'
 
 set PATH $PATH /usr/local/bin/google-cloud-sdk/bin
 varclear PATH
@@ -261,6 +259,12 @@ alias psg psgrep
 # alias colors 'for code in {0..255}; do echo -e "\e[38;05;${code}m $code: test"; done'
 # alias today 'vim ~/journal/$(date "+%Y-%m-%d").md'
 # alias yesterday 'vim ~/journal/$(ls ~/journal | sort | tail -n 1)'
+# }}}
+# Plugins {{{
+
+# Pisces
+set -U pisces_pairs '<,>' '`,`' '«,»' '","' '\',\'' '(,)' '[,]' '{,}'
+
 # }}}
 
 # vim:foldmethod=marker:foldlevel=0

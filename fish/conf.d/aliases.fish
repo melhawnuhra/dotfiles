@@ -1,1 +1,3 @@
-/Users/jared/.config/fisherman/fasd/conf.d/aliases.fish
+# support oldschool autojump user
+alias j  z
+alias jj zz

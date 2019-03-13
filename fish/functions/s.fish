@@ -1,1 +1,3 @@
-/Users/jared/.config/fisherman/fasd/functions/s.fish
+function s -d "Interactively select from all"
+  fasd -is $argv
+end

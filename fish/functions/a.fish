@@ -1,1 +1,3 @@
-/Users/jared/.config/fisherman/fasd/functions/a.fish
+function a -d "Match files and directories"
+  fasd -a $argv
+end
