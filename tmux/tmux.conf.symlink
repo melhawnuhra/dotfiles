@@ -1,8 +1,8 @@
 bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."
 
 # set window split
-bind-key v split-window -h -c '#{pane_current_path}'
-bind-key b split-window -v -c '#{pane_current_path}'
+bind v split-window -h -c '#{pane_current_path}'
+bind b split-window -v -c '#{pane_current_path}'
 
 # ---- Numbering and Naming ----
 set -g base-index 1         # start windows numbering at 1
@@ -42,7 +42,7 @@ source "/Users/jared/dotfiles/tmux/theme_gruvbox.conf"
 
 # C-b is not acceptable -- Vim uses it
 set -g prefix C-a
-bind-key C-a last-window
+bind C-a last-window
 
 # Highlight window when it has new activity
 setw -g monitor-activity on
@@ -55,17 +55,18 @@ bind k select-pane -U
 bind l select-pane -R
 
 # shift-movement keys will resize panes
-bind-key -r J resize-pane -D 15
-bind-key -r K resize-pane -U 15
-bind-key -r H resize-pane -L 25
-bind-key -r L resize-pane -R 25
+bind -r J resize-pane -D 15
+bind -r K resize-pane -U 15
+bind -r H resize-pane -L 25
+bind -r L resize-pane -R 25
 
-bind c new-window -c "#{pane_current_path}"
 
 bind j command-prompt -p "Join pane from:" "join-pane -s '%%'"
 
-bind-key , command-prompt -p "Name of current window:" "rename-window '%%'"
-bind-key C command-prompt -p "Name of new session: " "new -s '%%'"
+bind , command-prompt -p "Name of current window:" "rename-window '%%'"
+bind < command-prompt -p "Name of current session:" "rename-session '%%'"
+bind c new-window -c "#{pane_current_path}"
+bind C command-prompt -p "Name of new session: " "new -s '%%'"
 
 bind @ setw synchronize-panes
 
@@ -77,9 +78,9 @@ set -g default-shell /usr/local/bin/fish
 
 # Allow yanking to global clipboard
 set -g set-clipboard on
-set-option -g default-command "reattach-to-user-namespace -l $SHELL"
-bind-key -Tcopy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
-bind-key -Tcopy-mode-vi Escape send -X cancel
+set -g default-command "reattach-to-user-namespace -l $SHELL"
+bind -Tcopy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+bind -Tcopy-mode-vi Escape send -X cancel
 
 # color
 set -g default-terminal screen-256color
