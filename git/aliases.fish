@@ -35,6 +35,7 @@ if not set -q git_abbrs_initialized
   abbr gs 'git status -sb'
   abbr gst 'git stash'
   abbr gstp 'git stash pop'
+  abbr gstl 'git stash list'
   abbr gw 'git-wtf'
   abbr st 'open -a SourceTree .'
 
