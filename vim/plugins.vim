@@ -8,6 +8,8 @@ let g:rooter_silent_chdir = 1
 " Ack {{{
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
+  set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 cnoreabbrev Ack Ack!
 nnoremap \ :Ack!<Space>
@@ -23,21 +25,21 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 noremap <c-i> :CtrlPTag<CR>
 " }}}
 " NerdTree {{{
-let NERDTreeShowHidden=1
-nnoremap <silent> <Leader>f :NERDTreeToggle<CR>
+" let NERDTreeShowHidden=1
+" nnoremap <silent> <Leader>f :NERDTreeToggle<CR>
 
-" Close NerdTree after a file is opened
-let NERDTreeQuitOnOpen = 1
+" " Close NerdTree after a file is opened
+" let NERDTreeQuitOnOpen = 1
 
-" Remove the buffer when we delete the file in NerdTree
-let NERDTreeAutoDeleteBuffer = 1
+" " Remove the buffer when we delete the file in NerdTree
+" let NERDTreeAutoDeleteBuffer = 1
 
-" Close the tab if the only remaining window is NerdTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" " Close the tab if the only remaining window is NerdTree
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" Make NerdTree a bit prettier
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+" " Make NerdTree a bit prettier
+" let NERDTreeMinimalUI = 1
+" let NERDTreeDirArrows = 1
 " }}}
 " Airline {{{
 " Load only the airline integrations we want - performance boost
@@ -148,7 +150,7 @@ let g:indentLine_setConceal = 2
   " Press enter key to trigger snippet expansion
   " The parameters are the same as `:help feedkeys()`
   inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR><CR><C-o>k<Tab>", 'n')
-  inoremap <silent> <unique> <C-O> <CR>
+  inoremap <silent> <unique> <C-o> <CR>
 
 " }}}
 " Python {{{

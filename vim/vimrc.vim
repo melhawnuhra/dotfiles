@@ -18,8 +18,8 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'mileszs/ack.vim'
   Plug 'kien/ctrlp.vim'
-  Plug 'scrooloose/nerdtree'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
+  " Plug 'scrooloose/nerdtree'
+  " Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'airblade/vim-gitgutter'
   Plug 'airblade/vim-rooter'
   Plug 'junegunn/gv.vim'
@@ -56,6 +56,9 @@ call plug#begin('~/.vim/plugged')
 
   " Syntax highlighting
   Plug 'sheerun/vim-polyglot'
+
+  " Include / Definition Search
+  Plug 'romainl/vim-qlist'
 
   " Code completion
   " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
