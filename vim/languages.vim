@@ -23,3 +23,11 @@ let g:typescript_compiler_binary = 'tsc'
 let g:typescript_compiler_options = ''
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+
+nnoremap <leader>td :TSDef<CR>
+nnoremap <leader>tt :TSTypeDef<CR>
+nnoremap <leader>ts :TSRefs<CR>
+nnoremap <leader>tr :TSRename<Space>
+nnoremap <leader>ti :TSImport<CR>
+
+
