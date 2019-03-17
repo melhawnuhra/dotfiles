@@ -150,7 +150,7 @@ let g:indentLine_setConceal = 2
   " Press enter key to trigger snippet expansion
   " The parameters are the same as `:help feedkeys()`
   inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR><CR><C-o>k<Tab>", 'n')
-  inoremap <silent> <unique> <C-o> <CR>
+  imap <silent> <unique> <C-o> <CR>
 
 " }}}
 " Python {{{
