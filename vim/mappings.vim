@@ -38,6 +38,7 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 nnoremap <silent> ;; :b#<CR>
+nnoremap <leader>; :b <C-d>
 nnoremap <silent> 1; :b1<CR>
 nnoremap <silent> 2; :b2<CR>
 nnoremap <silent> 3; :b3<CR>
@@ -98,7 +99,7 @@ cnoremap <C-n> <Down>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Quick edit
-nnoremap <leader>e :e **/
+nnoremap <expr> <leader>e ':e '.expand('%:h').'/'
 
 " Quick write
 inoremap <leader>w <Esc>:w<CR>
@@ -130,7 +131,7 @@ inoremap <leader>id id=""<esc>i
 inoremap <leader>cl class=""<esc>i
 
 " Go-to-definition (made possible by Gutentags + CtrlP)
-map <silent> <leader>gd :CtrlPTag<cr><C-\>w
+" map <silent> <leader>gd :CtrlPTag<cr><C-\>w
 
 " space open/closes folds
 nnoremap <space> za

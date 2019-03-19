@@ -13,25 +13,31 @@ endif
 " Plugins {{{
 call plug#begin('~/.vim/plugged')
 
-  Plug 'mhinz/vim-sayonara'
   Plug 'tpope/vim-sensible'
 
+  " Search enhancements
   Plug 'mileszs/ack.vim'
   Plug 'kien/ctrlp.vim'
-  " Plug 'scrooloose/nerdtree'
-  " Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'romainl/vim-qlist'  " ilist / dlist
+
+  " UI and theme enhancements
+  Plug 'morhetz/gruvbox'
   Plug 'airblade/vim-gitgutter'
+  Plug 'ap/vim-buftabline'
+  Plug 'andymass/vim-matchup' " Highlight matching pairs
+  Plug 'sheerun/vim-polyglot' " Syntax highlighting
+
+  " Environment
+  Plug 'mhinz/vim-sayonara'
   Plug 'airblade/vim-rooter'
-  Plug 'junegunn/gv.vim'
   Plug 'editorconfig/editorconfig-vim'
-
-  Plug 'Raimondi/delimitMate'
-  Plug 'andymass/vim-matchup'
-  Plug 'Yggdroot/indentLine'
-
   Plug 'tmux-plugins/vim-tmux-focus-events'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'christoomey/vim-system-copy'
+
+  " Editing
+  Plug 'Raimondi/delimitMate'
+  Plug 'Yggdroot/indentLine'
   Plug 'christoomey/vim-sort-motion'
 
   Plug 'tpope/vim-commentary'
@@ -49,29 +55,17 @@ call plug#begin('~/.vim/plugged')
   Plug 'gaving/vim-textobj-argument'
   Plug 'kana/vim-textobj-line'
 
-  " Theme
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'morhetz/gruvbox'
-
   " Syntax highlighting
-  Plug 'sheerun/vim-polyglot'
-
-  " Include / Definition Search
-  Plug 'romainl/vim-qlist'
 
   " Code completion
-  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'Shougo/denite.nvim'
-  Plug 'Shougo/neopairs.vim'
   Plug 'Shougo/echodoc.vim'
   Plug 'mhartington/nvim-typescript', {'for': ['typescript', 'tsx'], 'do': './install.sh' }
-  " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'lvht/phpcd.vim'
 
+  " Code completion
   Plug 'roxma/nvim-yarp'
   Plug 'ncm2/ncm2'
-
   " nvm2 sources wiki page: https://github.com/ncm2/ncm2/wiki
   Plug 'ncm2/ncm2-bufword'
   Plug 'ncm2/ncm2-cssomni'
@@ -92,5 +86,6 @@ so ~/dotfiles/vim/mappings.vim
 so ~/dotfiles/vim/plugins.vim
 so ~/dotfiles/vim/languages.vim
 so ~/dotfiles/vim/functions.vim
+so ~/dotfiles/vim/statusline.vim
 
 " vim:foldmethod=marker:foldlevel=0
