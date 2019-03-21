@@ -33,6 +33,7 @@
 [core]
 	excludesfile = /Users/jared/.gitignore_global
         editor = nvim
+	pager = less -+X
 [apply]
         whitespace = nowarn
 [mergetool]
