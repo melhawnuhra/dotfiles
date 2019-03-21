@@ -194,9 +194,6 @@ end
 # show a popup when job completes
 alias alert 'terminal-notifier -title "Terminal Alert" -message Done!'
 
-# download the videos
-alias ytd 'youtube-dl -ciw '
-
 # use gnu utils
 function mv --wraps gmv
   command gmv --verbose $argv
