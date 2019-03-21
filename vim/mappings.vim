@@ -39,25 +39,12 @@ nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 nnoremap <silent> ;; :b#<CR>
 nnoremap <leader>; :b <C-d>
-nnoremap <silent> 1; :b1<CR>
-nnoremap <silent> 2; :b2<CR>
-nnoremap <silent> 3; :b3<CR>
-nnoremap <silent> 4; :b4<CR>
-nnoremap <silent> 5; :b5<CR>
-nnoremap <silent> 6; :b6<CR>
-nnoremap <silent> 7; :b7<CR>
-nnoremap <silent> 8; :b8<CR>
-nnoremap <silent> 9; :b9<CR>
-nnoremap <silent> 10; :b10<CR>
-nnoremap <silent> 11; :b11<CR>
-nnoremap <silent> 12; :b12<CR>
-nnoremap <silent> 13; :b13<CR>
-nnoremap <silent> 14; :b14<CR>
-nnoremap <silent> 15; :b15<CR>
-nnoremap <silent> 16; :b16<CR>
-nnoremap <silent> 17; :b17<CR>
-nnoremap <silent> 18; :b18<CR>
-nnoremap <silent> 19; :b19<CR>
+for i in range(1, 39)
+  execute 'nnoremap <silent> '.i.'; :b'.i.'<CR>'
+endfor
+for i in range(1, 9)
+  execute 'nnoremap <silent> 0'.i.'; :b'.i.'<CR>'
+endfor
 
 " Easier switching between tabs
 nnoremap <silent> [t :tabprevious<CR>
