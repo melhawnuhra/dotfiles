@@ -73,7 +73,7 @@ let g:indentLine_setConceal = 2
   " When the <Enter> key is pressed while the popup menu is visible, it only
   " hides the menu. Use this mapping to close the menu and also start a new
   " line.
-  inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<C-R>=delimitMate#ExpandReturn()\<CR>" : "<C-R>=delimitMate#ExpandReturn()\<CR>")
+  inoremap <silent> <expr> <CR> (pumvisible() ? "\<c-y>\<C-R>=delimitMate#ExpandReturn()\<CR>" : "<C-R>=delimitMate#ExpandReturn()\<CR>")
 
   " Use <TAB> to select the popup menu:
   inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
