@@ -57,3 +57,6 @@ set statusline+=\ ::\                     "
 set statusline+=\ %3l:%-2c               " line and column
 " set statusline+=%#Cursor#                 " colour
 set statusline+=\ %3p%%\                  " percentage of file
+
+" Show a simpler statusline for quickfix windows
+autocmd Filetype qf setlocal statusline=\ %n\ \ %f%=%L\ lines
