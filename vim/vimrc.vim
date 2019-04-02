@@ -37,7 +37,7 @@ call plug#begin('~/.vim/plugged')
 
   " Editing
   Plug 'Raimondi/delimitMate'
-  Plug 'Yggdroot/indentLine'
+  " Plug 'Yggdroot/indentLine'
   Plug 'christoomey/vim-sort-motion'
 
   Plug 'tpope/vim-commentary'
