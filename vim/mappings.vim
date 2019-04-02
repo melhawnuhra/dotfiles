@@ -39,7 +39,7 @@ nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 nnoremap <silent> ;; :b#<CR>
 nnoremap <leader>; :b <C-d>
-for i in range(1, 39)
+for i in range(1, 99)
   execute 'nnoremap <silent> '.i.'; :b'.i.'<CR>'
 endfor
 for i in range(1, 9)
