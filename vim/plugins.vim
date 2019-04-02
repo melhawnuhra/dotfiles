@@ -29,29 +29,29 @@ let g:buftabline_numbers=1
 let g:buftabline_indicators=1
 " }}}
 " Gutentags {{{
-let g:gutentags_cache_dir = '~/.vim/gutentags'
-let g:gutentags_project_root = ['composer.lock', 'package.json']
-let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js', '*.json', '*.xml',
-      \ '*.phar', '*.ini', '*.rst', '*.md',
-      \ '*vendor/*/test*', '*vendor/*/Test*',
-      \ '*vendor/*/fixture*', '*vendor/*/Fixture*',
-      \ '*var/cache*', '*var/log*', '*.vim']
+" let g:gutentags_cache_dir = '~/.vim/gutentags'
+" let g:gutentags_project_root = ['composer.lock', 'package.json']
+" let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js', '*.json', '*.xml',
+"       \ '*.phar', '*.ini', '*.rst', '*.md',
+"       \ '*vendor/*/test*', '*vendor/*/Test*',
+"       \ '*vendor/*/fixture*', '*vendor/*/Fixture*',
+"       \ '*var/cache*', '*var/log*', '*.vim']
 
-" Refresh the status bar when tagging has started/finished
-augroup MyGutentagsStatusLineRefresher
-  autocmd!
-  autocmd User GutentagsUpdating call airline#update_statusline()
-  autocmd User GutentagsUpdated call airline#update_statusline()
-augroup END
+" " Refresh the status bar when tagging has started/finished
+" augroup MyGutentagsStatusLineRefresher
+"   autocmd!
+"   autocmd User GutentagsUpdating call airline#update_statusline()
+"   autocmd User GutentagsUpdated call airline#update_statusline()
+" augroup END
 " }}}
 " Sayonara {{{
 let g:sayonara_confirm_quit = 0
 " }}}
 " IndentLine {{{
-let g:indentLine_char = '¦'
-let g:indentLine_setColors = 1
-let g:indentLine_enabled = 0
-let g:indentLine_setConceal = 2
+" let g:indentLine_char = '¦'
+" let g:indentLine_setColors = 1
+" let g:indentLine_enabled = 0
+" let g:indentLine_setConceal = 2
 " }}}
 " Polyglot {{{
 " e.g. g:polyglot_disabled = ['typescript']
