@@ -102,11 +102,11 @@ bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iq v
 
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-urlview'
-set -g @plugin 'tmux-plugins/tmux-online-status'
-set -g @online_icon "✓"
-set -g @offline_icon "✗"
+# set -g @plugin 'tmux-plugins/tmux-online-status'
+# set -g @online_icon "✓"
+# set -g @offline_icon "✗"
 
-set -g @plugin 'tmux-plugins/tmux-battery'
+# set -g @plugin 'tmux-plugins/tmux-battery'
 # set -g @plugin 'thewtex/tmux-mem-cpu-load'
 
 set -g @plugin 'nhdaly/tmux-better-mouse-mode'
