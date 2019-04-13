@@ -6,7 +6,11 @@ let g:rooter_patterns = ['composer.json', 'package.json', '.git/']
 let g:rooter_silent_chdir = 1
 " }}}
 " Ack {{{
-if executable('ag')
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
+  set grepprg=rg\ --nogroup\ --nocolor\ --ignore-case\ --column
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+elseif executable('ag')
   let g:ackprg = 'ag --vimgrep'
   set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
   set grepformat=%f:%l:%c:%m,%f:%l:%m
@@ -23,6 +27,7 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_reuse_window = 'netrw\|help\|quickfix\|NerdTree'
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 noremap <c-i> :CtrlPTag<CR>
+noremap <silent> <c-[> :CtrlPBuffer<CR>
 " }}}
 " BufTabline {{{
 let g:buftabline_numbers=1

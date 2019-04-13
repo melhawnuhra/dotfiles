@@ -17,7 +17,7 @@ call plug#begin('~/.vim/plugged')
 
   " Search enhancements
   Plug 'mileszs/ack.vim'
-  Plug 'kien/ctrlp.vim'
+  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'romainl/vim-qlist'  " ilist / dlist
 
   " UI and theme enhancements
