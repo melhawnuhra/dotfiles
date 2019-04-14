@@ -17,7 +17,6 @@ if not set -q git_abbrs_initialized
   abbr gbl 'git blame'
   abbr gc 'git commit -m'
   abbr gca 'git-amend'
-  abbr ge 'git-edit-new'
   abbr go 'git checkout'
   abbr gcp 'git cherry-pick'
   abbr gd 'git diff --color-words'
@@ -25,13 +24,14 @@ if not set -q git_abbrs_initialized
   abbr gf 'git fetch'
   abbr gl 'git log'
   abbr gm 'git merge'
-  abbr gp 'git push'
-  abbr gpo 'git push origin'
+  abbr gpo 'git push origin (git rev-parse --abbrev-ref HEAD)'
+  abbr gpo+ "git push origin +(git rev-parse --abbrev-ref HEAD)"
   abbr gpod 'git push origin dev'
   abbr gpom 'git push origin master'
+  abbr gpo+d 'git push origin +dev'
   abbr gpo+m 'git push origin +master'
   abbr gpl 'git pull'
-  abbr gr 'git remote'
+  abbr gr 'git reset'
   abbr gs 'git status -sb'
   abbr gst 'git stash'
   abbr gstp 'git stash pop'
@@ -44,6 +44,3 @@ end
 
 # Log / status
 alias gh="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-# git push
-alias gpd="git push origin develop"
-alias gpm="git push origin master"
