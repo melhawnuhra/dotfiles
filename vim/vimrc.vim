@@ -63,7 +63,7 @@ call plug#begin('~/.vim/plugged')
   " Code completion
   Plug 'Shougo/denite.nvim'
   Plug 'Shougo/echodoc.vim'
-  " Plug 'mhartington/nvim-typescript', {'for': ['typescript', 'tsx'], 'do': './install.sh' }
+  Plug 'mhartington/nvim-typescript', {'for': ['typescript', 'tsx'], 'do': './install.sh' }
   Plug 'lvht/phpcd.vim'
   Plug 'roxma/nvim-yarp'
   Plug 'ncm2/ncm2'
