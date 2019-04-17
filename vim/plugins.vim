@@ -19,6 +19,7 @@ cnoreabbrev Ack Ack!
 nnoremap \ :Ack!<Space>
 " }}}
 " CtrlP {{{
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_match_window = 'bottom,order:btt'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_switch_buffer = 'Et'
