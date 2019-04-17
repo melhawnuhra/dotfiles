@@ -40,7 +40,6 @@ call plug#begin('~/.vim/plugged')
 
   " Editing
   Plug 'Raimondi/delimitMate'
-  " Plug 'Yggdroot/indentLine'
   Plug 'christoomey/vim-sort-motion'
 
   Plug 'tpope/vim-commentary'
@@ -58,21 +57,16 @@ call plug#begin('~/.vim/plugged')
   Plug 'gaving/vim-textobj-argument'
   Plug 'kana/vim-textobj-line'
 
-  " Syntax highlighting
-
   " Code completion
   Plug 'Shougo/denite.nvim'
   Plug 'Shougo/echodoc.vim'
-  " Plug 'mhartington/nvim-typescript', {'for': ['typescript', 'tsx'], 'do': './install.sh' }
   Plug 'lvht/phpcd.vim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'ncm2/ncm2'
-  " nvm2 sources wiki page: https://github.com/ncm2/ncm2/wiki
-  Plug 'ncm2/ncm2-bufword'
-  Plug 'ncm2/ncm2-cssomni'
-  Plug 'ncm2/ncm2-path'
-  Plug 'ncm2/ncm2-tmux'
-  Plug 'ncm2/ncm2-ultisnips'
+
+  Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+  Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
   " Snippets
   Plug 'SirVer/ultisnips'
