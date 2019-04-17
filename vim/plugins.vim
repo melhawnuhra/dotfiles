@@ -26,8 +26,8 @@ let g:ctrlp_use_caching = 0
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_reuse_window = 'netrw\|help\|quickfix\|NerdTree'
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-noremap <c-i> :CtrlPTag<CR>
-noremap <silent> <c-[> :CtrlPBuffer<CR>
+" noremap <c-i> :CtrlPTag<CR>
+noremap <silent> <c-b> :CtrlPBuffer<CR>
 " }}}
 " BufTabline {{{
 let g:buftabline_numbers=1
