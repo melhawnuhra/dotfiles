@@ -2,6 +2,9 @@ if $SHELL =~ 'fish'
   set shell=/bin/sh
 endif
 
+let g:python_host_skip_check = 1
+let g:python3_host_skip_check = 1
+
 if !has('nvim')
   set nocompatible                " Turn of VI compatibility mode
   set ttyfast                     " Faster rendering
@@ -60,10 +63,8 @@ call plug#begin('~/.vim/plugged')
   " Code completion
   Plug 'Shougo/denite.nvim'
   Plug 'Shougo/echodoc.vim'
-  Plug 'mhartington/nvim-typescript', {'for': ['typescript', 'tsx'], 'do': './install.sh' }
+  " Plug 'mhartington/nvim-typescript', {'for': ['typescript', 'tsx'], 'do': './install.sh' }
   Plug 'lvht/phpcd.vim'
-
-  " Code completion
   Plug 'roxma/nvim-yarp'
   Plug 'ncm2/ncm2'
   " nvm2 sources wiki page: https://github.com/ncm2/ncm2/wiki
