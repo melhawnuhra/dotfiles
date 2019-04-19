@@ -62,34 +62,6 @@ let g:sayonara_confirm_quit = 0
 " Polyglot {{{
 " e.g. g:polyglot_disabled = ['typescript']
 " }}}
-" NCM2 {{{
-
-  " enable ncm2 for all buffers
-  autocmd BufEnter * call ncm2#enable_for_buffer()
-
-  " IMPORTANT: :help Ncm2PopupOpen for more information
-  set completeopt=noinsert,menuone,noselect
-
-  " suppress the annoying 'match x of y', 'The only match' and 'Pattern not found' messages
-  set shortmess+=c
-
-  " CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
-  inoremap <c-c> <ESC>
-
-  " When the <Enter> key is pressed while the popup menu is visible, it only
-  " hides the menu. Use this mapping to close the menu and also start a new
-  " line.
-  inoremap <silent> <expr> <CR> (pumvisible() ? "\<c-y>\<C-R>=delimitMate#ExpandReturn()\<CR>" : "<C-R>=delimitMate#ExpandReturn()\<CR>")
-
-  " Use <TAB> to select the popup menu:
-  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-  " Press enter key to trigger snippet expansion
-  " The parameters are the same as `:help feedkeys()`
-  inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<C-R>=delimitMate#ExpandReturn()\<CR>", 'n')
-
-" }}}
 " Python {{{
 let g:loaded_python_provider = 1
 let g:python_host_skip_check= 1
@@ -119,5 +91,50 @@ let g:UltiSnipsRemoveSelectModeMappings = 0
 let g:tmux_navigator_disable_when_zoomed = 1
 let g:tmux_navigator_save_on_switch = 1
 " }}}
+" LanguageClient {{{
 
+  let g:LanguageClient_serverCommands = {
+    \ 'typescript': ['typescript-language-server', '--stdio']
+  \ }
+  let g:LanguageClient_rootMarkers = ['.git']
+
+" }}}
+" COC {{{
+
+  " " Use <TAB> to select the popup menu:
+  " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+  " don't give |ins-completion-menu| messages.
+  set shortmess+=c
+
+  " Use tab for trigger completion with characters ahead and navigate.
+  " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+  inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
+
+  " Use <c-space> for trigger completion.
+  inoremap <silent><expr> <c-space> coc#refresh()
+
+  " Use <cr> to confirm complete
+  inoremap <silent> <expr> <cr> (pumvisible() ? "\<C-y>" : "<C-R>=delimitMate#ExpandReturn()\<CR>")
+
+  " Remap keys for gotos and quick actions
+  nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+  nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+  nnoremap <silent> gt <Plug>(coc-type-definition)
+  nnoremap <silent> gr <Plug>(coc-references)
+  nnoremap <silent> gi <Plug>(coc-implementation)
+  nnoremap <silent> <leader>rn :call LanguageClient#textDocument_rename()<CR>
+  nnoremap <leader>qf  <Plug>(coc-fix-current)
+
+" }}}
 " vim:foldmethod=marker:foldlevel=0

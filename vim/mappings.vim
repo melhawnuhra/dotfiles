@@ -117,9 +117,6 @@ inoremap <leader>/ </<C-x><C-o>
 inoremap <leader>id id=""<esc>i
 inoremap <leader>cl class=""<esc>i
 
-" Go-to-definition (made possible by Gutentags + CtrlP)
-" map <silent> <leader>gd :CtrlPTag<cr><C-\>w
-
 " space open/closes folds
 nnoremap <space> za
 
