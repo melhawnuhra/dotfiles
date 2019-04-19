@@ -65,7 +65,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'terryma/vim-expand-region'
 
   " Code completion
-  Plug 'Shougo/denite.nvim'
+  " TODO see if I can remove Denite now
+  " Plug 'Shougo/denite.nvim'
   Plug 'Shougo/echodoc.vim'
   Plug 'lvht/phpcd.vim'
 

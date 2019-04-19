@@ -111,24 +111,24 @@ let g:tmux_navigator_save_on_switch = 1
 " COC {{{
 
   " " Use <TAB> to select the popup menu:
-  " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-  " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
   " don't give |ins-completion-menu| messages.
   set shortmess+=c
 
   " Use tab for trigger completion with characters ahead and navigate.
   " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-  inoremap <silent><expr> <TAB>
-        \ pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
-        \ coc#refresh()
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  " inoremap <silent><expr> <TAB>
+  "       \ pumvisible() ? "\<C-n>" :
+  "       \ <SID>check_back_space() ? "\<TAB>" :
+  "       \ coc#refresh()
+  " inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-  function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-  endfunction
+  " function! s:check_back_space() abort
+  "   let col = col('.') - 1
+  "   return !col || getline('.')[col - 1]  =~# '\s'
+  " endfunction
 
   " Use <c-space> for trigger completion.
   inoremap <silent><expr> <c-space> coc#refresh()
@@ -139,14 +139,26 @@ let g:tmux_navigator_save_on_switch = 1
   " Use <cr> to hide autocomplete menu and start a new line
   inoremap <silent> <expr> <CR> (pumvisible() ? "\<c-y>\<C-R>=delimitMate#ExpandReturn()\<CR>" : "<C-R>=delimitMate#ExpandReturn()\<CR>")
 
+  " Use `[d` and `]d` to navigate diagnostics
+  nmap <silent> [d <Plug>(coc-diagnostic-prev)
+  nmap <silent> ]d <Plug>(coc-diagnostic-next)
+
   " Remap keys for gotos and quick actions
-  nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-  nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-  nnoremap <silent> gt <Plug>(coc-type-definition)
-  nnoremap <silent> gr <Plug>(coc-references)
-  nnoremap <silent> gi <Plug>(coc-implementation)
-  nnoremap <silent> <leader>gr :call LanguageClient#textDocument_rename()<CR>
-  nnoremap <silent> <leader>gf <Plug>(coc-fix-current)
+  nnoremap <silent> K :call <SID>show_documentation()<CR>
+  function! s:show_documentation()
+    if &filetype == 'vim'
+      execute 'h '.expand('<cword>')
+    else
+      call CocAction('doHover')
+    endif
+  endfunction
+  " nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+  nmap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+  nmap <silent> gt <Plug>(coc-type-definition)
+  nmap <silent> gr <Plug>(coc-references)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <leader>gr :call LanguageClient#textDocument_rename()<CR>
+  nmap <leader>gf <Plug>(coc-fix-current)
 
 " }}}
 " vim:foldmethod=marker:foldlevel=0

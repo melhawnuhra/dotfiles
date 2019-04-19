@@ -43,11 +43,7 @@ set cindent                         " More customizable smartindent
 " }}}
 " UI Config {{{
 set number                      " Line numbers are good...
-augroup BgHighlight
-    autocmd!
-    autocmd WinEnter * set relativenumber
-    autocmd WinLeave * set norelativenumber
-augroup END
+" set relativenumber
 " set nocursorline                " Don't highlight the current line
 set noshowmode                  " Status bar already shows mode
 set cmdheight=1                 " Height of the command bar
