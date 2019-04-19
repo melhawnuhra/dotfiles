@@ -19,9 +19,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-sensible'
 
   " Search enhancements
+  " TODO try replace Ack with fzf's Rg (if I can get Rg results to stay open
+  " after selecting one)
   Plug 'mileszs/ack.vim'
-  Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'romainl/vim-qlist'  " ilist / dlist
+  Plug '/usr/local/opt/fzf'
+  Plug 'junegunn/fzf.vim'
 
   " UI and theme enhancements
   Plug 'morhetz/gruvbox'
@@ -48,6 +50,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-fugitive'
+  " TODO include when I can think of good mappings
+  " Plug 'matze/vim-move'
+  " TODO evaluate how well this works and remove if it doesn't pull its weight (gS, gJ)
+  Plug 'AndrewRadev/splitjoin.vim'
 
   " Text Objects
   Plug 'kana/vim-textobj-user'
@@ -56,6 +62,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'michaeljsmith/vim-indent-object'
   Plug 'gaving/vim-textobj-argument'
   Plug 'kana/vim-textobj-line'
+  Plug 'terryma/vim-expand-region'
 
   " Code completion
   Plug 'Shougo/denite.nvim'

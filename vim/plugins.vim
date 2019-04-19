@@ -1,5 +1,11 @@
 " =-=-=--=-=-=-= PLUGIN CONFIGURATION =-=-=--=-=-=-=
 
+" Plug {{{
+nnoremap <leader>pc :PlugClean<CR>
+nnoremap <leader>pi :PlugInstall<CR>
+nnoremap <leader>ps :PlugStatus<CR>
+nnoremap <leader>pu :PlugUpdate<CR>
+" }}}
 " Rooter {{{
 let g:rooter_change_directory_for_non_project_files = 'current'
 let g:rooter_patterns = ['composer.json', 'package.json', '.git/']
@@ -18,17 +24,20 @@ endif
 cnoreabbrev Ack Ack!
 nnoremap \ :Ack!<Space>
 " }}}
-" CtrlP {{{
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-let g:ctrlp_match_window = 'bottom,order:btt'
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_switch_buffer = 'Et'
-let g:ctrlp_use_caching = 0
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_reuse_window = 'netrw\|help\|quickfix\|NerdTree'
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-" noremap <c-i> :CtrlPTag<CR>
-noremap <silent> <c-b> :CtrlPBuffer<CR>
+" FZF {{{
+
+  autocmd! FileType fzf
+  autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
+  let g:fzf_layout = { 'down': '~25%' }
+
+  nnoremap <silent> <c-b> :Buffers<CR>
+  nnoremap <silent> <leader>b :Buffers<CR>
+  nnoremap <silent> <c-p> :GFiles<CR>
+  nnoremap <silent> <c-f> :BLines<CR>
+  nnoremap <silent> <c-s> :Rg<CR>
+
 " }}}
 " BufTabline {{{
 let g:buftabline_numbers=1
@@ -136,8 +145,8 @@ let g:tmux_navigator_save_on_switch = 1
   nnoremap <silent> gt <Plug>(coc-type-definition)
   nnoremap <silent> gr <Plug>(coc-references)
   nnoremap <silent> gi <Plug>(coc-implementation)
-  nnoremap <silent> <leader>rn :call LanguageClient#textDocument_rename()<CR>
-  nnoremap <leader>qf  <Plug>(coc-fix-current)
+  nnoremap <silent> <leader>gr :call LanguageClient#textDocument_rename()<CR>
+  nnoremap <silent> <leader>gf <Plug>(coc-fix-current)
 
 " }}}
 " vim:foldmethod=marker:foldlevel=0

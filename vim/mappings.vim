@@ -38,7 +38,6 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 nnoremap <silent> ;; :b#<CR>
-nnoremap <leader>; :b <C-d>
 for i in range(1, 99)
   execute 'nnoremap <silent> '.i.'; :b'.i.'<CR>'
 endfor
@@ -64,10 +63,6 @@ nnoremap <leader>b :Hexplore<CR>
 nnoremap <expr> n 'Nn'[v:searchforward]
 " Make N always search backward
 nnoremap <expr> N 'nN'[v:searchforward]
-" Quick grep
-nnoremap <leader>g :grep<space>
-" Quick ilist
-nnoremap <leader>i :Ilist<space>
 " Quick turn off search highlighting
 nnoremap <leader><space> :nohlsearch<CR>
 
