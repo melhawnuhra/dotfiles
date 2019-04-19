@@ -124,8 +124,11 @@ let g:tmux_navigator_save_on_switch = 1
   " Use <c-space> for trigger completion.
   inoremap <silent><expr> <c-space> coc#refresh()
 
-  " Use <cr> to confirm complete
-  inoremap <silent> <expr> <cr> (pumvisible() ? "\<C-y>" : "<C-R>=delimitMate#ExpandReturn()\<CR>")
+  " " Use <cr> to confirm complete
+  " inoremap <silent> <expr> <cr> (pumvisible() ? "\<C-y>" : "<C-R>=delimitMate#ExpandReturn()\<CR>")
+
+  " Use <cr> to hide autocomplete menu and start a new line
+  inoremap <silent> <expr> <CR> (pumvisible() ? "\<c-y>\<C-R>=delimitMate#ExpandReturn()\<CR>" : "<C-R>=delimitMate#ExpandReturn()\<CR>")
 
   " Remap keys for gotos and quick actions
   nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
