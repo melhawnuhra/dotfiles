@@ -25,9 +25,11 @@
   " nnoremap \ :Ack!<Space>
 " }}}
 " FZF {{{
-  autocmd! FileType fzf
-  autocmd  FileType fzf set laststatus=0 noshowmode noruler
-    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+  augroup fzf
+    autocmd!
+    autocmd  FileType fzf set laststatus=0 noshowmode noruler
+      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+  augroup END
 
   let g:fzf_layout = { 'down': '~25%' }
 

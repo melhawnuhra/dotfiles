@@ -25,7 +25,7 @@ hi DiffText     gui=none    guifg=NONE          guibg=#8cbee2
 " set tabstop=2                       " Number of visual spaces per tab
 " set softtabstop=2                   " Number of spaces for tab when editing
 " set expandtab                       " Tabs are spaces
-" set list listchars=tab:»·,trail:·   " Display tabs and trailing spaces visually
+set list listchars=tab:»·,trail:·   " Display tabs and trailing spaces visually
 " }}}
 " File Options {{{
   " Don't mess with the file's original EOL situation

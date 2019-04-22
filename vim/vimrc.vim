@@ -3,7 +3,6 @@ if $SHELL =~ 'fish'
 endif
 
 if !has('nvim')
-  set nocompatible                " Turn of VI compatibility mode
   set ttyfast                     " Faster rendering
   set sidescroll=1                " Enable sideways scrolling
   set showcmd                     " Show incomplete cmds in bottom right

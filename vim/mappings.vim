@@ -64,7 +64,7 @@ nnoremap <expr> n 'Nn'[v:searchforward]
 " Make N always search backward
 nnoremap <expr> N 'nN'[v:searchforward]
 " Quick turn off search highlighting
-nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <silent> <leader><space> :nohlsearch<CR>
 
 " }}}
 
