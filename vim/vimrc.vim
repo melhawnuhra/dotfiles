@@ -118,6 +118,10 @@ call plug#begin('~/.vim/plugged')
   " Extremely useful extended text objects 
   Plug 'wellle/targets.vim'
 
+  " Tag/symbol finder
+  Plug 'liuchengxu/vista.vim'
+    let g:vista_default_executive = 'coc'
+
 call plug#end()
 " }}}
 
