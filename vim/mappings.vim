@@ -52,7 +52,7 @@ nnoremap <silent> [T :tfirst<CR>
 nnoremap <silent> ]T :tlast<CR>
 
 " Quickly open tabs and splits
-nnoremap <leader>v :Vexplore<CR>
+nnoremap <leader>v :Vexplore!<CR>
 nnoremap <leader>b :Hexplore<CR>
 
 " }}}
