@@ -66,6 +66,10 @@ nnoremap <expr> N 'nN'[v:searchforward]
 " Quick turn off search highlighting
 nnoremap <silent> <leader><space> :nohlsearch<CR>
 
+" quick insertion of the substitution command
+  nnoremap <leader>gs :%s///g<Left><Left>
+  xnoremap <leader>gs :s///g<Left><Left>
+
 " }}}
 
 " Easy expansion of the Active File Directory

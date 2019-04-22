@@ -90,6 +90,8 @@ set hidden                      " Allow buffers to stay open in the background
 " }}}
 " Miscellaneous {{{
 set visualbell                  " No sounds
+" allow moving cursor just after the last chraracter of the line
+set virtualedit=onemore
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
