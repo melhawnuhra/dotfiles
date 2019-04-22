@@ -22,40 +22,40 @@ hi DiffText     gui=none    guifg=NONE          guibg=#8cbee2
 
 " }}}
 " Spaces and Tabs {{{
-set tabstop=2                       " Number of visual spaces per tab
-set softtabstop=2                   " Number of spaces for tab when editing
-set expandtab                       " Tabs are spaces
-set list listchars=tab:»·,trail:·   " Display tabs and trailing spaces visually
+" set tabstop=2                       " Number of visual spaces per tab
+" set softtabstop=2                   " Number of spaces for tab when editing
+" set expandtab                       " Tabs are spaces
+" set list listchars=tab:»·,trail:·   " Display tabs and trailing spaces visually
 " }}}
 " File Options {{{
-
-set nofixeol                        " Don't mess with the file's original EOL situation
-
-" Return to last edit position when opening files :)
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  " Don't mess with the file's original EOL situation
+  set nofixeol
+  " Return to last edit position when opening files :)
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " }}}
 " Indentation {{{
-set shiftround                      " When at 3 spaces and I hit >>, go to 4. Not 5.
-set shiftwidth=2                    " Number of columns to indent when using >
-set smartindent                     " Do smart indenting when starting a new line
-set cindent                         " More customizable smartindent
+" TODO disabled all these after adding tpope's sleuth plugin. Remove if all
+" goes well
+" set shiftround                      " When at 3 spaces and I hit >>, go to 4. Not 5.
+" set shiftwidth=2                    " Number of columns to indent when using >
+" set smartindent                     " Do smart indenting when starting a new line
+" set cindent                         " More customizable smartindent
 " }}}
 " UI Config {{{
 set number                      " Line numbers are good...
-" set relativenumber
-" set nocursorline                " Don't highlight the current line
+set relativenumber              " Relative numbers ftw
+set nocursorline                " Don't highlight the current line
 set noshowmode                  " Status bar already shows mode
 set cmdheight=1                 " Height of the command bar
 set showmatch                   " Highlight matching pairs
 set matchpairs+=<:>             " Add some pair definitions
 set diffopt+=vertical           " Use vertical split for Git diffs
-set mouse=nv                    " Enable mouse only in normal and visual modes"
+set mouse=nv                    " Enable mouse only in normal and visual modes
 set splitbelow                  " Open horizonal splits below
 set splitright                  " Open vertical splits to the right
 " }}}
 " Searching {{{
-set incsearch         " Search as characters are entered
 set hlsearch          " Highlight search results
 set ignorecase        " Ignore case when searching...
 set smartcase         " ...unless we type a capital

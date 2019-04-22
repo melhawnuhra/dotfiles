@@ -33,8 +33,8 @@ nnoremap <leader>f :Ex<CR>
 " Buffers / Tabs {{{
 
 " Easier switching between buffers
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
+" nnoremap <silent> [b :bprevious<CR>
+" nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 nnoremap <silent> ;; :b#<CR>
@@ -46,8 +46,8 @@ for i in range(1, 9)
 endfor
 
 " Easier switching between tabs
-nnoremap <silent> [t :tabprevious<CR>
-nnoremap <silent> ]t :tabnext<CR>
+" nnoremap <silent> [t :tabprevious<CR>
+" nnoremap <silent> ]t :tabnext<CR>
 nnoremap <silent> [T :tfirst<CR>
 nnoremap <silent> ]T :tlast<CR>
 

@@ -12,17 +12,17 @@
   let g:rooter_silent_chdir = 1
 " }}}
 " Ack {{{
-  if executable('rg')
-    let g:ackprg = 'rg --vimgrep'
-    set grepprg=rg\ --nogroup\ --nocolor\ --ignore-case\ --column
-    set grepformat=%f:%l:%c:%m,%f:%l:%m
-  elseif executable('ag')
-    let g:ackprg = 'ag --vimgrep'
-    set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
-    set grepformat=%f:%l:%c:%m,%f:%l:%m
-  endif
-  cnoreabbrev Ack Ack!
-  nnoremap \ :Ack!<Space>
+  " if executable('rg')
+  "   let g:ackprg = 'rg --vimgrep'
+  "   set grepprg=rg\ --nogroup\ --nocolor\ --ignore-case\ --column
+  "   set grepformat=%f:%l:%c:%m,%f:%l:%m
+  " elseif executable('ag')
+  "   let g:ackprg = 'ag --vimgrep'
+  "   set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
+  "   set grepformat=%f:%l:%c:%m,%f:%l:%m
+  " endif
+  " cnoreabbrev Ack Ack!
+  " nnoremap \ :Ack!<Space>
 " }}}
 " FZF {{{
   autocmd! FileType fzf
@@ -67,7 +67,8 @@
   let g:delimitMate_backspace = 1
 " }}}
 " Ultisnips {{{
-  let g:UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"
+  " let g:UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"
+  let g:UltiSnipsExpandTrigger = "<C-j>"
   let g:UltiSnipsJumpForwardTrigger = "<c-j>"
   let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
   let g:UltiSnipsRemoveSelectModeMappings = 0
@@ -76,21 +77,7 @@
   let g:tmux_navigator_disable_when_zoomed = 1
   let g:tmux_navigator_save_on_switch = 1
 " }}}
-" LanguageClient {{{
-  let g:LanguageClient_serverCommands = {
-    \ 'typescript': ['typescript-language-server', '--stdio']
-  \ }
-  let g:LanguageClient_rootMarkers = ['.git']
-
-  let g:LanguageClient_diagnosticsEnable = 0
-  " TODO remove this if it seems to have no speed improvement
-  let g:LanguageClient_autoStop = 0
-" }}}
 " COC {{{
-  " Use <TAB> to select the popup menu:
-  " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-  " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
   " don't give |ins-completion-menu| messages.
   set shortmess+=c
 
@@ -114,7 +101,6 @@
   nmap <silent> [d <Plug>(coc-diagnostic-prev)
   nmap <silent> ]d <Plug>(coc-diagnostic-next)
 
-  " Remap keys for gotos and quick actions
   nnoremap <silent> K :call <SID>show_documentation()<CR>
   function! s:show_documentation()
     if &filetype == 'vim'
@@ -123,12 +109,12 @@
       call CocAction('doHover')
     endif
   endfunction
-  " nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-  nmap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+
+  nmap <silent> gd <Plug>(coc-definition)
   nmap <silent> gt <Plug>(coc-type-definition)
   nmap <silent> gr <Plug>(coc-references)
   nmap <silent> gi <Plug>(coc-implementation)
-  nmap <leader>gr :call LanguageClient#textDocument_rename()<CR>
-  nmap <leader>gf <Plug>(coc-fix-current)
+  nmap <silent> <leader>gr <Plug>(coc-rename)
+  nmap <silent> <leader>gf <Plug>(coc-fix-current)
 " }}}
 " vim:foldmethod=marker:foldlevel=0
