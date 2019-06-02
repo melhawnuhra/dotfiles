@@ -22,6 +22,21 @@ call plug#begin('~/.vim/plugged')
   " Search enhancements
   Plug '/usr/local/opt/fzf'
   Plug 'junegunn/fzf.vim'
+  " Project-wide search with rg
+  Plug 'mhinz/vim-grepper'
+    let g:grepper = {}
+    let g:grepper.tools = ["rg"]
+    " runtime autoload/grepper.vim
+    let g:grepper.jump = 1
+    nnoremap \ :GrepperRg<Space>
+    nnoremap g* :Grepper -cword -noprompt<CR>
+    xmap g* <plug>(GrepperOperator)
+  " Make * useful in visual mode
+  Plug 'bronson/vim-visual-star-search'
+  " More sensible behaviour of f, F, t and T
+  Plug 'rhysd/clever-f.vim'
+    let g:clever_f_across_no_line = 1
+    let g:clever_f_chars_match_any_signs = ';'
 
   " UI / Theme
   " Theme
@@ -56,14 +71,19 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-unimpaired'
   " Provides some nice Git integration for Vim
   Plug 'tpope/vim-fugitive'
+  " Heuristically set buffer options (indent, tabs etc)
+  Plug 'tpope/vim-sleuth'
 
   " Text Objects
-  " Dependency for other vim-textobj plugins
   Plug 'kana/vim-textobj-user'
   Plug 'glts/vim-textobj-comment'
   Plug 'kana/vim-textobj-entire'
   Plug 'michaeljsmith/vim-indent-object'
   Plug 'terryma/vim-expand-region'
+  Plug 'wellle/targets.vim'
+
+  " Better definitions of w and b for camelCase and snake_case variables
+  Plug 'chaoren/vim-wordmotion'
 
   " Smart completion of matching pairs in insert mode
   Plug 'Raimondi/delimitMate'
@@ -81,45 +101,15 @@ call plug#begin('~/.vim/plugged')
   " Plugins on Trial
   " --------------------
 
-  Plug 'AndrewRadev/splitjoin.vim' " gS / gJ
-
-  " TODO include when I can think of good mappings
-  " Plug 'matze/vim-move'
-
-  " Heuristically set buffer options (indent, tabs etc)
-  Plug 'tpope/vim-sleuth'
-
-  " More sensible behaviour of f, F, t and T
-  Plug 'rhysd/clever-f.vim'
-
-  " Better definitions of w and b for camelCase and snake_case variables
-  Plug 'chaoren/vim-wordmotion'
-
   " Save buffers automatically
   Plug '907th/vim-auto-save'
     let g:auto_save = 1
     let g:auto_save_silent = 1
     let g:auto_save_events = ["InsertLeave", "TextChanged", "FocusLost"]
 
-  " Make * useful in visual mode
-  Plug 'bronson/vim-visual-star-search'
-
-  " Project-wide search with rg
-  Plug 'mhinz/vim-grepper'
-    let g:grepper = {}
-    let g:grepper.tools = ["rg"]
-    " runtime autoload/grepper.vim
-    let g:grepper.jump = 1
-    nnoremap \ :GrepperRg<Space>
-    nnoremap g* :Grepper -cword -noprompt<CR>
-    xmap g* <plug>(GrepperOperator)
-
-  " Extremely useful extended text objects 
-  Plug 'wellle/targets.vim'
-
   " Tag/symbol finder
-  Plug 'liuchengxu/vista.vim'
-    let g:vista_default_executive = 'coc'
+  " Plug 'liuchengxu/vista.vim'
+  "   let g:vista_default_executive = 'coc'
 
 call plug#end()
 " }}}

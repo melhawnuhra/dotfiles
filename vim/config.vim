@@ -42,6 +42,10 @@ set list listchars=tab:»·,trail:·   " Display tabs and trailing spaces visual
 " set smartindent                     " Do smart indenting when starting a new line
 " set cindent                         " More customizable smartindent
 " }}}
+" Netrw {{{
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+" }}}
 " UI Config {{{
 set number                      " Line numbers are good...
 set relativenumber              " Relative numbers ftw

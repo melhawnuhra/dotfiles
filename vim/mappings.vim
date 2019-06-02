@@ -24,6 +24,7 @@ inoremap <Right> <NOP>
 
 " Quick Esc in insert mode
 inoremap jk <esc>
+inoremap jK <esc>
 
 " Quick open netrw
 nnoremap <leader>f :Ex<CR>
