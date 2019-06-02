@@ -31,6 +31,7 @@ if not set -q git_abbrs_initialized
   abbr gpo+d 'git push origin +dev'
   abbr gpo+m 'git push origin +master'
   abbr gpl 'git pull'
+  abbr gplr 'git pull --rebase'
   abbr gr 'git reset'
   abbr gs 'git status -sb'
   abbr gst 'git stash'

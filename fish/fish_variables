@@ -62,6 +62,7 @@ SETUVAR _fish_abbr_gp_2B_d:git\x20push\x20origin\x20\x2bdev
 SETUVAR _fish_abbr_gp_2B_m:git\x20push\x20origin\x20\x2bmaster
 SETUVAR _fish_abbr_gpd:git\x20push\x20origin\x20dev
 SETUVAR _fish_abbr_gpl:git\x20pull
+SETUVAR _fish_abbr_gplr:git\x20pull\x20\x2d\x2drebase
 SETUVAR _fish_abbr_gpm:git\x20push\x20origin\x20master
 SETUVAR _fish_abbr_gpo:git\x20push\x20origin\x20\x28git\x20rev\x2dparse\x20\x2d\x2dabbrev\x2dref\x20HEAD\x29
 SETUVAR _fish_abbr_gpo_2B_:git\x20push\x20origin\x20\x2b\x28git\x20rev\x2dparse\x20\x2d\x2dabbrev\x2dref\x20HEAD\x29
