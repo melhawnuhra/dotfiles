@@ -31,6 +31,14 @@ nnoremap <leader>f :Ex<CR>
 
 " }}}
 
+" Copy/paste {{{
+nnoremap <C-c> V"+y
+vnoremap <C-c> "+y
+vnoremap <C-v> c<ESC>"+p
+inoremap <C-v> <ESC>"+pA
+nnoremap <C-v> "+p
+" }}}
+
 " Buffers / Tabs {{{
 
 " Easier switching between buffers
@@ -73,12 +81,16 @@ nnoremap <silent> <leader><space> :nohlsearch<CR>
 
 " }}}
 
-" Easy expansion of the Active File Directory
+" Command mode mappings {{{
+
+" Easy expansion of the present working directory
 cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Ex mode - cycle through command history on home row
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+
+" }}}
 
 " =-=-=--=-=-=-= LEADER MAPPINGS =-=-=--=-=-=-=
 
@@ -89,9 +101,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <expr> <leader>e ':e '.expand('%:h').'/'
 
 " Quick write
-inoremap <leader>w <Esc>:w<CR>
 nnoremap <leader>w :w<CR>
-nnoremap <leader>W :saveas **/
+nnoremap <expr> <leader>W ':saveas '.expand('%:h').'/'
 
 " Quick quit
 inoremap <leader>q <ESC>:q<CR>
