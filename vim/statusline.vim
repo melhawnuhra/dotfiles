@@ -28,13 +28,13 @@ set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ RPLACE\ ':''}
 set statusline+=%#Cursor#%{(mode()=='v')?'\ \ VISUAL\ ':''}
 " flags and buf number
 " set statusline+=%2*
-set statusline+=[
-set statusline+=%n                        " buffer number
+" set statusline+=[
+" set statusline+=%n                        " buffer number
 set statusline+=%H                        "
 set statusline+=%M                        " modified
 set statusline+=%{ReadOnly()}             " readonly flag
 set statusline+=%W                        "
-set statusline+=]
+" set statusline+=]
 " end flags
 set statusline+=%*                        " colour
 set statusline+=%{&paste?'\ PASTE\ ':''}  " paste mode
