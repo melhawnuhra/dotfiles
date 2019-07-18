@@ -38,7 +38,7 @@ source $DOTFILES_HOME/kubernetes/abbr.fish
 # Git
 source $DOTFILES_HOME/git/aliases.fish
 
-set PATH $PATH /usr/local/bin/google-cloud-sdk/bin /Users/jared/Library/Python/3.7/bin/
+set PATH $PATH /usr/local/bin/google-cloud-sdk/bin /Users/jared/Library/Python/3.7/bin /Users/jared/go/bin
 varclear PATH
 # }}}
 # Colors {{{
