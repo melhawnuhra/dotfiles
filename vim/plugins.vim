@@ -119,4 +119,7 @@
   nmap <silent> <leader>gr <Plug>(coc-rename)
   nmap <silent> <leader>gf <Plug>(coc-fix-current)
 " }}}
+" Narrow Region {{{
+  vnoremap <leader>z :NR!<CR>
+" }}}
 " vim:foldmethod=marker:foldlevel=0

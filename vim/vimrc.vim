@@ -111,6 +111,11 @@ call plug#begin('~/.vim/plugged')
   " Plug 'liuchengxu/vista.vim'
   "   let g:vista_default_executive = 'coc'
 
+  " Focus on a narrow region of code
+  Plug 'chrisbra/NrrwRgn'
+    let g:nrrw_rgn_nomap_nr = 1
+    let g:nrrw_rgn_nomap_Nr = 1
+
 call plug#end()
 " }}}
 
