@@ -137,8 +137,10 @@ if not set -q abbrs_initialized
   abbr fg2 'fg %2'
   abbr fg3 'fg %3'
 
-  abbr cd. 'cd (git rev-parse --show-toplevel)' # cd to the project root
+  abbr cd. 'cd (git rev-parse --show-toplevel); and clear' # cd to the project root
+  abbr c.d 'cd (git rev-parse --show-toplevel); and clear' # cd to the project root
   abbr cdc 'cd ~/Code'
+  abbr cdd 'cd ~/Desktop'
   abbr cdf 'cd ~/dotfiles/fish'
   abbr cdv 'cd ~/dotfiles/vim'
   abbr cdp 'cd ~/Documents/Personal/Projects'
