@@ -39,6 +39,11 @@ source $DOTFILES_HOME/kubernetes/abbr.fish
 source $DOTFILES_HOME/git/aliases.fish
 
 set PATH $PATH /usr/local/bin/google-cloud-sdk/bin /Users/jared/Library/Python/3.7/bin /Users/jared/go/bin
+
+# Android SDK
+set ANDROID_SDK_ROOT $HOME/Library/Android/sdk
+set PATH $PATH $ANDROID_SDK_ROOT/tools/bin $ANDROID_SDK_ROOT/platform-tools $ANDROID_SDK_ROOT/emulator $ANDROID_SDK_ROOT/build-tools
+
 varclear PATH
 # }}}
 # Colors {{{
