@@ -14,11 +14,6 @@ set -g renumber-windows on  # renumber windows when a window is closed
 set -g set-titles on                        # set terminal title
 set -g set-titles-string '#h ❐ #S ● #I #W'
 
-# ---- Display ----
-# default window title colors
-set-window-option -g window-status-fg colour244 #base0
-set-window-option -g window-status-bg default
-
 # Increase the scrollback limit
 set -g history-limit 50000
 
@@ -37,8 +32,7 @@ set -sg escape-time 10
 # Increase repeat time for repeatable commands
 set -g repeat-time 1000
 
-# source "/Users/jared/dotfiles/tmux/status-bar.conf"
-source "/Users/jared/dotfiles/tmux/theme_gruvbox.conf"
+source "/Users/jared/dotfiles/tmux/theme.conf"
 
 # C-b is not acceptable -- Vim uses it
 set -g prefix C-a
