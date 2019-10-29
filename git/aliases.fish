@@ -43,9 +43,14 @@ if not set -q git_abbrs_initialized
   abbr gpo+d 'git push origin +dev'
   abbr gpo+m 'git push origin +master'
 
-  abbr gpl 'git pull --rebase'
-  abbr gpld 'git pull --rebase origin dev'
-  abbr gplm 'git pull --rebase origin master'
+  abbr gpl 'git pull'
+  abbr gplb 'git pull (git rev-parse --abbrev-ref HEAD)'
+  abbr gpld 'git pull origin dev'
+  abbr gplm 'git pull origin master'
+
+  abbr gplr 'git pull --rebase'
+  abbr gplrd 'git pull --rebase origin dev'
+  abbr gplrm 'git pull --rebase origin master'
 
   abbr gr 'git reset'
   abbr gs 'git status -sb'
