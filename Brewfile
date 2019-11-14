@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 
+brew 'asciinema'
 brew 'atool'
 brew 'autoenv'
 brew 'bat'
