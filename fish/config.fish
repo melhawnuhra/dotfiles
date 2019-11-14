@@ -3,6 +3,8 @@
 # fish --profile prompt.prof -ic 'fish_prompt; exit'; sort -nk 2 prompt.prof
 
 # Environment {{{
+fish_vi_key_bindings
+
 set DOTFILES_HOME "$HOME/dotfiles"
 
 if [ -n "$TMUX" ]
