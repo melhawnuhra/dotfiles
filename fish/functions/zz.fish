@@ -1,3 +1,3 @@
-function zz -d "Change directory with interactive selection"
-  fasd_cd -id $argv
+function zz -d "cd with interactive selection"
+  fasd_cd -di $argv
 end

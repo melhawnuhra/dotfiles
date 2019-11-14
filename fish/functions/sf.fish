@@ -1,3 +1,3 @@
-function sf -d "Interactively select file"
-  fasd -isf $argv
+function sf -d "interactive file selection"
+  command fasd -sif $argv
 end

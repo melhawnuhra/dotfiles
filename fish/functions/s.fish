@@ -1,3 +1,3 @@
-function s -d "Interactively select from all"
-  fasd -is $argv
+function s -d "show / search / select"
+  command fasd -si $argv
 end

@@ -1,3 +1,3 @@
-function a -d "Match files and directories"
-  fasd -a $argv
+function a -d "any"
+  command fasd -a $argv
 end

@@ -1,3 +1,3 @@
-function f -d "Match files only"
-  fasd -f $argv
+function f -d "file"
+  command fasd -f $argv
 end

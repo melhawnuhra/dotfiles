@@ -1,3 +1,3 @@
-function d -d "Match directories only"
-  fasd -d $argv
+function d -d "directory"
+  command fasd -d $argv
 end
