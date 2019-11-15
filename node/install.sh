@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 if test ! $(which spoof)
 then
   sudo npm install spoof -g
@@ -26,3 +28,4 @@ fi
 npm i -g neovim
 npm i -g typescript
 npm i -g alfred-npms
+npm i -g npm-check-updates

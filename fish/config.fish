@@ -33,8 +33,6 @@ set PATH $PATH $DOTFILES_HOME/bin
 set RANGER_LOAD_DEFAULT_RC "false"
 # Docker
 source $DOTFILES_HOME/docker/aliases.fish
-# Node
-source $DOTFILES_HOME/node/nvm.fish
 # Kubernetes
 source $DOTFILES_HOME/kubernetes/abbr.fish
 # Git
