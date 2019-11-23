@@ -101,7 +101,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <expr> <leader>e ':e '.expand('%:h').'/'
 
 " Quick write
-nnoremap <leader>w :w<CR>
+" nnoremap <leader>w :w<CR>
 nnoremap <expr> <leader>W ':saveas '.expand('%:h').'/'
 
 " Quick quit

@@ -28,19 +28,19 @@ hi DiffText     gui=none    guifg=NONE          guibg=#8cbee2
 set list listchars=tab:»·,trail:·   " Display tabs and trailing spaces visually
 " }}}
 " File Options {{{
+
   " Don't mess with the file's original EOL situation
   set nofixeol
+
   " Return to last edit position when opening files :)
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+  " If file is already open, edit anyway and warn user
+  autocmd SwapExists * let v:swapchoice = "e" | echomsg "Concurrent editing"
+
 " }}}
-" Indentation {{{
-" TODO disabled all these after adding tpope's sleuth plugin. Remove if all
-" goes well
-" set shiftround                      " When at 3 spaces and I hit >>, go to 4. Not 5.
-" set shiftwidth=2                    " Number of columns to indent when using >
-" set smartindent                     " Do smart indenting when starting a new line
-" set cindent                         " More customizable smartindent
+" Editing {{{
+   set formatoptions=tn21
 " }}}
 " Netrw {{{
 let g:netrw_liststyle = 3

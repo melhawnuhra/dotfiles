@@ -26,12 +26,29 @@
 " }}}
 " FZF {{{
   augroup fzf
-    autocmd!
-    autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    autocmd! FileType fzf
+    autocmd  FileType fzf set laststatus=0 noshowmode noruler nonumber norelativenumber
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
   augroup END
 
-  let g:fzf_layout = { 'down': '~25%' }
+  let g:fzf_layout = { 'down': '~20%' }
+  " let g:fzf_layout = { 'window': '10new' }
+
+  " Customize fzf colors to match your color scheme
+  let g:fzf_colors =
+  \ { 'fg': ['fg', 'Normal'],
+  \ 'bg': ['bg', 'Normal'],
+  \ 'hl': ['fg', 'Comment'],
+  \ 'fg+': ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+': ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+': ['fg', 'Statement'],
+  \ 'info': ['fg', 'PreProc'],
+  \ 'border': ['fg', 'Ignore'],
+  \ 'prompt': ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker': ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header': ['fg', 'Comment'] }
 
   nnoremap <silent> <c-b> :Buffers<CR>
   nnoremap <silent> <leader>; :Buffers<CR>
