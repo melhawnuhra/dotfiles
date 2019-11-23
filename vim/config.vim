@@ -40,7 +40,12 @@ set list listchars=tab:»·,trail:·   " Display tabs and trailing spaces visual
 
 " }}}
 " Editing {{{
-   set formatoptions=tn21
+  augroup auto_comment
+    au!
+    au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+  augroup END
+
+  set formatoptions=tn21
 " }}}
 " Netrw {{{
 let g:netrw_liststyle = 3
