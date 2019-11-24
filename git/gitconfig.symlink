@@ -62,4 +62,4 @@
 	name = Jared Murphy
 	email = jlmurphy.sa@gmail.com
 [commit]
-	template = /Users/jaredmurphy/.stCommitMsg
+	template = /Users/jared/dotfiles/git/commit-template.txt
