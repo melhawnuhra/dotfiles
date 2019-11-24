@@ -41,9 +41,9 @@
 [difftool]
         prompt = false
 [diff]
-        tool = code-insiders
+	tool = diffmerge
 [merge]
-        tool = code-insiders
+	tool = diffmerge
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -63,3 +63,8 @@
 	email = jlmurphy.sa@gmail.com
 [commit]
 	template = /Users/jared/dotfiles/git/commit-template.txt
+[mergetool "diffmerge"]
+	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+	trustExitCode = true
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
