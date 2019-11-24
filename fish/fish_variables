@@ -58,8 +58,9 @@ SETUVAR _fish_abbr_gb:git\x20branch
 SETUVAR _fish_abbr_gbd:git\x20branch\x20\x2dD
 SETUVAR _fish_abbr_gbl:git\x20blame
 SETUVAR _fish_abbr_gbm:git\x20branch\x20\x2dm
-SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dm
+SETUVAR _fish_abbr_gc:git\x20commit
 SETUVAR _fish_abbr_gca:git\x2damend
+SETUVAR _fish_abbr_gcm:git\x20commit\x20\x2dm
 SETUVAR _fish_abbr_gcp:git\x20cherry\x2dpick
 SETUVAR _fish_abbr_gd:git\x20diff\x20\x2d\x2dcolor\x2dwords
 SETUVAR _fish_abbr_gds:git\x20diff\x20\x2d\x2dcolor\x2dwords\x20\x2d\x2dstaged
