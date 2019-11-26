@@ -90,7 +90,7 @@ function fish_prompt
 	# __user_host
 	__ssh_badge
 	__current_path
-	__ruby_version
+	# __ruby_version
 	__git_status
 	echo -e ''
 
