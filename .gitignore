@@ -28,3 +28,4 @@ Session.vim
 NetrwTreeListing*
 
 fish/fish_history
+fish/conf.d/fisher.fish
