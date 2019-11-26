@@ -201,16 +201,19 @@ end
 # show a popup when job completes
 alias alert 'terminal-notifier -title "Terminal Alert" -message Done!'
 
-# use gnu utils
-function mv --wraps gmv
-  command gmv --verbose $argv
-end
-function rm --wraps grm
-  command grm --verbose $argv
-end
-function cp --wraps gcp
-  command gcp --verbose $argv
-end
+if [ "$(uname -s)" == "Darwin" ]
+then
+  # use gnu utils
+  function mv --wraps gmv
+    command gmv --verbose $argv
+  end
+  function rm --wraps grm
+    command grm --verbose $argv
+  end
+  function cp --wraps gcp
+    command gcp --verbose $argv
+  end
+fi
 
 # ls better
 alias l 'exa'
