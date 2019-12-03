@@ -46,6 +46,11 @@ set list listchars=tab:»·,trail:·   " Display tabs and trailing spaces visual
   augroup END
 
   set formatoptions=tn21
+
+  " Make sure the undo stack retains changes past the first level
+  set cpoptions-=u
+  set undofile
+  set undodir=$HOME/.vim/undo
 " }}}
 " Netrw {{{
 let g:netrw_liststyle = 3
