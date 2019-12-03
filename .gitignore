@@ -16,6 +16,7 @@ zsh/local.zsh
 vim/vim.symlink/gutentags
 vim/vim.symlink/bundle/ycm.vim
 vim/vim.symlink/plugged
+vim/vim.symlink/undo
 
 tmux/tmux.symlink/resurrect
 tmux/tmux.symlink/plugins
