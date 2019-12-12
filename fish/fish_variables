@@ -31,6 +31,7 @@ SETUVAR _fish_abbr_cdf:cd\x20\x7e/dotfiles/fish
 SETUVAR _fish_abbr_cdp:cd\x20\x7e/Documents/Personal/Projects
 SETUVAR _fish_abbr_cdr:cd\x20\x7e/Documents/Personal/Reference
 SETUVAR _fish_abbr_cdv:cd\x20\x7e/dotfiles/vim
+SETUVAR _fish_abbr_connect:\x7e/Code/SN/k8s/tools/connect\x2esh
 SETUVAR _fish_abbr_cpwd:pwd\x20\x7c\x20tr\x20\x2dd\x20\x22\x5cn\x22\x20\x7c\x20pbcopy
 SETUVAR _fish_abbr_d:docker
 SETUVAR _fish_abbr_db:docker\x20build
@@ -41,6 +42,7 @@ SETUVAR _fish_abbr_dcl:docker\x2dcompose\x20logs\x20\x2df
 SETUVAR _fish_abbr_dcs:docker\x2dcompose\x20ps
 SETUVAR _fish_abbr_dcu:docker\x2dcompose\x20up
 SETUVAR _fish_abbr_de:docker\x20exec\x20\x2dit
+SETUVAR _fish_abbr_dev:ssh\x20jared\x40dev\x2esensornetworks\x2eco\x2eza
 SETUVAR _fish_abbr_dl:docker\x20logs
 SETUVAR _fish_abbr_dp:docker\x20volume\x20prune\x3b\x20and\x20docker\x20system\x20prune\x3b\x20and\x20docker\x20container\x20prune\x3b\x20and\x20docker\x20image\x20prune
 SETUVAR _fish_abbr_dr:docker\x20run
