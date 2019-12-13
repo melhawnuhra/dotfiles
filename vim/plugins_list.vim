@@ -102,4 +102,9 @@ call plug#begin('~/.vim/plugged')
   " Vim wiki (leader-ww)
   Plug 'vimwiki/vimwiki'
 
+  " Better indenting for p, P
+  Plug 'sickill/vim-pasta'
+    let g:pasta_disabled_filetypes = ['python', 'coffee', 'yaml']
+    let g:pasta_enabled_filetypes = ['ruby', 'javascript', 'css', 'sh']
+
 call plug#end()
