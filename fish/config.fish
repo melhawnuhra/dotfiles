@@ -212,10 +212,12 @@ then
     command gmv --verbose $argv
   end
   function rm --wraps grm
-    command grm --verbose $argv
+    command grm $argv
+    # command grm --verbose $argv
   end
   function cp --wraps gcp
-    command gcp --verbose $argv
+    command gcp $argv
+    # command gcp --verbose $argv
   end
 end
 
