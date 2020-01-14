@@ -38,7 +38,11 @@ source $DOTFILES_HOME/kubernetes/abbr.fish
 # Git
 source $DOTFILES_HOME/git/aliases.fish
 
+# Gcloud
 set PATH $PATH /usr/local/bin/google-cloud-sdk/bin /Users/jared/Library/Python/3.7/bin /Users/jared/go/bin
+
+# Python3
+set PATH $PATH /usr/local/opt/python@3.8/bin
 
 # Android SDK
 set ANDROID_SDK_ROOT $HOME/Library/Android/sdk
