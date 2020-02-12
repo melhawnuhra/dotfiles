@@ -4,7 +4,10 @@ if not set -q kube_abbrs_initialized
 
   abbr k 'kubectl'
   abbr ka 'kubectl apply'
+
   abbr kc 'kubectl config get-contexts'
+  abbr kcs 'kubectl config set current-context'
+
   abbr kd 'kubectl describe'
   abbr kdd 'kubectl describe deployment'
   abbr kdi 'kubectl describe ingress'
