@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
+tap 'weaveworks/tap'
 
 brew 'nvie/tap/git-toolbelt'
 brew 'asciinema'
@@ -14,6 +15,7 @@ brew 'ctags'
 brew 'docker'
 brew 'docker-compose'
 brew 'docker-machine'
+brew 'weaveworks/tap/eksctl'
 brew 'entr'
 brew 'exa'
 brew 'fasd'
