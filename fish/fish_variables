@@ -111,6 +111,7 @@ SETUVAR _fish_abbr_kgp:kubectl\x20get\x20pod
 SETUVAR _fish_abbr_kgs:kubectl\x20get\x20service
 SETUVAR _fish_abbr_killit:kill\x20\x2d9\x20\x251
 SETUVAR _fish_abbr_kl:kubectl\x20logs
+SETUVAR _fish_abbr_klf:kubectl\x20logs\x20\x2df
 SETUVAR _fish_abbr_lst:tree\x20\x2dI\x20\x22node_modules\x7cdist\x22
 SETUVAR _fish_abbr_mux:tmuxinator
 SETUVAR _fish_abbr_q:exit

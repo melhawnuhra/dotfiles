@@ -24,6 +24,7 @@ if not set -q kube_abbrs_initialized
   abbr kgn 'kubectl get namespace'
   abbr kgs 'kubectl get service'
   abbr kl 'kubectl logs'
+  abbr klf 'kubectl logs -f'
 
   echo 'Done'
 end
