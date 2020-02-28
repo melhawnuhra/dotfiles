@@ -15,6 +15,10 @@ if not set -q kube_abbrs_initialized
   abbr kdr 'kubectl describe replicaset'
   abbr kdn 'kubectl describe namespace'
   abbr kds 'kubectl describe service'
+  abbr ke 'kubectl exec'
+  abbr keb 'kubectl exec -it bash'
+  abbr kes 'kubectl exec -it sh'
+
   abbr kg 'kubectl get'
   abbr kga 'kubectl get all'
   abbr kgd 'kubectl get deployment'
