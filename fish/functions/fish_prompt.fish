@@ -93,14 +93,14 @@ function fish_prompt
           set pchar (set_color --bold $color_red)"❯"
   end
 
-  echo -n (set_color $color_blue)"╭─"(set_color normal)
+  echo -n (set_color $color_blue)""(set_color normal)
   # __user_host
   __ssh_badge
   __current_path
   __git_status
   echo -e ''
 
-  echo -e (set_color $color_blue)"╰─"(_background_jobs_icon)"$pchar "(set_color normal)
+  echo -e (set_color $color_blue)"  "(_background_jobs_icon)"$pchar "(set_color normal)
 end
 
 function fish_right_prompt
@@ -114,3 +114,18 @@ function fish_right_prompt
   set_color normal
 end
 
+function fish_mode_prompt --description 'Displays the current mode'
+    switch $fish_bind_mode
+        case default
+            set_color --bold red
+            echo '⦿'
+        case insert
+            set_color --bold cyan
+            echo '⦿'
+        case visual
+            set_color --bold --background magenta white
+            echo 'V'
+    end
+    set_color normal
+    echo -n ''
+end
