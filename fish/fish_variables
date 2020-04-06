@@ -92,7 +92,7 @@ SETUVAR _fish_abbr_gpo_2B_d:git\x20push\x20origin\x20\x2bdev
 SETUVAR _fish_abbr_gpo_2B_m:git\x20push\x20origin\x20\x2bmaster
 SETUVAR _fish_abbr_gpod:git\x20push\x20origin\x20dev
 SETUVAR _fish_abbr_gpom:git\x20push\x20origin\x20master
-SETUVAR _fish_abbr_gr:git\x20remote
+SETUVAR _fish_abbr_gr:git\x20reset
 SETUVAR _fish_abbr_gs:git\x20status\x20\x2dsb
 SETUVAR _fish_abbr_gst:git\x20stash
 SETUVAR _fish_abbr_gstl:git\x20stash\x20list
@@ -119,6 +119,7 @@ SETUVAR _fish_abbr_klf:kubectl\x20logs\x20\x2df
 SETUVAR _fish_abbr_lst:tree\x20\x2dI\x20\x22node_modules\x7cdist\x22
 SETUVAR _fish_abbr_mux:tmuxinator
 SETUVAR _fish_abbr_q:exit
+SETUVAR _fish_abbr_qa:ssh\x20jared\x40qa\x2esensornetworks\x2eco\x2eza
 SETUVAR _fish_abbr_st:open\x20\x2da\x20SourceTree\x20\x2e
 SETUVAR _fish_abbr_xx:atool\x20\x2dx
 SETUVAR abbrs_initialized:\x1d

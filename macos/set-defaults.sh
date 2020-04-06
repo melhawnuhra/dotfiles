@@ -148,7 +148,7 @@ echo "Dock - Automatically hide and show"
 defaults write com.apple.dock autohide -bool true
 
 echo "Dock - Remove the auto-hiding delay"
-defaults write com.apple.Dock autohide-delay -float 1
+defaults write com.apple.Dock autohide-delay -float 0.2
 
 echo "Dock - Don’t show Dashboard as a Space"
 defaults write com.apple.dock "dashboard-in-overlay" -bool true
