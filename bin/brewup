@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# Quick shortcut to update homebrew (because I forget the correct order)
+#
+# USAGE:
+
+echo "Updating and upgrading Homebrew packages..."
+brew update && brew upgrade
