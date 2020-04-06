@@ -1,9 +1,0 @@
-
-[dotfiles]
-checkout = git clone 'git@github.com:jlmurphysa/dotfiles' 'dotfiles'
-
-[Code/SN/iot]
-checkout = git clone 'git@gitlab.ci.sensornetworks.co.za:backend/iot.git' 'iot'
-
-[Code/SN/k8s]
-checkout = git clone 'git@gitlab.ci.sensornetworks.co.za:backend/k8s.git' 'k8s'
