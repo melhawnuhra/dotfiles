@@ -275,7 +275,7 @@ echo "Finder - Show status bar"
 defaults write com.apple.finder ShowStatusBar -bool true
 
 echo "Finder - Display full POSIX path as window title"
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool false
 
 echo "Finder -Always open everything in Finder's list view. This is important"
 defaults write com.apple.Finder FXPreferredViewStyle Nlsv
@@ -314,15 +314,6 @@ echo "Finder - Automatically open a new window when a volume is mounted"
 defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
-
-echo "Finder - Show the ~/Library folder"
-chflags nohidden ~/Library
-
-echo "Finder - Show the /Volumes folder"
-sudo chflags nohidden /Volumes
-
-echo "Finder - Show path bar"
-defaults write com.apple.finder ShowPathbar -bool true
 
 # echo "Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons"
 # defaults write com.apple.finder QuitMenuItem -bool true
