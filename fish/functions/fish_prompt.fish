@@ -104,14 +104,14 @@ function fish_prompt
 end
 
 function fish_right_prompt
-  set -l st $status
-  if [ $st != 0 ];
-          echo (set_color $color_red) ↵ $st (set_color normal)
-  end
-  __ssh_host
-  set_color -o 666
-  date '+ %T'
-  set_color normal
+  # set -l st $status
+  # if [ $st != 0 ];
+  #         echo (set_color $color_red) ↵ $st (set_color normal)
+  # end
+  # __ssh_host
+  # set_color -o 666
+  # date '+ %T'
+  # set_color normal
 end
 
 function fish_mode_prompt --description 'Displays the current mode'
