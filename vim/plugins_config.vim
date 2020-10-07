@@ -139,4 +139,10 @@
 " Narrow Region {{{
   vnoremap <leader>z :NR!<CR>
 " }}}
+" Vimux {{{
+  " Prompt for a command to run
+  map <Leader>cp :VimuxPromptCommand<CR>
+  " Run last command executed by VimuxRunCommand
+  map <Leader>cl :VimuxRunLastCommand<CR>
+" }}}
 " vim:foldmethod=marker:foldlevel=0

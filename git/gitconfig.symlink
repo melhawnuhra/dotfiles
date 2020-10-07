@@ -68,3 +68,5 @@
 	trustExitCode = true
 [difftool "diffmerge"]
 	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[pull]
+	ff = only

@@ -51,6 +51,7 @@ if not set -q git_abbrs_initialized
 
   abbr gplr 'git pull --rebase'
   abbr gplrd 'git pull --rebase origin dev'
+  abbr gplrq 'git pull --rebase origin qa'
   abbr gplrm 'git pull --rebase origin master'
 
   abbr gr 'git reset'

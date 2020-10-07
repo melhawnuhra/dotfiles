@@ -45,6 +45,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tmux-plugins/vim-tmux-focus-events'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'christoomey/vim-system-copy'
+  Plug 'benmills/vimux'
 
   " Provides a motion to easily sort lines
   Plug 'christoomey/vim-sort-motion'
@@ -73,6 +74,11 @@ call plug#begin('~/.vim/plugged')
   " Better definitions of w and b for camelCase and snake_case variables
   Plug 'chaoren/vim-wordmotion'
 
+  " Better indenting for p, P
+  Plug 'sickill/vim-pasta'
+    let g:pasta_disabled_filetypes = ['python', 'coffee', 'yaml']
+    let g:pasta_enabled_filetypes = ['ruby', 'javascript', 'css', 'sh']
+
   " Smart completion of matching pairs in insert mode
   Plug 'Raimondi/delimitMate'
   " Code completion framework. Supports LSP
@@ -82,8 +88,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'SirVer/ultisnips'
   " Show sensible snippets for various languages
   Plug 'honza/vim-snippets'
-  " Emmet keybindings for writing html
-  Plug 'mattn/emmet-vim'
 
   " Save buffers automatically
   Plug '907th/vim-auto-save'
@@ -98,13 +102,5 @@ call plug#begin('~/.vim/plugged')
   " Tag/symbol finder
   " Plug 'liuchengxu/vista.vim'
   "   let g:vista_default_executive = 'coc'
-
-  " Vim wiki (leader-ww)
-  Plug 'vimwiki/vimwiki'
-
-  " Better indenting for p, P
-  Plug 'sickill/vim-pasta'
-    let g:pasta_disabled_filetypes = ['python', 'coffee', 'yaml']
-    let g:pasta_enabled_filetypes = ['ruby', 'javascript', 'css', 'sh']
 
 call plug#end()

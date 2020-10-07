@@ -85,6 +85,7 @@ SETUVAR _fish_abbr_gplm:git\x20pull\x20origin\x20master
 SETUVAR _fish_abbr_gplr:git\x20pull\x20\x2d\x2drebase
 SETUVAR _fish_abbr_gplrd:git\x20pull\x20\x2d\x2drebase\x20origin\x20dev
 SETUVAR _fish_abbr_gplrm:git\x20pull\x20\x2d\x2drebase\x20origin\x20master
+SETUVAR _fish_abbr_gplrq:git\x20pull\x20\x2d\x2drebase\x20origin\x20qa
 SETUVAR _fish_abbr_gpm:git\x20push\x20origin\x20master
 SETUVAR _fish_abbr_gpo:git\x20push\x20origin
 SETUVAR _fish_abbr_gpo_2B_:git\x20push\x20origin\x20\x2b\x28git\x20rev\x2dparse\x20\x2d\x2dabbrev\x2dref\x20HEAD\x29
@@ -98,6 +99,8 @@ SETUVAR _fish_abbr_gst:git\x20stash
 SETUVAR _fish_abbr_gstl:git\x20stash\x20list
 SETUVAR _fish_abbr_gstp:git\x20stash\x20pop
 SETUVAR _fish_abbr_gw:git\x2dwtf
+SETUVAR _fish_abbr_jump_2D_dev:sudo\x20ssh\x20\x2dL\x20443\x3a10\x2e10\x2e12\x2e119\x3a443\x20ubuntu\x40jump\x2edev\x2esensornetworks\x2eco\x2eza\x20\x2di\x20/Users/jared/\x2essh/sn\x2ddevelopment\x2dinfrastructure\x2epem
+SETUVAR _fish_abbr_jump_2D_qa:sudo\x20ssh\x20\x2dL\x20443\x3a10\x2e30\x2e1\x2e98\x3a443\x20ubuntu\x40jump\x2eqa\x2esensornetworks\x2eco\x2eza\x20\x2di\x20/Users/jared/\x2essh/sn\x2dqa\x2dinfrastructure\x2epem
 SETUVAR _fish_abbr_k:kubectl
 SETUVAR _fish_abbr_ka:kubectl\x20apply
 SETUVAR _fish_abbr_kc:kubectl\x20config\x20get\x2dcontexts
@@ -116,6 +119,13 @@ SETUVAR _fish_abbr_kgs:kubectl\x20get\x20service
 SETUVAR _fish_abbr_killit:kill\x20\x2d9\x20\x251
 SETUVAR _fish_abbr_kl:kubectl\x20logs
 SETUVAR _fish_abbr_klf:kubectl\x20logs\x20\x2df
+SETUVAR _fish_abbr_ks:/Users/jared/Code/SN/devops/scripts/eks/switch_eks_clusters\x2esh
+SETUVAR _fish_abbr_ksd:/Users/jared/Code/SN/devops/scripts/eks/switch_eks_clusters\x2esh\x20dev
+SETUVAR _fish_abbr_ksp:/Users/jared/Code/SN/devops/scripts/eks/switch_eks_clusters\x2esh\x20prod
+SETUVAR _fish_abbr_ksq:/Users/jared/Code/SN/devops/scripts/eks/switch_eks_clusters\x2esh\x20qa
+SETUVAR _fish_abbr_kube_2D_dev:kubectl\x20config\x20set\x20current\x2dcontext\x20arn\x3aaws\x3aeks\x3aus\x2dwest\x2d2\x3a708454979044\x3acluster/development\x2deks\x2dcluster
+SETUVAR _fish_abbr_kube_2D_qa:kubectl\x20config\x20set\x20current\x2dcontext\x20arn\x3aaws\x3aeks\x3aeu\x2dwest\x2d1\x3a431473077221\x3acluster/qa\x2deks\x2dcluster
+SETUVAR _fish_abbr_kubeswitch:/Users/jared/Code/SN/devops/scripts/eks/switch_eks_clusters\x2esh
 SETUVAR _fish_abbr_lst:tree\x20\x2dI\x20\x22node_modules\x7cdist\x22
 SETUVAR _fish_abbr_mux:tmuxinator
 SETUVAR _fish_abbr_q:exit
