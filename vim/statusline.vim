@@ -5,15 +5,6 @@ function! ReadOnly() abort
     return ''
 endfunction
 
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?' '.l:branchname.' ':''
-endfunction
-
 "define 3 custom highlight groups
 hi User1 guifg=#FFFFFF guibg=#191f26 gui=BOLD
 hi User2 guifg=#000000 guibg=#959ca6
@@ -48,7 +39,6 @@ set statusline+=\ ››
 set statusline+=%=                        " right align
 " set statusline+=\ %{LinterStatus()}
 set statusline+=%*
-set statusline+=\ %{StatuslineGit()}     " git branch
 " set statusline+=%#CursorLine#             " colour
 set statusline+=\ ::\                     "
 set statusline+=\ %Y\                     " file type

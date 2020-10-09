@@ -13,6 +13,7 @@ so ~/dotfiles/vim/plugins_list.vim
 so ~/dotfiles/vim/config.vim
 so ~/dotfiles/vim/mappings.vim
 so ~/dotfiles/vim/plugins_config.vim
+
 so ~/dotfiles/vim/filetypes.vim
 so ~/dotfiles/vim/functions.vim
 so ~/dotfiles/vim/statusline.vim
