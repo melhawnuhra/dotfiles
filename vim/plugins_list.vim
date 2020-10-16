@@ -26,6 +26,10 @@ call plug#begin('~/.vim/plugged')
     let g:clever_f_across_no_line = 1
     let g:clever_f_chars_match_any_signs = ';'
 
+  " Smooth scrolling
+  Plug 'psliwka/vim-smoothie'
+    let g:smoothie_base_speed = 10
+
   " UI / Theme
   " Theme
   Plug 'morhetz/gruvbox'
@@ -62,6 +66,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   " Heuristically set buffer options (indent, tabs etc)
   Plug 'tpope/vim-sleuth'
+  " Add some common UNIX commands within vim
+  Plug 'tpope/vim-eunuch'
 
   " Text Objects
   Plug 'kana/vim-textobj-user'
@@ -99,8 +105,15 @@ call plug#begin('~/.vim/plugged')
   " Plugins on Trial
   " --------------------
 
-  " Tag/symbol finder
-  " Plug 'liuchengxu/vista.vim'
-  "   let g:vista_default_executive = 'coc'
+  " Let's stop using hjkl so much
+  Plug 'takac/vim-hardtime'
+  " Let's try indent guides again
+  Plug 'nathanaelkane/vim-indent-guides'
+    let g:indent_guides_auto_colors = 0
+    let g:indent_guides_enable_on_vim_startup=1
+    " let g:indent_guides_guide_size=1
+    let g:indent_guides_start_level=2
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+
 
 call plug#end()

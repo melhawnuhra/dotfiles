@@ -13,7 +13,7 @@ syntax enable
 " hi VertSplit cterm=NONE ctermbg=Black ctermfg=Gray
 " hi HorizontalSplit cterm=NONE ctermbg=Black ctermfg=Gray
 " Search highlight colors
-hi Search cterm=bold ctermbg=Yellow ctermfg=Black
+" hi Search cterm=bold ctermbg=Yellow ctermfg=Black
 
 hi DiffAdd      gui=none    guifg=NONE          guibg=#bada9f
 hi DiffChange   gui=none    guifg=NONE          guibg=#e5d5ac

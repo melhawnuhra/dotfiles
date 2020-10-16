@@ -121,6 +121,7 @@ SETUVAR _fish_abbr_kl:kubectl\x20logs
 SETUVAR _fish_abbr_klf:kubectl\x20logs\x20\x2df
 SETUVAR _fish_abbr_ks:/Users/jared/Code/SN/devops/scripts/eks/switch_eks_clusters\x2esh
 SETUVAR _fish_abbr_ksd:/Users/jared/Code/SN/devops/scripts/eks/switch_eks_clusters\x2esh\x20dev
+SETUVAR _fish_abbr_ksdr:/Users/jared/Code/SN/devops/scripts/eks/switch_eks_clusters\x2esh\x20dr
 SETUVAR _fish_abbr_ksp:/Users/jared/Code/SN/devops/scripts/eks/switch_eks_clusters\x2esh\x20prod
 SETUVAR _fish_abbr_ksq:/Users/jared/Code/SN/devops/scripts/eks/switch_eks_clusters\x2esh\x20qa
 SETUVAR _fish_abbr_kube_2D_dev:kubectl\x20config\x20set\x20current\x2dcontext\x20arn\x3aaws\x3aeks\x3aus\x2dwest\x2d2\x3a708454979044\x3acluster/development\x2deks\x2dcluster
@@ -131,6 +132,9 @@ SETUVAR _fish_abbr_mux:tmuxinator
 SETUVAR _fish_abbr_q:exit
 SETUVAR _fish_abbr_qa:ssh\x20jared\x40qa\x2esensornetworks\x2eco\x2eza
 SETUVAR _fish_abbr_st:open\x20\x2da\x20SourceTree\x20\x2e
+SETUVAR _fish_abbr_wp:watch\x20\x27kubectl\x20get\x20pod\x27
+SETUVAR _fish_abbr_wpinfra:watch\x20\x27kubectl\x20get\x20pod\x20\x7c\x20grep\x20infra\x27
+SETUVAR _fish_abbr_wpiot:watch\x20\x27kubectl\x20get\x20pod\x20\x7c\x20grep\x20iot\x27
 SETUVAR _fish_abbr_xx:atool\x20\x2dx
 SETUVAR abbrs_initialized:\x1d
 SETUVAR docker_abbrs_initialized:\x1d
