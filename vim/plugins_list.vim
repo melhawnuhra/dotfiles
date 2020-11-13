@@ -101,12 +101,14 @@ call plug#begin('~/.vim/plugged')
     let g:auto_save_silent = 1
     let g:auto_save_events = ["InsertLeave", "TextChanged", "FocusLost"]
 
+  Plug 'TaDaa/vimade'
+
   " --------------------
   " Plugins on Trial
   " --------------------
 
   " Let's stop using hjkl so much
-  Plug 'takac/vim-hardtime'
+  " Plug 'takac/vim-hardtime'
   " Let's try indent guides again
   " Plug 'nathanaelkane/vim-indent-guides'
   "   let g:indent_guides_auto_colors = 0
