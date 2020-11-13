@@ -132,6 +132,7 @@ SETUVAR _fish_abbr_mux:tmuxinator
 SETUVAR _fish_abbr_q:exit
 SETUVAR _fish_abbr_qa:ssh\x20jared\x40qa\x2esensornetworks\x2eco\x2eza
 SETUVAR _fish_abbr_st:open\x20\x2da\x20SourceTree\x20\x2e
+SETUVAR _fish_abbr_stack:/Users/jared/Code/SN/k8s/dev/local\x2esh
 SETUVAR _fish_abbr_wp:watch\x20\x27kubectl\x20get\x20pod\x27
 SETUVAR _fish_abbr_wpinfra:watch\x20\x27kubectl\x20get\x20pod\x20\x7c\x20grep\x20infra\x27
 SETUVAR _fish_abbr_wpiot:watch\x20\x27kubectl\x20get\x20pod\x20\x7c\x20grep\x20iot\x27
