@@ -6,6 +6,10 @@ let g:gruvbox_contrast_dark = 'medium'
 set background=dark
 syntax enable
 
+" Transparent background
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+
 " TODO Sift through these overrides and decide for colorscheme
 " Make it more obvious which paren I'm on
 " hi MatchParen cterm=bold ctermbg=NONE ctermfg=yellow
