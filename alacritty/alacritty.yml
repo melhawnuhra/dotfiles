@@ -13,12 +13,12 @@ window:
     y: 0
   startup_mode: Maximized
 
-shell:
-  program: /usr/local/bin/fish
-  args:
-    - -l
-    - -c
-    - tmux attach; or tmux
+#shell:
+#  program: /usr/local/bin/fish
+#  args:
+#    - -l
+#    - -c
+#    - tmux attach; or tmux
 
 # draw_bold_text_with_bright_colors: false
 live_config_reload: true

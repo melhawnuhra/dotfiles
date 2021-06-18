@@ -35,14 +35,14 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 echo "System - Set standby delay to 24 hours (default is 1 hour)"
 sudo pmset -a standbydelay 86400
 
-echo "System - Disable hibernation (speeds up entering sleep mode)"
-sudo pmset -a hibernatemode 0
+# echo "System - Disable hibernation (speeds up entering sleep mode)"
+# sudo pmset -a hibernatemode 0
 
 echo "System - Restart automatically if the computer freezes"
 sudo systemsetup -setrestartfreeze on
 
-echo "System - Never go into computer sleep mode"
-sudo systemsetup -setcomputersleep Off > /dev/null
+# echo "System - Never go into computer sleep mode"
+# sudo systemsetup -setcomputersleep Off > /dev/null
 
 echo "System - Disable Resume system-wide"
 defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
@@ -126,10 +126,10 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # }}}
 
 # Trackpad {{{
-echo "Trackpad - Enable tap to click for current user and the login screen"
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# echo "Trackpad - Enable tap to click for current user and the login screen"
+# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+# defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 echo "Trackpad - Don't reverse scroll direction"
 defaults write -g com.apple.swipescrolldirection -bool false
@@ -156,10 +156,10 @@ defaults write com.apple.dock "dashboard-in-overlay" -bool true
 echo "Dock - Use the dark theme"
 defaults write ~/Library/Preferences/.GlobalPreferences AppleInterfaceStyle -string "Dark"
 
-echo "Dock - Enable highlight hover effect for the grid view of a stack (Dock)"
-defaults write com.apple.dock mouse-over-hilite-stack -bool true
+# echo "Dock - Enable highlight hover effect for the grid view of a stack (Dock)"
+# defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
-echo "Dock - Set the icon size of Dock items to 44 pixels"
+echo "Dock - Set the icon size of Dock items"
 defaults write com.apple.dock tilesize -int 56
 
 echo "Dock - Enable spring loading for all Dock items"
@@ -174,8 +174,8 @@ defaults write com.apple.dock show-process-indicators -bool true
 echo "Dock - Don’t animate opening applications from the Dock"
 defaults write com.apple.dock launchanim -bool false
 
-echo "Dock - Remove the animation when hiding/showing the Dock"
-defaults write com.apple.dock autohide-time-modifier -float 0
+# echo "Dock - Remove the animation when hiding/showing the Dock"
+# defaults write com.apple.dock autohide-time-modifier -float 0
 
 echo "Make Dock icons of hidden applications translucent"
 defaults write com.apple.dock showhidden -bool true
@@ -224,8 +224,8 @@ defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
 echo "App Store - Turn on app auto-update"
 defaults write com.apple.commerce AutoUpdate -bool true
 
-echo "App Store - Check for updates daily, rather than weekly"
-defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+# echo "App Store - Check for updates daily, rather than weekly"
+# defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 echo "App Store - Download newly available updates in the background"
 defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
@@ -233,8 +233,8 @@ defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
 echo "App Store - Install system data files & security updates"
 defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
 
-echo "App Store - Automatically download apps purchased on other Macs"
-defaults write com.apple.SoftwareUpdate ConfigDataInstall -int 1
+echo "App Store - Don't automatically download apps purchased on other Macs"
+defaults write com.apple.SoftwareUpdate ConfigDataInstall -int 0
 
 echo "App Store - Allow the App Store to reboot machine on macOS updates"
 defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
@@ -258,7 +258,7 @@ defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 # }}}
 
-# Finder {{{{{{}}}
+# Finder {{{
 echo "Finder - Show hidden files"
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
@@ -280,11 +280,11 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool false
 echo "Finder -Always open everything in Finder's list view. This is important"
 defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 
-echo "Finder - Show the ~/Library folder"
-chflags nohidden ~/Library
+# echo "Finder - Show the ~/Library folder"
+# chflags nohidden ~/Library
 
-echo "Finder - Show the /Volumes folder"
-sudo chflags nohidden /Volumes
+# echo "Finder - Show the /Volumes folder"
+# sudo chflags nohidden /Volumes
 
 echo "Finder - Set the prefs for showing a few different volumes on the Desktop."
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
@@ -342,14 +342,14 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
 # Increase grid spacing for icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 35" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 35" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 35" ~/Library/Preferences/com.apple.finder.plist
+# /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 35" ~/Library/Preferences/com.apple.finder.plist
+# /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 35" ~/Library/Preferences/com.apple.finder.plist
+# /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 35" ~/Library/Preferences/com.apple.finder.plist
 
 # Increase the size of icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 56" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 56" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 56" ~/Library/Preferences/com.apple.finder.plist
+# /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 56" ~/Library/Preferences/com.apple.finder.plist
+# /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 56" ~/Library/Preferences/com.apple.finder.plist
+# /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 56" ~/Library/Preferences/com.apple.finder.plist
 # }}}
 
 # UX {{{
@@ -362,8 +362,8 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 echo "UX - Disable mouse enlargement with jiggle"
 defaults write ~/Library/Preferences/.GlobalPreferences CGDisableCursorLocationMagnification -bool true
 
-echo "UX - Set the Reduce Motion UI option"
-defaults write com.apple.universalaccess reduceMotion -bool true
+# echo "UX - Set the Reduce Motion UI option"
+# defaults write com.apple.universalaccess reduceMotion -bool true
 
 echo "UX - Disable annoying UI error sounds."
 defaults write com.apple.systemsound com.apple.sound.beep.volume -int 0
@@ -374,8 +374,8 @@ osascript -e 'set volume alert volume 0'
 echo "UX - Disable Notification Center and remove the menu bar icon"
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
 
-echo "UX - Don't automatically rearrange Spaces based on most recent use"
-defaults write com.apple.dock mru-spaces -bool false
+# echo "UX - Don't automatically rearrange Spaces based on most recent use"
+# defaults write com.apple.dock mru-spaces -bool false
 
 echo "UX - Expand save panel by default"
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -391,18 +391,18 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 echo "UX - Automatically quit printer app once the print jobs complete"
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
-echo "UX - Set sidebar icon size to medium"
-defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
+# echo "UX - Set sidebar icon size to medium"
+# defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
 echo "UX - Always show scrollbars"
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
-echo "UX - Disable the over-the-top focus ring animation"
-defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
+# echo "UX - Disable the over-the-top focus ring animation"
+# defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
 
-echo "UX - Increase window resize speed for Cocoa applications"
-defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+# echo "UX - Increase window resize speed for Cocoa applications"
+# defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 # echo "UX - Run the screensaver if we're in the bottom-left hot corner"
 # defaults write com.apple.dock wvous-bl-corner -int 5
