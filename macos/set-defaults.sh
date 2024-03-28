@@ -147,8 +147,11 @@ defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int
 echo "Dock - Automatically hide and show"
 defaults write com.apple.dock autohide -bool true
 
-echo "Dock - Remove the auto-hiding delay"
-defaults write com.apple.Dock autohide-delay -float 0.2
+echo "Dock - Remove the audohide delay"
+defaults write com.apple.dock autohide-delay -float 0
+
+echo "Dock - Set the autohide transition time"
+defaults write com.apple.dock autohide-time-modifier -float 0.2
 
 echo "Dock - Don’t show Dashboard as a Space"
 defaults write com.apple.dock "dashboard-in-overlay" -bool true
