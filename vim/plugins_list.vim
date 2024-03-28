@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 
   " Search enhancements
   Plug '/usr/local/opt/fzf'
+  Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   " Project-wide search with rg
   Plug 'mhinz/vim-grepper'

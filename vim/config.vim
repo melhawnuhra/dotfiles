@@ -29,7 +29,8 @@ hi DiffText     gui=none    guifg=NONE          guibg=#8cbee2
 " set tabstop=2                       " Number of visual spaces per tab
 " set softtabstop=2                   " Number of spaces for tab when editing
 " set expandtab                       " Tabs are spaces
-set list listchars=tab:»·,trail:·   " Display tabs and trailing spaces visually
+set nolist
+" set list listchars=tab:»·,trail:·   " Display tabs and trailing spaces visually
 " }}}
 " File Options {{{
 
@@ -59,6 +60,7 @@ set list listchars=tab:»·,trail:·   " Display tabs and trailing spaces visual
 " Netrw {{{
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
+let g:netrw_list_hide = netrw_gitignore#Hide()
 " }}}
 " UI Config {{{
 set number                      " Line numbers are good...

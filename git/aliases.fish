@@ -53,6 +53,9 @@ if not set -q git_abbrs_initialized
   abbr gplrd 'git pull --rebase origin dev'
   abbr gplrq 'git pull --rebase origin qa'
   abbr gplrm 'git pull --rebase origin master'
+  abbr gplrmm 'git pull --rebase origin main'
+
+
 
   abbr gr 'git reset'
   abbr gs 'git status -sb'

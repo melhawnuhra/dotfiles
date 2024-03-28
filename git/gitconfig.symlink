@@ -60,7 +60,7 @@
         default = current
 [user]
 	name = Jared Murphy
-	email = jlmurphy.sa@gmail.com
+	email = jared@wer1.ai
 [commit]
 	template = /Users/jared/dotfiles/git/commit-template.txt
 [mergetool "diffmerge"]
@@ -70,3 +70,8 @@
 	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [pull]
 	ff = only
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f

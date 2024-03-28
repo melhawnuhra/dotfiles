@@ -44,6 +44,9 @@ set PATH $PATH /usr/local/bin/google-cloud-sdk/bin /Users/jared/Library/Python/3
 # Python3
 set PATH $PATH /usr/local/opt/python@3.8/bin
 
+# Homebrew
+set PATH $PATH /opt/homebrew/bin
+
 # Android SDK
 set ANDROID_SDK_ROOT $HOME/Library/Android/sdk
 set PATH $PATH $ANDROID_SDK_ROOT/tools/bin $ANDROID_SDK_ROOT/platform-tools $ANDROID_SDK_ROOT/emulator $ANDROID_SDK_ROOT/build-tools
@@ -52,58 +55,16 @@ varclear PATH
 # }}}
 # Colors {{{
 
-# Readline colors
-# set -g fish_color_autosuggestion 555 yellow
-#set -g fish_color_command 5f87d7
-#set -g fish_color_comment 808080
-#set -g fish_color_cwd 87af5f
-# set -g fish_color_cwd_root 5f0000
-# set -g fish_color_error 870000 --bold
-# set -g fish_color_escape af5f5f
-#set -g fish_color_history_current 87afd7
-#set -g fish_color_host 5f87af
-# set -g fish_color_match d7d7d7 --background=303030
-#set -g fish_color_normal normal
-#set -g fish_color_operator d7d7d7
-# set -g fish_color_param 5f87af
-#set -g fish_color_redirection normal
-# set -g fish_color_search_match --background=purple
-# set -g fish_color_status 5f0000
-#set -g fish_color_user 5f875f
-set -g fish_color_quote d7af5f
-set -g fish_color_valid_path --none
-
-# set the color of the selected on in the drop list of TAB #4695
-set -g fish_color_search_match --background=blue
-
-set fish_new_pager 1
-set -gx fish_color_user magenta
-set -gx fish_color_host yellow
-
-#set -g fish_color_dimmed 555
-#set -g fish_color_separator 999
-
-## Git prompt status
-set -g __fish_git_prompt_showdirtystate 'yes'
-set -g __fish_git_prompt_showupstream auto
-#set -g pure_git_untracked_dirty false
-
 ## Status Chars
-# set __fish_git_prompt_char_dirtystate '*'
-# set __fish_git_prompt_char_upstream_equal ''
-# set __fish_git_prompt_char_upstream_ahead '↑'
-# set __fish_git_prompt_char_upstream_behind '↓'
+set __fish_git_prompt_char_dirtystate '*'
+set __fish_git_prompt_char_upstream_equal ''
+set __fish_git_prompt_char_upstream_ahead '↑'
+set __fish_git_prompt_char_upstream_behind '↓'
 
-# set __fish_git_prompt_color_branch yellow
-# set __fish_git_prompt_color_dirtystate red
-# set __fish_git_prompt_color_upstream_ahead ffb90f
-# set __fish_git_prompt_color_upstream_behind blue
-
-## Local prompt customization
-#set -g fish_pager_color_completion normal
-#set -g fish_pager_color_description 555 yellow
-#set -g fish_pager_color_prefix cyan
-#set -g fish_pager_color_progress cyan
+set __fish_git_prompt_color_branch yellow
+set __fish_git_prompt_color_dirtystate red
+set __fish_git_prompt_color_upstream_ahead ffb90f
+set __fish_git_prompt_color_upstream_behind blue
 
 # }}}
 # Pager {{{
@@ -143,12 +104,10 @@ if not set -q abbrs_initialized
 
   abbr cd. 'cd (git rev-parse --show-toplevel); and clear' # cd to the project root
   abbr c.d 'cd (git rev-parse --show-toplevel); and clear' # cd to the project root
-  abbr cdc 'cd ~/Code'
+  abbr cdc 'cd ~/code'
   abbr cdd 'cd ~/Desktop'
   abbr cdf 'cd ~/dotfiles/fish'
   abbr cdv 'cd ~/dotfiles/vim'
-  abbr cdp 'cd ~/Documents/Personal/Projects'
-  abbr cdr 'cd ~/Documents/Personal/Reference'
   abbr cd.. 'cd ..'                         # Correct my typos, please
 
   abbr .. 'cd ..'
@@ -162,11 +121,11 @@ if not set -q abbrs_initialized
 end
 # }}}
 # TMUX {{{
-  abbr mux 'tmuxinator'
   alias t 'tmux attach ;or tmux'
+  alias ti 'tmux new-session -t 0'
   alias tl 'tmux ls'
-  alias tl 'tmux ls'
-  alias tls 'tmux list-panes -s'
+
+  alias tc 'tmux list-sessions | grep -v attached | cut -d: -f1 |  xargs -t -n1 tmux kill-session -t'
   function tk -d 'tmux kill-session single/multiple sessions'
       if test (count $argv) -gt 0
           for i in $argv
@@ -257,9 +216,6 @@ alias mem 'top -o rsize' # memory
 # list TODO/FIX lines from the current project
 alias todos "ag --ignore 'node_modules/* .git/* .map' -- '(FIX(ME)?:)|@todo|@Todo|TODO'"
 
-# interactive fasd
-alias zi "fasd -e cd -i"
-
 # Flush DNS
 alias flush "sudo killall -HUP mDNSResponder"
 
@@ -268,10 +224,6 @@ alias psgrep "ps ax|grep -v grep|grep -iE"
 alias psg psgrep
 
 
-# TODO
-# alias colors 'for code in {0..255}; do echo -e "\e[38;05;${code}m $code: test"; done'
-# alias today 'vim ~/journal/$(date "+%Y-%m-%d").md'
-# alias yesterday 'vim ~/journal/$(ls ~/journal | sort | tail -n 1)'
 # }}}
 # Plugins {{{
 
@@ -281,3 +233,10 @@ set -U pisces_pairs '<,>' '`,`' '«,»' '","' '\',\'' '(,)' '[,]' '{,}'
 # }}}
 
 # vim:foldmethod=marker:foldlevel=0
+
+# pnpm
+set -gx PNPM_HOME "/Users/jared/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
