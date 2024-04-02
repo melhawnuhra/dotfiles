@@ -34,6 +34,7 @@
 	excludesfile = /Users/jared/.gitignore_global
         editor = nvim
 	pager = less -+X -+F
+	ignorecase = true
 [apply]
         whitespace = nowarn
 [mergetool]
