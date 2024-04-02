@@ -74,8 +74,15 @@ set -gx LESS_TERMCAP_us \e'[04;38;5;146m' # begin underline
   alias t 'tmux attach ;or tmux'
   alias ti 'tmux new-session -t 0'
   alias tl 'tmux ls'
-
   alias tc 'tmux list-sessions | grep -v attached | cut -d: -f1 |  xargs -t -n1 tmux kill-session -t'
+
+  function ta -d 'Attach to a tmux session by name'
+    if count $argv > 0
+        tmux attach -t $argv[1]
+    else
+        echo "Usage: tmux_attach <session-name>"
+    end
+  end
   function tk -d 'tmux kill-session single/multiple sessions'
       if test (count $argv) -gt 0
           for i in $argv
@@ -107,6 +114,14 @@ set -gx LESS_TERMCAP_us \e'[04;38;5;146m' # begin underline
               tmux kill-server        # kill all sessions (including current one)
           end
       end
+  end
+  function trn -d 'Rename the current tmux session'
+    if count $argv > 0
+        tmux rename-session $argv[1]
+        echo "Current session renamed to \"$argv[1]\""
+    else
+        echo "Usage: tmux_rename <new-session-name>"
+    end
   end
 # }}}
 # Aliases {{{
