@@ -1,25 +1,10 @@
-
-# Profile loading time >>
-# fish --profile prompt.prof -ic 'fish_prompt; exit'; sort -nk 2 prompt.prof
+# --------------- FISH CONFIG ----------------
 
 # Environment {{{
 fish_vi_key_bindings
 
 set DOTFILES_HOME "$HOME/dotfiles"
-
-if [ -n "$TMUX" ]
-  set -x TERM screen-256color
-else
-  set -x TERM xterm-256color
-end
-
-# set LS_COLORS "exfxcxdxbxegedabagacad"
-set CLICOLOR "true"
-
 set -x EDITOR 'nvim'
-
-# Highlight color for grep matches
-set -x GREP_COLOR '1;32'
 
 set -x LANG en_US.UTF-8
 set -x LC_CTYPE "en_US.UTF-8"
@@ -29,42 +14,43 @@ set -x LC_COLLATE C
 
 # Custom bin/
 set PATH $PATH $DOTFILES_HOME/bin
-# Ranger
-set RANGER_LOAD_DEFAULT_RC "false"
-# Docker
-source $DOTFILES_HOME/docker/aliases.fish
-# Kubernetes
-source $DOTFILES_HOME/kubernetes/abbr.fish
-# Git
-source $DOTFILES_HOME/git/aliases.fish
-
-# Gcloud
-set PATH $PATH /usr/local/bin/google-cloud-sdk/bin /Users/jared/Library/Python/3.7/bin /Users/jared/go/bin
-
 # Python3
 set PATH $PATH /usr/local/opt/python@3.8/bin
-
 # Homebrew
 set PATH $PATH /opt/homebrew/bin
-
 # Android SDK
 set ANDROID_SDK_ROOT $HOME/Library/Android/sdk
 set PATH $PATH $ANDROID_SDK_ROOT/tools/bin $ANDROID_SDK_ROOT/platform-tools $ANDROID_SDK_ROOT/emulator $ANDROID_SDK_ROOT/build-tools
-
+# Misc
+set PATH $PATH /usr/local/bin/google-cloud-sdk/bin $HOME/Library/Python/3.7/bin $HOME/go/bin
+# pnpm
+set -gx PNPM_HOME "$HOME/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
 varclear PATH
+
+# Docker
+source $DOTFILES_HOME/fish/aliases/docker.fish
+# Kubernetes
+source $DOTFILES_HOME/fish/aliases/k8s.fish
+# Git
+source $DOTFILES_HOME/fish/aliases/git.fish
+
 # }}}
 # Colors {{{
 
-## Status Chars
-set __fish_git_prompt_char_dirtystate '*'
-set __fish_git_prompt_char_upstream_equal ''
-set __fish_git_prompt_char_upstream_ahead '↑'
-set __fish_git_prompt_char_upstream_behind '↓'
+if [ -n "$TMUX" ]
+  set -x TERM screen-256color
+else
+  set -x TERM xterm-256color
+end
 
-set __fish_git_prompt_color_branch yellow
-set __fish_git_prompt_color_dirtystate red
-set __fish_git_prompt_color_upstream_ahead ffb90f
-set __fish_git_prompt_color_upstream_behind blue
+set CLICOLOR "true"
+
+# Highlight color for grep matches
+set -x GREP_COLOR '1;32'
 
 # }}}
 # Pager {{{
@@ -83,42 +69,6 @@ set -gx LESS_TERMCAP_se \e'[0m'           # end standout-mode
 set -gx LESS_TERMCAP_so \e'[38;5;246m'    # begin standout-mode - info box
 set -gx LESS_TERMCAP_ue \e'[0m'           # end underline
 set -gx LESS_TERMCAP_us \e'[04;38;5;146m' # begin underline
-# }}}
-# Abbreviations {{{
-if not set -q abbrs_initialized
-  set -U abbrs_initialized
-  echo -n Setting abbreviations...
-
-  abbr c 'clear'
-  abbr q 'exit'
-  abbr dux 'du -h | sort -rh | head -5'     # Where are all the bytes hiding?
-  abbr cpwd 'pwd | tr -d "\n" | pbcopy'     # Copy pwd
-  abbr xx 'atool -x'                        # Extract ANYTHING
-  abbr lst 'tree -I "node_modules|dist"'
-  abbr killit 'kill -9 %1'                  # Kill the last suspended process (because sometimes Ctrl-C is not enough)
-  abbr _ 'sudo'
-
-  abbr fg1 'fg %1'
-  abbr fg2 'fg %2'
-  abbr fg3 'fg %3'
-
-  abbr cd. 'cd (git rev-parse --show-toplevel); and clear' # cd to the project root
-  abbr c.d 'cd (git rev-parse --show-toplevel); and clear' # cd to the project root
-  abbr cdc 'cd ~/code'
-  abbr cdd 'cd ~/Desktop'
-  abbr cdf 'cd ~/dotfiles/fish'
-  abbr cdv 'cd ~/dotfiles/vim'
-  abbr cd.. 'cd ..'                         # Correct my typos, please
-
-  abbr .. 'cd ..'
-  abbr ... 'cd ../..'
-  abbr .... 'cd ../../..'
-  abbr ..... 'cd ../../../..'
-  abbr ...... 'cd ../../../../..'
-  # ...because sometimes you just don't have the time for those extra keystrokes.
-
-  echo 'Done'
-end
 # }}}
 # TMUX {{{
   alias t 'tmux attach ;or tmux'
@@ -222,8 +172,41 @@ alias flush "sudo killall -HUP mDNSResponder"
 # Search running processes for a pattern
 alias psgrep "ps ax|grep -v grep|grep -iE"
 alias psg psgrep
+# }}}
+# Abbreviations {{{
+if not set -q abbrs_initialized
+  set -U abbrs_initialized
+  echo -n Setting abbreviations...
 
+  abbr c 'clear'
+  abbr q 'exit'
+  abbr dux 'du -h | sort -rh | head -5'     # Where are all the bytes hiding?
+  abbr cpwd 'pwd | tr -d "\n" | pbcopy'     # Copy pwd
+  abbr xx 'atool -x'                        # Extract ANYTHING
+  abbr lst 'tree -I "node_modules|dist"'
+  abbr killit 'kill -9 %1'                  # Kill the last suspended process (because sometimes Ctrl-C is not enough)
+  abbr _ 'sudo'
 
+  abbr fg1 'fg %1'
+  abbr fg2 'fg %2'
+  abbr fg3 'fg %3'
+
+  abbr cd. 'cd (git rev-parse --show-toplevel); and clear' # cd to the project root
+  abbr c.d 'cd (git rev-parse --show-toplevel); and clear' # cd to the project root
+  abbr cdc 'cd ~/code'
+  abbr cdd 'cd ~/Desktop'
+  abbr cdf 'cd ~/dotfiles/fish'
+  abbr cdv 'cd ~/dotfiles/vim'
+  abbr cd.. 'cd ..'
+
+  abbr .. 'cd ..'
+  abbr ... 'cd ../..'
+  abbr .... 'cd ../../..'
+  abbr ..... 'cd ../../../..'
+  abbr ...... 'cd ../../../../..'
+
+  echo 'Done'
+end
 # }}}
 # Plugins {{{
 
@@ -231,12 +214,9 @@ alias psg psgrep
 set -U pisces_pairs '<,>' '`,`' '«,»' '","' '\',\'' '(,)' '[,]' '{,}'
 
 # }}}
+# Useful Notes + Commands {{{
+# Profile loading time >>
+# fish --profile prompt.prof -ic 'fish_prompt; exit'; sort -nk 2 prompt.prof
+# }}}
 
 # vim:foldmethod=marker:foldlevel=0
-
-# pnpm
-set -gx PNPM_HOME "/Users/jared/Library/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end

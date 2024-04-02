@@ -90,6 +90,7 @@ set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " fold based on indent level
 set modelines=1         " Allow modelines to override settings per file
+set foldmarker={{{,}}}
 " }}}
 " Line Wrapping {{{
 set nowrap                      " Don't wrap lines
