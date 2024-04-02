@@ -27,6 +27,8 @@ if not set -q git_abbrs_initialized
 
   abbr go 'git checkout'
   abbr gob 'git checkout -b'
+  abbr gom 'git checkout main'
+
 
   abbr gcp 'git cherry-pick'
 
