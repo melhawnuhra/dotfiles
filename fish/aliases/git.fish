@@ -50,6 +50,8 @@ if not set -q git_abbrs_initialized
   abbr gplb 'git pull (git rev-parse --abbrev-ref HEAD)'
   abbr gpld 'git pull origin dev'
   abbr gplm 'git pull origin master'
+  abbr gplmm 'git pull origin main'
+
 
   abbr gplr 'git pull --rebase'
   abbr gplrd 'git pull --rebase origin dev'
