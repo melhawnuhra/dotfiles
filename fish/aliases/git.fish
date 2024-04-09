@@ -62,6 +62,7 @@ if not set -q git_abbrs_initialized
 
 
   abbr gr 'git reset'
+  abbr grc 'git rebase --continue'
   abbr gs 'git status -sb'
 
   abbr gst 'git stash'
