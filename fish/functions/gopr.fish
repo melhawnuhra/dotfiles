@@ -5,12 +5,21 @@ function openpr -d 'prompt to ask to open a pull request'
     open $pr_url
 end
 
-function gopr -d 'push current branch and open a pull request'
-  git push origin (git rev-parse --abbrev-ref HEAD)
-
-  if test $status -eq 0
-    openpr
-  else
-    echo 'failed to push current branch and open a pull request.'
+function gopr -d 'typecheck, lint, push current branch and open a pull request'
+  pnpm typecheck
+  if test $status -ne 0
+    return
   end
+
+  pnpm lint
+  if test $status -ne 0
+    return
+  end
+
+  git push origin (git rev-parse --abbrev-ref HEAD)
+  if test $status -ne 0
+    return
+  end
+
+  openpr
 end
