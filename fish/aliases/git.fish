@@ -12,7 +12,7 @@ if not set -q git_abbrs_initialized
 
   abbr ga 'git add'
   abbr gaa 'git add -A'
-  abbr gacp 'git add -A; and git-amend; and git push origin +master'
+  abbr gacp 'git add -A; and git-amend; and git push origin +(git rev-parse --abbrev-ref HEAD)'
   abbr gap 'git add -p'
 
   abbr gb 'git branch'
@@ -29,7 +29,6 @@ if not set -q git_abbrs_initialized
   abbr gob 'git checkout -b'
   abbr gom 'git checkout main'
 
-
   abbr gcp 'git cherry-pick'
 
   abbr gd 'git diff --color-words'
@@ -42,35 +41,29 @@ if not set -q git_abbrs_initialized
   abbr gpo 'git push origin (git rev-parse --abbrev-ref HEAD)'
   abbr gpo+ "git push origin +(git rev-parse --abbrev-ref HEAD)"
   abbr gpod 'git push origin dev'
-  abbr gpom 'git push origin master'
+  abbr gpom 'git push origin main'
   abbr gpo+d 'git push origin +dev'
-  abbr gpo+m 'git push origin +master'
+  abbr gpo+m 'git push origin +main'
 
   abbr gpl 'git pull'
   abbr gplb 'git pull (git rev-parse --abbrev-ref HEAD)'
   abbr gpld 'git pull origin dev'
-  abbr gplm 'git pull origin master'
+  abbr gplm 'git pull origin main'
   abbr gplmm 'git pull origin main'
-
 
   abbr gplr 'git pull --rebase'
   abbr gplrd 'git pull --rebase origin dev'
   abbr gplrq 'git pull --rebase origin qa'
-  abbr gplrm 'git pull --rebase origin master'
-  abbr gplrmm 'git pull --rebase origin main'
-
-
+  abbr gplrm 'git pull --rebase origin main'
 
   abbr gr 'git reset'
+  abbr grbi 'git rebase -i HEAD~'
   abbr grbc 'git rebase --continue'
   abbr gs 'git status -sb'
 
   abbr gst 'git stash'
   abbr gstp 'git stash pop'
   abbr gstl 'git stash list'
-
-  abbr gw 'git-wtf'
-  abbr st 'open -a SourceTree .'
 
   echo 'Done'
 end
