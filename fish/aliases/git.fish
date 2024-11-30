@@ -4,7 +4,7 @@ if which hub > /dev/null
   alias git=(which hub)
 end
 
-if not set -q git_abbrs_initialized
+# if not set -q git_abbrs_initialized
   set -U git_abbrs_initialized
   echo -n Setting Git abbreviations...
 
@@ -58,6 +58,7 @@ if not set -q git_abbrs_initialized
 
   abbr gr 'git reset'
   abbr grbi 'git rebase -i HEAD~'
+  abbr grba 'git rebase --abort'
   abbr grbc 'git rebase --continue'
   abbr gs 'git status -sb'
 
@@ -66,7 +67,7 @@ if not set -q git_abbrs_initialized
   abbr gstl 'git stash list'
 
   echo 'Done'
-end
+# end
 
 # Log / status
 alias gh="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"

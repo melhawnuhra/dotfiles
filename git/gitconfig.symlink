@@ -84,3 +84,5 @@
 	prune = true
 [rerere]
 	enabled = true
+[http]
+	postBuffer = 1048576000

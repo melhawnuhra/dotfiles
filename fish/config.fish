@@ -18,6 +18,8 @@ set PATH $PATH $DOTFILES_HOME/bin
 set PATH $PATH /usr/local/opt/python@3.8/bin
 # Homebrew
 set PATH $PATH /opt/homebrew/bin
+# Java
+set -x JAVA_HOME (/usr/libexec/java_home -v21.0.5)
 # Android SDK
 set ANDROID_SDK_ROOT $HOME/Library/Android/sdk
 set PATH $PATH $ANDROID_SDK_ROOT/tools/bin $ANDROID_SDK_ROOT/platform-tools $ANDROID_SDK_ROOT/emulator $ANDROID_SDK_ROOT/build-tools

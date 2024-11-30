@@ -416,6 +416,10 @@ defaults write com.apple.dock mineffect -string "scale"
 
 echo "UX - Minimize windows into their application’s icon"
 defaults write com.apple.dock minimize-to-application -bool true
+
+echo "UX - Don't round windows at the top"
+defaults write -g AppleUseCoreUI -bool false
+
 # }}}
 
 # Safari {{{
