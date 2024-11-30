@@ -148,12 +148,12 @@ then
 end
 
 # ls better
-alias l 'exa'
-alias ls 'exa'
-alias ll 'exa -l'
-alias lla 'exa -la'
-alias lal 'exa -la'
-alias la 'exa -a'
+alias l 'eza'
+alias ls 'eza'
+alias ll 'eza -l'
+alias lla 'eza -la'
+alias lal 'eza -la'
+alias la 'eza -a'
 alias lt 'ls -l --sort newest; and echo "------Oldest--"'
 alias ltr 'ls -l --sort oldest; and echo "------Newest--"'
 
