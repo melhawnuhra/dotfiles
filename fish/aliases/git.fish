@@ -6,7 +6,6 @@ end
 
 # if not set -q git_abbrs_initialized
   set -U git_abbrs_initialized
-  echo -n Setting Git abbreviations...
 
   abbr g 'git'
 

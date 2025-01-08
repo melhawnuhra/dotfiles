@@ -40,6 +40,8 @@ source $DOTFILES_HOME/fish/aliases/k8s.fish
 # Git
 source $DOTFILES_HOME/fish/aliases/git.fish
 
+# This doesn't seem to work as is - consider converting it to fishscript
+# bass source $HOME/.sdkman/bin/sdkman-init.sh
 # }}}
 # Colors {{{
 
@@ -215,6 +217,8 @@ if not set -q abbrs_initialized
   abbr cdf 'cd ~/dotfiles/fish'
   abbr cdv 'cd ~/dotfiles/vim'
   abbr cd.. 'cd ..'
+  abbr cdw 'cd ~/code/wer1'
+  abbr cdm 'cd ~/code/meza'
 
   abbr .. 'cd ..'
   abbr ... 'cd ../..'
