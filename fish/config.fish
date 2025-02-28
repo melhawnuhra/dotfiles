@@ -14,29 +14,38 @@ set -x LC_COLLATE C
 
 # Custom bin/
 set PATH $PATH $DOTFILES_HOME/bin
+
 # Python3
 set PATH $PATH /usr/local/opt/python@3.8/bin
+
 # Homebrew
 set PATH $PATH /opt/homebrew/bin
-# Java
-set -x JAVA_HOME (/usr/libexec/java_home -v21.0.5)
+
+## Java
+#set -x JAVA_HOME (/usr/libexec/java_home -v21.0.5)
+
 # Android SDK
 set ANDROID_SDK_ROOT $HOME/Library/Android/sdk
 set PATH $PATH $ANDROID_SDK_ROOT/tools/bin $ANDROID_SDK_ROOT/platform-tools $ANDROID_SDK_ROOT/emulator $ANDROID_SDK_ROOT/build-tools
+
 # Misc
 set PATH $PATH /usr/local/bin/google-cloud-sdk/bin $HOME/Library/Python/3.7/bin $HOME/go/bin
+
 # pnpm
 set -gx PNPM_HOME "$HOME/Library/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
 varclear PATH
 
 # Docker
 source $DOTFILES_HOME/fish/aliases/docker.fish
+
 # Kubernetes
 source $DOTFILES_HOME/fish/aliases/k8s.fish
+
 # Git
 source $DOTFILES_HOME/fish/aliases/git.fish
 
@@ -225,8 +234,6 @@ if not set -q abbrs_initialized
   abbr .... 'cd ../../..'
   abbr ..... 'cd ../../../..'
   abbr ...... 'cd ../../../../..'
-
-  echo 'Done'
 end
 # }}}
 # Plugins {{{

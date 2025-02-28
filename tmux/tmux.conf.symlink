@@ -66,7 +66,7 @@ bind C command-prompt -p "Name of new session: " "new -s '%%'"
 
 bind @ setw synchronize-panes
 
-set -g default-shell /usr/local/bin/fish
+set -g default-shell /opt/homebrew/bin/fish
 
 # Allow yanking to global clipboard
 set -g set-clipboard on

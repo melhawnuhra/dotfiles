@@ -64,8 +64,6 @@ end
   abbr gst 'git stash'
   abbr gstp 'git stash pop'
   abbr gstl 'git stash list'
-
-  echo 'Done'
 # end
 
 # Log / status

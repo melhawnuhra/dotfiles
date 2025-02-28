@@ -6,13 +6,6 @@ set -e
 
 cd "$(dirname $0)"/..
 
-# Run Homebrew through the Brewfile
-if [ "$(uname -s)" == "Darwin" ]
-then
-	echo "› brew bundle"
-	brew bundle
-fi
-
 # make the .config directory if it doesn't already exit
 mkdir -p ~/.config
 

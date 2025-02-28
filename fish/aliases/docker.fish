@@ -15,7 +15,5 @@ if not set -q docker_abbrs_initialized
   abbr dcu 'docker-compose up'
   abbr dcd 'docker-compose down'
   abbr dcs 'docker-compose ps'
-
-  echo 'Done'
 end
 

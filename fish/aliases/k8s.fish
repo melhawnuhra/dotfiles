@@ -29,7 +29,5 @@ if not set -q kube_abbrs_initialized
   abbr kgs 'kubectl get service'
   abbr kl 'kubectl logs'
   abbr klf 'kubectl logs -f'
-
-  echo 'Done'
 end
 
